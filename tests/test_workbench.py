@@ -252,14 +252,15 @@ def test_assignment_escalation_and_requests_persist_across_restart(env):
     assert s.responsible == 'Waiting on Vendor' and s.status == 'blocked'
     clock.advance(hours=3)
     s = env.escalate('invoice_1008', CLERK, s.rev, 'VP Finance', 'Vendor is unresponsive and amount is near 10K', s.evidence)
-    assert s.row['workflow'] == 'escalated' and s.responsible == 'VP Finance (escalated)'
+    assert s.row['workflow'] == 'correction_requested' and s.row['assignee'] == 'VP Finance'
+    assert s.responsible == 'Waiting on Vendor'
     s = env.assign('invoice_1008', MANAGER, s.rev, 'Demo AP Clerk', 'Take over follow-up', s.evidence)
 
     restarted = Workbench(env.db_path, env.data_dir, clock=clock)
     restarted.ingest()
     after = st(restarted, 'invoice_1008')
-    assert after.row['assignee'] == 'Demo AP Clerk' and after.row['workflow'] == 'assigned'
-    assert after.blockers == ['unknown_item'] and after.status == 'blocked'    # nothing was resolved
+    assert after.row['assignee'] == 'Demo AP Clerk' and after.row['workflow'] == 'correction_requested'
+    assert set(after.blockers) == {'unknown_item', 'correction_requested'} and after.status == 'blocked'    # nothing was resolved
     hist = restarted.history('invoice_1008')
     assert [e['kind'] for e in hist][:3] == ['assign', 'escalate', 'request_correction']
     first = hist[2]
@@ -564,3 +565,70 @@ def test_unreadable_document_becomes_a_blocked_case(env):
         env.pay('broken', MANAGER, s.rev, s.evidence)
     with pytest.raises(ValueError):
         Workbench(':memory:', env.data_dir)
+
+
+def test_open_correction_request_stops_payment_until_explicit_resolution(env):
+    s = approve_ready(env)
+    s = env.request_correction(s.case_id, CLERK, s.rev, 'Vendor', 'Confirm remittance details', s.evidence)
+    assert s.status == 'blocked' and 'correction_requested' in s.blockers
+    assert not s.approvals and not s.payable
+    s = env.assign(s.case_id, CLERK, s.rev, 'Treasury', 'Verify the request', s.evidence)
+    s = env.escalate(s.case_id, CLERK, s.rev, 'AP Manager', 'Needs review', s.evidence)
+    assert 'correction_requested' in s.blockers
+    with pytest.raises(Refused):
+        env.approve(s.case_id, MANAGER, s.rev, 'ap', s.evidence, 'Premature signoff')
+    with pytest.raises(Refused):
+        env.pay(s.case_id, MANAGER, s.rev, s.evidence)
+    assert ledger_count(env) == 0
+    s = env.resolve_correction(s.case_id, CLERK, s.rev, 'Vendor confirmed original details', s.evidence)
+    assert s.status == 'awaiting_approval' and not s.approvals
+    s = env.approve(s.case_id, MANAGER, s.rev, 'ap', s.evidence, 'Reviewed the resolution')
+    assert env.pay(s.case_id, MANAGER, s.rev, s.evidence).status == 'paid'
+    assert any(e['kind'] == 'correction_resolved' for e in env.history(s.case_id))
+
+
+def test_resolution_does_not_clear_remaining_validation_defects(env):
+    s = env.case('invoice_1008')
+    s = env.request_correction(s.case_id, CLERK, s.rev, 'Vendor', 'Unknown item needs correction', s.evidence)
+    with pytest.raises(Refused):
+        env.resolve_correction(s.case_id, CLERK, s.rev, 'Looks fine to me', s.evidence)
+    assert 'unknown_item' in env.case(s.case_id).blockers
+
+
+@pytest.mark.parametrize('missing', [False, True])
+def test_source_change_invalidates_approval_and_blocks_payment(env, missing):
+    s = approve_ready(env)
+    path = env.data_dir / 'invoice_1001.txt'
+    if missing:
+        path.unlink()
+    else:
+        path.write_text('New invoice contents')
+    fresh = env.case(s.case_id)
+    assert 'source_unavailable' in fresh.blockers and not fresh.approvals
+    assert fresh.evidence != s.evidence and not fresh.payable
+    with pytest.raises(Stale):
+        env.pay(s.case_id, MANAGER, s.rev, s.evidence)
+    with pytest.raises(Refused):
+        env.approve(s.case_id, MANAGER, fresh.rev, 'ap', fresh.evidence, 'Approve missing evidence')
+    with pytest.raises(Refused):
+        env.pay(s.case_id, MANAGER, fresh.rev, fresh.evidence)
+    assert ledger_count(env) == 0
+
+
+def test_extreme_numeric_correction_returns_validation_error_without_changes(env):
+    s = env.case('invoice_1001')
+    with pytest.raises(Invalid):
+        env.edit_fields(s.case_id, CLERK, s.rev, s.effective.filename,
+                        {'line.0.unit_price': '1e100'}, 'Mistyped numeric value', s.evidence)
+    assert env.case(s.case_id).rev == s.rev
+    assert env.edits(s.case_id) == []
+
+
+def test_ingested_numeric_overflow_is_a_blocked_case_not_a_broken_inbox(env):
+    (env.data_dir / 'overflow.json').write_text(json.dumps({
+        'invoice_number':'INV-9999','vendor':'Overflow Ltd','date':'2026-01-01','due_date':'2026-02-01',
+        'line_items':[{'item':'WidgetA','quantity':1,'unit_price':'1e100'}],'total':'1e100'}))
+    env.ingest()
+    states = {s.case_id:s for s in env.list_cases()}
+    assert states['overflow'].status == 'blocked'
+    assert states['overflow'].reasons == ['parse_error']

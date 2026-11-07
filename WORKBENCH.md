@@ -137,3 +137,37 @@ keyboard-only use, screen readers.
 `invoices/workbench/{policy,service,views,server,__main__,__init__}.py`, `tests/test_workbench.py`,
 `tests/test_workbench_http.py`, `WORKBENCH.md`, one-line `.gitignore` addition, a pointer in
 `IMPLEMENTATION.md`.
+
+## Parent review and fixes (2026-11-06)
+
+Codex independently reviewed commit 41bf8d2 against baseline 6c6e98f, reran all
+102 tests and the corpus eval, then reproduced three gaps with real temporary
+SQLite/datadir copies:
+
+- A correction requested after sign-off left the case payable. An open request
+  now adds a payment/approval blocker, invalidates sign-offs, survives assignment
+  or escalation, and needs an explicit audited resolution. Remaining validation
+  defects must be fixed before resolution; fresh approval is then required.
+  The UI says 'Record correction request'; no message is sent externally.
+- Changing/removing a source file left the stored evidence hash/sign-off valid.
+  Case state now verifies original files, includes availability in the evidence
+  hash, and blocks approval/payment when any case document is missing/changed.
+  Restore the exact original file to make evidence available again. This check
+  does not provide filesystem isolation against concurrent external writers.
+- Extreme finite numeric input could raise during the arithmetic display and
+  break the inbox for an ingested document. Corrections now enforce magnitude
+  <= 1 trillion and at most 12 fractional digits; evaluation arithmetic failures
+  produce a blocked case without attempting an invalid arithmetic breakdown.
+
+Policy version bumped to workbench-2, so pre-fix approvals require fresh review.
+Six new backend regression cases failed before these changes; two new real HTTP
+flows verify request -> resolve -> fresh sign-off -> payment and numeric failure
+handling. The prior assignment test now checks that reassignment preserves an
+open correction request instead of implicitly clearing it.
+
+Final local checks: `uv run pytest -q`: 110 passed; `uv run python -m
+invoices.evaluate`: exit 0, 20 standalone and 20 batch working labels matched;
+`git diff --check`: clean. Core/labels/fixtures/dependencies remain unchanged.
+Parent verification used real HTTP tests, without an additional browser pass.
+The Sonnet browser observations above remain separately attributed. CI has not
+run; no cloud deployment or production-auth claim is made.

@@ -30,7 +30,7 @@ MAX_BODY = 256 * 1024
 ID_RE = re.compile(r'[A-Za-z0-9_-]{1,80}')
 FILE_RE = re.compile(r'[A-Za-z0-9._-]{1,120}')
 ACTIONS = {'edit', 'select-version', 'assign', 'request-correction', 'escalate', 'comment',
-           'revalidate', 'approve', 'reject', 'reopen', 'pay'}
+           'revalidate', 'approve', 'reject', 'reopen', 'pay', 'resolve-correction'}
 NOTICE_KEY = {'select-version': 'select', 'request-correction': 'request'}
 RAW_TYPES = {'pdf': 'application/pdf', 'json': 'text/plain; charset=utf-8', 'csv': 'text/plain; charset=utf-8',
              'xml': 'text/plain; charset=utf-8', 'txt': 'text/plain; charset=utf-8'}
@@ -159,6 +159,8 @@ def make_handler(wb):
                     wb.assign(case_id, actor, rev, form.get('assignee', ''), form.get('reason'), evidence)
                 elif action == 'request-correction':
                     wb.request_correction(case_id, actor, rev, form.get('party', ''), form.get('message'), evidence)
+                elif action == 'resolve-correction':
+                    wb.resolve_correction(case_id, actor, rev, form.get('reason'), evidence)
                 elif action == 'escalate':
                     wb.escalate(case_id, actor, rev, form.get('target', ''), form.get('reason'), evidence)
                 elif action == 'comment':

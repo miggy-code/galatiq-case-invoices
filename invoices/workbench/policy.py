@@ -5,7 +5,7 @@ module only describes who may do what in the local demo and how reasons read.
 """
 from collections import namedtuple
 
-POLICY_VERSION = 'main-v1-working+workbench-1'
+POLICY_VERSION = 'main-v1-working+workbench-2'
 
 Actor = namedtuple('Actor', 'id name role')
 
@@ -30,7 +30,7 @@ ROLE_LABELS = {
 }
 
 _WORK = {'edit', 'select_version', 'assign', 'request_correction', 'escalate',
-         'comment', 'revalidate'}
+         'comment', 'revalidate', 'resolve_correction'}
 PERMISSIONS = {
     'ap_clerk': _WORK,
     'ap_manager': _WORK | {'approve_ap', 'reject', 'reopen', 'pay'},
@@ -47,6 +47,8 @@ CORRECTION_PARTIES = ['Vendor', 'Requester / buyer', 'Internal data entry']
 
 # code: (label, default team). Order doubles as routing priority.
 REASONS = {
+    'source_unavailable': ('Original evidence unavailable or changed', 'AP Operations'),
+    'correction_requested': ('Correction request open', 'AP Operations'),
     'parse_error': ('Unreadable document', 'AP Operations'),
     'revision_conflict': ('Competing versions', 'AP Operations'),
     'missing_vendor': ('Vendor missing', 'AP Operations'),

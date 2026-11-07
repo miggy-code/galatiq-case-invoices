@@ -163,6 +163,8 @@ def set_field(inv, fid, text):
                 raise Invalid(f'{field_label(fid)}: {text!r} is not a number') from None
             if not value.is_finite():
                 raise Invalid(f'{field_label(fid)}: {text!r} is not a finite number')
+            if abs(value) > Decimal('1e12') or value.as_tuple().exponent < -12:
+                raise Invalid(f'{field_label(fid)}: use at most 12 fractional digits and magnitude <= 1 trillion')
     elif kind == 'currency':
         if not text:
             raise Invalid('Currency is required')
@@ -286,6 +288,7 @@ class DocView:
     result: dict | None
     role: str = 'effective'   # effective | duplicate | superseded | competing | unparsed
     edit_count: int = 0
+    source_error: str | None = None
 
 
 @dataclass
@@ -537,6 +540,17 @@ class Workbench:
         with self.read() as c:
             return [dict(r) for r in c.execute('SELECT * FROM mock_payments ORDER BY vendor, invoice_number')]
 
+    def _source_error(self, filename, sha256):
+        try:
+            path = (self.data_dir / filename).resolve()
+            if path.parent != self.data_dir or not path.is_file():
+                return f'{filename}: original document is missing or outside the data directory'
+            if hashlib.sha256(path.read_bytes()).hexdigest() != sha256:
+                return f'{filename}: original document changed since ingestion'
+        except OSError:
+            return f'{filename}: original document cannot be read'
+        return None
+
     # ------------------------------------------------------------ state derivation
 
     def _state(self, c, case_id, detail=False):
@@ -561,7 +575,8 @@ class Workbench:
                     result = {'source': d['filename'], 'decision': 'reject', 'reasons': ['parse_error'],
                               'detail': f'{exc.__class__.__name__}: {exc}'}
             docs.append(DocView(d['filename'], d['fmt'], d['sha256'], d['size'], original, current,
-                                d['parse_error'], result, 'unparsed' if current is None else 'effective', count))
+                                d['parse_error'], result, 'unparsed' if current is None else 'effective', count,
+                                self._source_error(d['filename'], d['sha256'])))
         parsable = [d for d in docs if d.effective is not None]
         selected = row['selected_filename']
         conflict, effective = False, None
@@ -589,6 +604,13 @@ class Workbench:
             decision, reasons = 'hold', ['revision_conflict']
         elif effective:
             decision, reasons = effective.result['decision'], order_reasons(effective.result['reasons'])
+        reasons = list(reasons)
+        if any(d.source_error for d in docs):
+            reasons.append('source_unavailable')
+        if row['workflow'] == 'correction_requested':
+            reasons.append('correction_requested')
+        if any(r in reasons for r in ('source_unavailable', 'correction_requested')) and decision == 'approve':
+            decision = 'hold'
         blockers = [r for r in reasons if r not in GATE_REASONS]
         gates = [r for r in reasons if r in GATE_REASONS]
         required = ['ap'] + (['vp'] if 'high_value' in reasons else [])
@@ -637,13 +659,17 @@ class Workbench:
             status = 'ready_to_pay'
 
         explanations, bd = {}, None
-        if effective:
+        if effective and 'parse_error' not in effective.result['reasons']:
             bd = breakdown(effective.effective, c)
             explanations = explain(reasons, effective.effective, bd, effective.result.get('detail', ''))
         elif conflict:
             explanations = explain(reasons, None, None)
         elif docs:
             explanations = explain(reasons, None, None, docs[0].parse_error or '')
+        if 'source_unavailable' in reasons:
+            explanations['source_unavailable'] = '; '.join(d.source_error for d in docs if d.source_error)
+        if 'correction_requested' in reasons:
+            explanations['correction_requested'] = 'A correction was requested. Resolve it explicitly before obtaining fresh sign-offs.'
         state = CaseState(case_id, row, docs, effective, conflict, decision, reasons, blockers, gates,
                           required, explanations, evidence, approvals, stale, rejection, payment, status,
                           pending, problems, '', bd)
@@ -656,7 +682,7 @@ class Workbench:
 
     def _evidence_hash(self, docs, effective, decision, reasons, inventory):
         payload = {'policy': POLICY_VERSION,
-                   'documents': [(d.filename, d.sha256, d.role) for d in docs],
+                   'documents': [(d.filename, d.sha256, d.role, d.source_error) for d in docs],
                    'effective': effective.filename if effective else None,
                    'invoices': [inv_to_dict(d.effective) for d in docs if d.effective],
                    'validation': {'decision': decision, 'reasons': reasons},
@@ -797,7 +823,7 @@ class Workbench:
 
         def fn(c, st):
             self._editable(st)
-            c.execute("UPDATE cases SET assignee = ?, workflow = 'assigned', waiting_on = NULL WHERE case_id = ?",
+            c.execute("UPDATE cases SET assignee = ?, workflow = CASE WHEN workflow = 'correction_requested' THEN workflow ELSE 'assigned' END WHERE case_id = ?",
                       (assignee, case_id))
             self._event(c, case_id, actor, 'assign', f'Assigned to {assignee}. Reason: {reason}',
                         {'assignee': assignee, 'reason': reason}, rev=st.rev + 1)
@@ -820,6 +846,21 @@ class Workbench:
             return 'a correction was requested'
         return self._act(case_id, actor, 'request_correction', rev, evidence, fn)
 
+    def resolve_correction(self, case_id, actor, rev, reason, evidence=None):
+        reason = _reason_text(reason, 'A resolution reason')
+
+        def fn(c, st):
+            self._editable(st)
+            if st.row['workflow'] != 'correction_requested':
+                raise Refused('There is no open correction request.')
+            if any(r != 'correction_requested' for r in st.blockers):
+                raise Refused('Correct the remaining validation blockers before resolving the request.')
+            c.execute("UPDATE cases SET workflow = 'open', waiting_on = NULL WHERE case_id = ?", (case_id,))
+            self._event(c, case_id, actor, 'correction_resolved', f'Correction request resolved: {reason}',
+                        {'reason': reason}, rev=st.rev + 1)
+            return 'the correction request was resolved'
+        return self._act(case_id, actor, 'resolve_correction', rev, evidence, fn)
+
     def escalate(self, case_id, actor, rev, target, reason, evidence=None):
         _require(actor, 'escalate')
         if target not in TEAMS:
@@ -828,7 +869,7 @@ class Workbench:
 
         def fn(c, st):
             self._editable(st)
-            c.execute("UPDATE cases SET workflow = 'escalated', assignee = ?, waiting_on = NULL WHERE case_id = ?",
+            c.execute("UPDATE cases SET workflow = CASE WHEN workflow = 'correction_requested' THEN workflow ELSE 'escalated' END, assignee = ? WHERE case_id = ?",
                       (target, case_id))
             self._event(c, case_id, actor, 'escalate', f'Escalated to {target}. Reason: {reason}',
                         {'target': target, 'reason': reason, 'blockers': st.blockers}, rev=st.rev + 1)

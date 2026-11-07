@@ -378,8 +378,11 @@ def _forms(st, actor, doc):
     if not closed:
         parties = ''.join(f'<option>{e(p)}</option>' for p in CORRECTION_PARTIES)
         block('request', 'request_correction', 'Request correction (math, unknown item, stock, vendor change)',
-              form('request-correction', f'<label for="party">Ask</label><select id="party" name="party">{parties}</select>{reason("message", "What needs correcting (required)")}', 'Send request')
+              form('request-correction', f'<label for="party">Ask</label><select id="party" name="party">{parties}</select>{reason("message", "What needs correcting (required)")}', 'Record correction request')
               + '<p class="small muted">Records the request and who the case waits on. It does not clear any blocker.</p>')
+        if st.row['workflow'] == 'correction_requested':
+            block('resolve-request', 'resolve_correction', 'Resolve correction request',
+                  form('resolve-correction', '<p>Resolve only after checking the correction. Remaining validation blockers must be cleared first. Fresh sign-offs will be required.</p>' + reason(), 'Resolve request'))
         people = ''.join(f'<option>{e(a.name)}</option>' for a in ACTORS.values() if a.role != 'observer')
         teams = ''.join(f'<option>{e(t)}</option>' for t in TEAMS)
         target = f'<label for="assignee">To</label><select id="assignee" name="assignee"><optgroup label="Teams">{teams}</optgroup><optgroup label="Demo people">{people}</optgroup></select>'
@@ -438,6 +441,7 @@ def _history(events):
 NOTICES = {
     'edit': 'Corrections saved and the invoice was revalidated.', 'select': 'Authoritative version recorded; validation re-ran on it.',
     'assign': 'Assignment saved.', 'request': 'Correction request recorded. Blockers stay until the data is corrected.',
+    'resolve-correction': 'Correction request resolved. Obtain fresh sign-offs.',
     'escalate': 'Escalation recorded.', 'comment': 'Note saved.', 'revalidate': 'Validation re-run and logged.',
     'approve': 'Sign-off recorded for the exact data shown.', 'reject': 'Invoice rejected; it cannot be paid.',
     'reopen': 'Case reopened.', 'pay': 'Mock payment recorded in the local ledger. No external call was made.',
@@ -461,7 +465,7 @@ def case_page(wb, st, history, actor, query, now, notice=None, error=None):
         reasons_html = '<p class="small">No validation findings: eligible on the current data.</p>'
     detail = ''
     if st.invoice and doc is st.effective:
-        detail = f'<div class="panel"><h2>Parsed invoice (selected document)</h2>{_field_table(st, doc)}{_calc_tables(st)}</div>'
+        detail = f'<div class="panel"><h2>Parsed invoice (selected document)</h2>{_field_table(st, doc)}{_calc_tables(st) if st.breakdown else ''}</div>'
     elif doc.effective:
         detail = (f'<div class="panel"><h2>Parsed fields of {e(doc.filename)} ({e(doc.role)})</h2>'
                   f'<p class="small muted">This document is not the one being validated for payment.</p>{_field_table(st, doc)}</div>')

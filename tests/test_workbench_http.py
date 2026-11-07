@@ -240,3 +240,35 @@ def test_correction_form_round_trip_over_http(app):
     status, _, msg = c.post('/case/invoice_9002/edit', {**c.hidden('invoice_9002'), 'doc': 'invoice_9002.json',
                                                          'reason': 'no change here', **fields, 'f:total': '500'})
     assert status == 422 and 'No field changed' in msg
+
+
+def test_correction_request_resolution_requires_fresh_approval_over_http(app):
+    mgr, clerk = Client(app, 'manager'), Client(app, 'clerk')
+    case = 'invoice_1001'
+    base = f'/case/{case}'
+    assert mgr.post(base+'/approve', {**mgr.hidden(case), 'gate':'ap', 'reason':'Checked original'})[0] == 303
+    assert clerk.post(base+'/request-correction', {**clerk.hidden(case), 'party':'Vendor', 'message':'Verify remittance details'})[0] == 303
+    status, _, page = clerk.get(base)
+    assert status == 200 and 'Resolve correction request' in page and 'Correction request open' in page
+    assert mgr.post(base+'/pay', mgr.hidden(case))[0] == 422
+    assert clerk.post(base+'/resolve-correction', {**clerk.hidden(case), 'reason':'Vendor confirmed existing details'})[0] == 303
+    assert mgr.post(base+'/pay', mgr.hidden(case))[0] == 422
+    assert mgr.post(base+'/approve', {**mgr.hidden(case), 'gate':'ap', 'reason':'Reviewed resolution'})[0] == 303
+    assert mgr.post(base+'/pay', mgr.hidden(case))[0] == 303
+    assert len(app.ledger()) == 1
+
+
+def test_extreme_correction_is_422_and_overflow_document_still_renders(app):
+    c = Client(app, 'clerk')
+    case = 'invoice_1001'
+    before = snapshot(app)
+    assert c.post(f'/case/{case}/edit', {**c.hidden(case), 'doc':'invoice_1001.txt',
+                  'f:line.0.unit_price':'1e100', 'reason':'Mistyped price'})[0] == 422
+    assert snapshot(app) == before
+    (app.data_dir/'overflow.json').write_text(json.dumps({
+        'invoice_number':'INV-9999','vendor':'Overflow Ltd','date':'2026-01-01','due_date':'2026-02-01',
+        'line_items':[{'item':'WidgetA','quantity':1,'unit_price':'1e100'}],'total':'1e100'}))
+    app.ingest()
+    assert c.get('/')[0] == 200
+    status, _, page = c.get('/case/overflow')
+    assert status == 200 and 'Unreadable document' in page
