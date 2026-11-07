@@ -48,6 +48,12 @@ revision before a later workflow can pay it. Stock is not decremented.
   malformed input, money/stock boundaries, duplicate/revision behavior, concurrent
   mock-payment attempts and known-good/known-bad scorer tests.
 
+## Review workbench
+
+A local review UI over this core lives in `invoices/workbench/`; see `WORKBENCH.md` for start
+command, behavior, validation evidence and limitations
+(`uv run python -m invoices.workbench`).
+
 ## Verification on 2026-11-06
 
 - `uv run pytest -q`: 39 passed.
