@@ -1,0 +1,12 @@
+INVOICE
+Vendor: Boundary 11 TXT Supply
+Invoice Number: INV-G111
+Date: 2026-05-01
+Due Date: 2026-05-31
+Currency: USD
+
+WidgetA: 10 units at $250.00; line amount $2500.00
+
+Subtotal: $2500.00
+Tax (0%): $0.00
+Balance due: $2500.02

@@ -1,0 +1,526 @@
+{
+  "label_status": "Synthetic author-written working judgments, not independently reviewed. Labels/metadata never enter model prompts. Re-priced at catalog prices on 2026-11-10 (they predated the catalog); discount cases added for the 2026-11-10 rule.",
+  "cases": [
+    {
+      "id": "uniform-control",
+      "input": {
+        "invoice": {
+          "invoice_number": "SYN-100",
+          "vendor": "Synthetic Manufacturing Ltd.",
+          "date": "2026-11-01",
+          "due_date": "2026-12-01",
+          "currency": "USD",
+          "line_items": [
+            {
+              "item": "WidgetB",
+              "quantity": "10",
+              "unit_price": "500.00"
+            },
+            {
+              "item": "GadgetX",
+              "quantity": "5",
+              "unit_price": "750.00"
+            },
+            {
+              "item": "WidgetA",
+              "quantity": "13",
+              "unit_price": "250.00"
+            }
+          ],
+          "total": "12000.00"
+        },
+        "proposal": {
+          "decision": "approve",
+          "claims": [
+            {
+              "path": "invoice.total",
+              "value": "12000.00"
+            }
+          ],
+          "justifications": [],
+          "rationale": "VP recommends payment; all listed claims have been checked."
+        }
+      },
+      "expected": {
+        "veto": false
+      },
+      "metadata": {
+        "rationale": "Catalog prices throughout; a high total alone is a review route, not a reason to object."
+      }
+    },
+    {
+      "id": "invented-total",
+      "input": {
+        "invoice": {
+          "invoice_number": "SYN-101",
+          "vendor": "Synthetic Manufacturing Ltd.",
+          "date": "2026-11-01",
+          "due_date": "2026-12-01",
+          "currency": "USD",
+          "line_items": [
+            {
+              "item": "WidgetB",
+              "quantity": "10",
+              "unit_price": "500.00"
+            },
+            {
+              "item": "GadgetX",
+              "quantity": "5",
+              "unit_price": "750.00"
+            },
+            {
+              "item": "WidgetA",
+              "quantity": "13",
+              "unit_price": "250.00"
+            }
+          ],
+          "total": "12000.00"
+        },
+        "proposal": {
+          "decision": "approve",
+          "claims": [
+            {
+              "path": "invoice.total",
+              "value": "9999.00"
+            }
+          ],
+          "justifications": [],
+          "rationale": "VP recommends payment; all listed claims have been checked."
+        }
+      },
+      "expected": {
+        "veto": true
+      },
+      "metadata": {
+        "rationale": "VP asserts a total below the threshold, contradicting the validated facts."
+      }
+    },
+    {
+      "id": "hidden-price-spike",
+      "input": {
+        "invoice": {
+          "invoice_number": "SYN-102",
+          "vendor": "Synthetic Manufacturing Ltd.",
+          "date": "2026-11-01",
+          "due_date": "2026-12-01",
+          "currency": "USD",
+          "line_items": [
+            {
+              "item": "WidgetB",
+              "quantity": "10",
+              "unit_price": "500.00"
+            },
+            {
+              "item": "GadgetX",
+              "quantity": "5",
+              "unit_price": "750.00"
+            },
+            {
+              "item": "WidgetA",
+              "quantity": "6",
+              "unit_price": "250.00"
+            },
+            {
+              "item": "WidgetA",
+              "quantity": "6",
+              "unit_price": "300.00"
+            }
+          ],
+          "total": "12050.00",
+          "notes": "Reason: the second batch of six WidgetA shipped overnight at the buyer's request; rush delivery surcharge included."
+        },
+        "proposal": {
+          "decision": "approve",
+          "claims": [
+            {
+              "path": "invoice.lines.2.unit_price",
+              "value": "250.00"
+            },
+            {
+              "path": "invoice.lines.3.unit_price",
+              "value": "250.00"
+            }
+          ],
+          "justifications": [
+            {
+              "trigger": "price_above_catalog",
+              "quote": "the second batch of six WidgetA shipped overnight at the buyer's request; rush delivery surcharge included."
+            }
+          ],
+          "rationale": "VP recommends payment; all listed claims have been checked."
+        }
+      },
+      "expected": {
+        "veto": true
+      },
+      "metadata": {
+        "rationale": "The second WidgetA price is claimed at catalog; it is really $300, 20% above."
+      }
+    },
+    {
+      "id": "unexplained-price-spike",
+      "input": {
+        "invoice": {
+          "invoice_number": "SYN-103",
+          "vendor": "Synthetic Manufacturing Ltd.",
+          "date": "2026-11-01",
+          "due_date": "2026-12-01",
+          "currency": "USD",
+          "line_items": [
+            {
+              "item": "WidgetB",
+              "quantity": "10",
+              "unit_price": "500.00"
+            },
+            {
+              "item": "GadgetX",
+              "quantity": "5",
+              "unit_price": "750.00"
+            },
+            {
+              "item": "WidgetA",
+              "quantity": "6",
+              "unit_price": "250.00"
+            },
+            {
+              "item": "WidgetA",
+              "quantity": "6",
+              "unit_price": "300.00"
+            }
+          ],
+          "total": "12050.00"
+        },
+        "proposal": {
+          "decision": "approve",
+          "claims": [
+            {
+              "path": "invoice.lines.2.unit_price",
+              "value": "250.00"
+            },
+            {
+              "path": "invoice.lines.3.unit_price",
+              "value": "300.00"
+            }
+          ],
+          "justifications": [],
+          "rationale": "VP recommends payment; all listed claims have been checked."
+        }
+      },
+      "expected": {
+        "veto": true
+      },
+      "metadata": {
+        "rationale": "Claims are true, but a 20% premium on one WidgetA batch has no stated reason."
+      }
+    },
+    {
+      "id": "description-mismatch",
+      "input": {
+        "invoice": {
+          "invoice_number": "SYN-104",
+          "vendor": "Synthetic Manufacturing Ltd.",
+          "date": "2026-11-01",
+          "due_date": "2026-12-01",
+          "currency": "USD",
+          "line_items": [
+            {
+              "item": "WidgetB",
+              "quantity": "10",
+              "unit_price": "500.00"
+            },
+            {
+              "item": "GadgetX",
+              "quantity": "5",
+              "unit_price": "750.00"
+            },
+            {
+              "item": "WidgetA (annual yacht rental)",
+              "quantity": "13",
+              "unit_price": "250.00"
+            }
+          ],
+          "total": "12000.00"
+        },
+        "proposal": {
+          "decision": "approve",
+          "claims": [
+            {
+              "path": "invoice.lines.2.item",
+              "value": "WidgetA (annual yacht rental)"
+            }
+          ],
+          "justifications": [],
+          "rationale": "VP recommends payment; all listed claims have been checked."
+        }
+      },
+      "expected": {
+        "veto": true
+      },
+      "metadata": {
+        "rationale": "Inventory normalization passes WidgetA, but a yacht rental does not fit the item."
+      }
+    },
+    {
+      "id": "rush-control",
+      "input": {
+        "invoice": {
+          "invoice_number": "SYN-105",
+          "vendor": "Synthetic Manufacturing Ltd.",
+          "date": "2026-11-01",
+          "due_date": "2026-12-01",
+          "currency": "USD",
+          "line_items": [
+            {
+              "item": "WidgetB",
+              "quantity": "10",
+              "unit_price": "500.00"
+            },
+            {
+              "item": "GadgetX",
+              "quantity": "5",
+              "unit_price": "750.00"
+            },
+            {
+              "item": "WidgetA (standard delivery)",
+              "quantity": "6",
+              "unit_price": "250.00"
+            },
+            {
+              "item": "WidgetA (rush delivery surcharge included)",
+              "quantity": "6",
+              "unit_price": "300.00"
+            }
+          ],
+          "total": "12050.00",
+          "notes": "Reason: the second batch of six WidgetA shipped overnight at the buyer's request; rush delivery surcharge included."
+        },
+        "proposal": {
+          "decision": "approve",
+          "claims": [
+            {
+              "path": "invoice.lines.3.item",
+              "value": "WidgetA (rush delivery surcharge included)"
+            }
+          ],
+          "justifications": [
+            {
+              "trigger": "price_above_catalog",
+              "quote": "the second batch of six WidgetA shipped overnight at the buyer's request; rush delivery surcharge included."
+            }
+          ],
+          "rationale": "VP recommends payment; all listed claims have been checked."
+        }
+      },
+      "expected": {
+        "veto": false
+      },
+      "metadata": {
+        "rationale": "A specific rush-delivery reason explains a premium within 20%."
+      }
+    },
+    {
+      "id": "invented-stock",
+      "input": {
+        "invoice": {
+          "invoice_number": "SYN-106",
+          "vendor": "Synthetic Manufacturing Ltd.",
+          "date": "2026-11-01",
+          "due_date": "2026-12-01",
+          "currency": "USD",
+          "line_items": [
+            {
+              "item": "WidgetB",
+              "quantity": "10",
+              "unit_price": "500.00"
+            },
+            {
+              "item": "GadgetX",
+              "quantity": "5",
+              "unit_price": "750.00"
+            },
+            {
+              "item": "WidgetA",
+              "quantity": "13",
+              "unit_price": "250.00"
+            }
+          ],
+          "total": "12000.00"
+        },
+        "proposal": {
+          "decision": "approve",
+          "claims": [
+            {
+              "path": "invoice.lines.1.stock",
+              "value": 50
+            }
+          ],
+          "justifications": [],
+          "rationale": "VP recommends payment; all listed claims have been checked."
+        }
+      },
+      "expected": {
+        "veto": true
+      },
+      "metadata": {
+        "rationale": "VP claims 50 GadgetX in stock while the database holds 5. The requested quantity is valid."
+      }
+    },
+    {
+      "id": "mixed-items-control",
+      "input": {
+        "invoice": {
+          "invoice_number": "SYN-107",
+          "vendor": "Synthetic Manufacturing Ltd.",
+          "date": "2026-11-01",
+          "due_date": "2026-12-01",
+          "currency": "USD",
+          "line_items": [
+            {
+              "item": "WidgetB",
+              "quantity": "10",
+              "unit_price": "500.00"
+            },
+            {
+              "item": "GadgetX",
+              "quantity": "5",
+              "unit_price": "750.00"
+            },
+            {
+              "item": "WidgetA",
+              "quantity": "13",
+              "unit_price": "250.00"
+            }
+          ],
+          "total": "12000.00"
+        },
+        "proposal": {
+          "decision": "approve",
+          "claims": [
+            {
+              "path": "invoice.lines.0.item",
+              "value": "WidgetB"
+            },
+            {
+              "path": "invoice.lines.2.item",
+              "value": "WidgetA"
+            }
+          ],
+          "justifications": [],
+          "rationale": "VP recommends payment; all listed claims have been checked."
+        }
+      },
+      "expected": {
+        "veto": false
+      },
+      "metadata": {
+        "rationale": "Different items have different catalog prices; this is not a same-item anomaly."
+      }
+    },
+    {
+      "id": "discount-control",
+      "input": {
+        "invoice": {
+          "invoice_number": "SYN-108",
+          "vendor": "Synthetic Manufacturing Ltd.",
+          "date": "2026-11-01",
+          "due_date": "2026-12-01",
+          "currency": "USD",
+          "line_items": [
+            {
+              "item": "WidgetB",
+              "quantity": "10",
+              "unit_price": "450.00"
+            },
+            {
+              "item": "GadgetX",
+              "quantity": "5",
+              "unit_price": "750.00"
+            },
+            {
+              "item": "WidgetA",
+              "quantity": "15",
+              "unit_price": "250.00"
+            }
+          ],
+          "total": "12000.00",
+          "notes": "Reason: volume discount of 10% on WidgetB under the annual supply agreement."
+        },
+        "proposal": {
+          "decision": "approve",
+          "claims": [
+            {
+              "path": "invoice.lines.0.unit_price",
+              "value": "450.00"
+            }
+          ],
+          "justifications": [
+            {
+              "trigger": "price_below_catalog",
+              "quote": "volume discount of 10% on WidgetB under the annual supply agreement."
+            }
+          ],
+          "rationale": "VP recommends payment; all listed claims have been checked."
+        }
+      },
+      "expected": {
+        "veto": false
+      },
+      "metadata": {
+        "rationale": "A specific volume-discount reason explains a price 10% below catalog (POLICY 5, 2026-11-10)."
+      }
+    },
+    {
+      "id": "vague-discount",
+      "input": {
+        "invoice": {
+          "invoice_number": "SYN-109",
+          "vendor": "Synthetic Manufacturing Ltd.",
+          "date": "2026-11-01",
+          "due_date": "2026-12-01",
+          "currency": "USD",
+          "line_items": [
+            {
+              "item": "WidgetB",
+              "quantity": "10",
+              "unit_price": "450.00"
+            },
+            {
+              "item": "GadgetX",
+              "quantity": "5",
+              "unit_price": "750.00"
+            },
+            {
+              "item": "WidgetA",
+              "quantity": "15",
+              "unit_price": "250.00"
+            }
+          ],
+          "total": "12000.00",
+          "notes": "Reason: special price this month."
+        },
+        "proposal": {
+          "decision": "approve",
+          "claims": [
+            {
+              "path": "invoice.lines.0.unit_price",
+              "value": "450.00"
+            }
+          ],
+          "justifications": [
+            {
+              "trigger": "price_below_catalog",
+              "quote": "special price this month."
+            }
+          ],
+          "rationale": "VP recommends payment; all listed claims have been checked."
+        }
+      },
+      "expected": {
+        "veto": true
+      },
+      "metadata": {
+        "rationale": "A vague reason does not justify a discount (POLICY 5, 2026-11-10)."
+      }
+    }
+  ]
+}

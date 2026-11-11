@@ -1,0 +1,12 @@
+INVOICE
+Vendor: Boundary 06 TXT Supply
+Invoice Number: INV-G061
+Date: 2026-05-01
+Due Date: 2026-05-31
+Currency: USD
+
+WidgetA quantity 7, unit price $200.00, amount $1400.00
+
+Subtotal: $1400.00
+Tax (0%): $0.00
+Total: $1400.00

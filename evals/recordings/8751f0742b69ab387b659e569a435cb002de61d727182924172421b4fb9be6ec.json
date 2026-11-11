@@ -1,0 +1,1 @@
+{"content": "{\"signals\":[]}", "model": "grok-4.7", "latency_seconds": 5.968444916972658, "prompt_tokens": 1506, "completion_tokens": 4, "provider_requests": 1}

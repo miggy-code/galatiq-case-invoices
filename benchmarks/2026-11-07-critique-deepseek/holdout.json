@@ -1,0 +1,202 @@
+{
+  "label_status": "Synthetic author-written working judgments, not independently reviewed. Labels/metadata never enter model prompts.",
+  "summary": {
+    "trials": 15,
+    "bad_proposals": 6,
+    "good_proposals": 9,
+    "grounded_catches": 5,
+    "catch_rate": 0.8333333333333334,
+    "false_vetoes": 0,
+    "false_veto_rate": 0.0,
+    "invalid_or_unavailable": 1,
+    "blocked_good_proposals": 0,
+    "per_case": {
+      "holdout-1": {
+        "statuses": {
+          "pass": 3
+        },
+        "distinct_critiques": 1
+      },
+      "holdout-2": {
+        "statuses": {
+          "issues": 3
+        },
+        "distinct_critiques": 3
+      },
+      "holdout-3": {
+        "statuses": {
+          "issues": 2,
+          "invalid": 1
+        },
+        "distinct_critiques": 3
+      },
+      "holdout-4": {
+        "statuses": {
+          "pass": 3
+        },
+        "distinct_critiques": 1
+      },
+      "holdout-5": {
+        "statuses": {
+          "pass": 3
+        },
+        "distinct_critiques": 1
+      }
+    },
+    "evidence": "Grounded vetoes observed against author-written labels."
+  },
+  "trials": [
+    {
+      "case": "holdout-1",
+      "repeat": 1,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\":[]}"
+    },
+    {
+      "case": "holdout-1",
+      "repeat": 2,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\": []}"
+    },
+    {
+      "case": "holdout-1",
+      "repeat": 3,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\":[]}"
+    },
+    {
+      "case": "holdout-2",
+      "repeat": 1,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.1.unit_price",
+          "value": "3500.00",
+          "description": "Same-item price difference: GadgetX is billed at 2500.00 on line 0 and 3500.00 on line 1, with no plausible explanation in the facts."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.1.unit_price\",\"value\":\"3500.00\",\"description\":\"Same-item price difference: GadgetX is billed at 2500.00 on line 0 and 3500.00 on line 1, with no plausible explanation in the facts.\"}]}"
+    },
+    {
+      "case": "holdout-2",
+      "repeat": 2,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.1.unit_price",
+          "value": "3500.00",
+          "description": "Same item GadgetX appears on line 0 at 2500.00 and line 1 at 3500.00 with no plausible explanation in the facts."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.1.unit_price\",\"value\":\"3500.00\",\"description\":\"Same item GadgetX appears on line 0 at 2500.00 and line 1 at 3500.00 with no plausible explanation in the facts.\"}]}"
+    },
+    {
+      "case": "holdout-2",
+      "repeat": 3,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.1.unit_price",
+          "value": "3500.00",
+          "description": "Same item GadgetX appears on two invoice lines at different unit prices (2500.00 and 3500.00) with no plausible explanation provided."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.1.unit_price\",\"value\":\"3500.00\",\"description\":\"Same item GadgetX appears on two invoice lines at different unit prices (2500.00 and 3500.00) with no plausible explanation provided.\"}]}"
+    },
+    {
+      "case": "holdout-3",
+      "repeat": 1,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.0.item",
+          "value": "GadgetX (private jet charter)",
+          "description": "The line item description combines a gadget/component name with 'private jet charter' and does not fit the vendor Synthetic Components Co.; this is a description anomaly requiring review before payment."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.0.item\",\"value\":\"GadgetX (private jet charter)\",\"description\":\"The line item description combines a gadget/component name with 'private jet charter' and does not fit the vendor Synthetic Components Co.; this is a description anomaly requiring review before payment.\"}]}"
+    },
+    {
+      "case": "holdout-3",
+      "repeat": 2,
+      "expected_veto": true,
+      "status": "invalid",
+      "issues": [],
+      "error": "JSONDecodeError",
+      "response": ""
+    },
+    {
+      "case": "holdout-3",
+      "repeat": 3,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.0.item",
+          "value": "GadgetX (private jet charter)",
+          "description": "Item description includes 'private jet charter', which does not fit a components vendor line item and indicates a description anomaly."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.0.item\",\"value\":\"GadgetX (private jet charter)\",\"description\":\"Item description includes 'private jet charter', which does not fit a components vendor line item and indicates a description anomaly.\"}]}"
+    },
+    {
+      "case": "holdout-4",
+      "repeat": 1,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\": []}"
+    },
+    {
+      "case": "holdout-4",
+      "repeat": 2,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\":[]}"
+    },
+    {
+      "case": "holdout-4",
+      "repeat": 3,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\":[]}"
+    },
+    {
+      "case": "holdout-5",
+      "repeat": 1,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\":[]}"
+    },
+    {
+      "case": "holdout-5",
+      "repeat": 2,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\":[]}"
+    },
+    {
+      "case": "holdout-5",
+      "repeat": 3,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\": []}"
+    }
+  ],
+  "mode": "fresh live calls"
+}

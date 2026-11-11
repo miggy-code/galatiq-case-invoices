@@ -1,0 +1,15 @@
+{
+  "baseline": "8fb1c0d",
+  "labels_commit": "0a7ab2850c501e4bc0c8eab5e74e1e0f8967fd35",
+  "python": "3.14.2",
+  "sha256": {
+    "evals/POLICY.md": "4d96f911dafbdae5bedad88ff572b19807a17f1d4682c0612c91484b1e4573f0",
+    "invoices/extraction.py": "42fea376594226ed6c744d069a519a3ef9c67e5b77de7b1dfb6c917e55024707",
+    "invoices/review.py": "775d217200b63e6568a16111367f8565d744cb20c4b35ba1cf8187da05ff1e3b",
+    "invoices/core.py": "b2d15d1bcad8cc83c151d7b063606092a01279311855adbdac0b325d11f7dc3b",
+    "evals/generated-manifest.json": "7af9d026a559c97cccca312e53792155fdc30fce5f84b432f65dfa3b636b9728",
+    "uv.lock": "9e041e0feeb3b7f695b88ae9d19baadc9d01b2c875b18737626d5bb49f002d29"
+  },
+  "determinism": "Two complete generation runs: all 44 documents and label file had identical SHA-256 hashes. Text extracted from each text PDF retains every nonempty source row; all four image PDFs extract empty text.",
+  "visual_review": "All 24 PDFs rendered with pypdfium2 and inspected together on a contact sheet; no clipped rows or overlapping text."
+}

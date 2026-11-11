@@ -1,0 +1,13 @@
+INVOICE
+Vendor: Boundary 13 TXT Supply
+Invoice Number: INV-G131
+Date: 2026-05-01
+Due Date: 2026-05-31
+Currency: USD
+
+Item | Quantity | Unit Price | Amount
+WidgetA | 12 | $250.00 | $3000.00
+
+Subtotal: $3000.00
+Tax (7.25%): $217.53
+Amount due: $3217.53

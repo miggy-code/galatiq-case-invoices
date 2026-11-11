@@ -1,0 +1,12 @@
+INVOICE
+Vendor: Boundary 25 TXT Supply
+Invoice Number: INV-G251
+Date: 2026-05-01
+Due Date: 2026-05-31
+Currency: USD
+
+WidgetB quantity 3, unit price $500.00, amount $1500.00
+
+Subtotal: $1500.01
+Tax (0%): $0.01
+Total: $1500.02

@@ -1,0 +1,14 @@
+INVOICE
+Vendor: Boundary 08 Supply
+Invoice Number: INV-G08
+Date: 2026-05-01
+Due Date: 2026-05-31
+Currency: USD
+
+WidgetA: 10 units at $250.00; line amount $2500.00
+WidgetB: 9 units at $500.00; line amount $4500.00
+GadgetX: 4 units at $750.00; line amount $3000.00
+
+Subtotal: $10000.00
+Tax (0%): $0.00
+Balance due: $10000.00

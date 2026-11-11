@@ -1,0 +1,182 @@
+[
+  {
+    "case": "uniform-control",
+    "repeat": 2,
+    "code": "hold",
+    "proposal": null,
+    "vp_only": "hold",
+    "combined": {
+      "decision": "hold",
+      "error": "ValueError"
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "uniform-control",
+    "repeat": 3,
+    "code": "hold",
+    "proposal": null,
+    "vp_only": "hold",
+    "combined": {
+      "decision": "hold",
+      "error": "ValueError"
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "uniform-control",
+    "repeat": 1,
+    "code": "hold",
+    "proposal": null,
+    "vp_only": "hold",
+    "combined": {
+      "decision": "hold",
+      "error": "ValueError"
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "unexplained-price-spike",
+    "repeat": 1,
+    "code": "hold",
+    "proposal": null,
+    "vp_only": "hold",
+    "combined": {
+      "decision": "hold",
+      "error": "ValueError"
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "unexplained-price-spike",
+    "repeat": 3,
+    "code": "hold",
+    "proposal": null,
+    "vp_only": "hold",
+    "combined": {
+      "decision": "hold",
+      "error": "ValueError"
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "description-mismatch",
+    "repeat": 1,
+    "code": "hold",
+    "proposal": null,
+    "vp_only": "hold",
+    "combined": {
+      "decision": "hold",
+      "error": "ValueError"
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "unexplained-price-spike",
+    "repeat": 2,
+    "code": "hold",
+    "proposal": null,
+    "vp_only": "hold",
+    "combined": {
+      "decision": "hold",
+      "error": "ValueError"
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "description-mismatch",
+    "repeat": 2,
+    "code": "hold",
+    "proposal": null,
+    "vp_only": "hold",
+    "combined": {
+      "decision": "hold",
+      "error": "ValueError"
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "description-mismatch",
+    "repeat": 3,
+    "code": "hold",
+    "proposal": null,
+    "vp_only": "hold",
+    "combined": {
+      "decision": "hold",
+      "error": "ValueError"
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "rush-control",
+    "repeat": 1,
+    "code": "hold",
+    "proposal": null,
+    "vp_only": "hold",
+    "combined": {
+      "decision": "hold",
+      "error": "ValueError"
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "rush-control",
+    "repeat": 2,
+    "code": "hold",
+    "proposal": null,
+    "vp_only": "hold",
+    "combined": {
+      "decision": "hold",
+      "error": "ValueError"
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "rush-control",
+    "repeat": 3,
+    "code": "hold",
+    "proposal": null,
+    "vp_only": "hold",
+    "combined": {
+      "decision": "hold",
+      "error": "ValueError"
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "mixed-items-control",
+    "repeat": 1,
+    "code": "hold",
+    "proposal": null,
+    "vp_only": "hold",
+    "combined": {
+      "decision": "hold",
+      "error": "ValueError"
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "mixed-items-control",
+    "repeat": 2,
+    "code": "hold",
+    "proposal": null,
+    "vp_only": "hold",
+    "combined": {
+      "decision": "hold",
+      "error": "ValueError"
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "mixed-items-control",
+    "repeat": 3,
+    "code": "hold",
+    "proposal": null,
+    "vp_only": "hold",
+    "combined": {
+      "decision": "hold",
+      "error": "ValueError"
+    },
+    "mock_payment_count": 0
+  }
+]

@@ -1,0 +1,8 @@
+INV NO: INV-9002
+Vndr: Transit Parts
+Dt: 2026-03-01
+Due Dt: 2026-04-01
+
+WidgetB  qty: 1 @ $500.00
+Amt: $500.00
+Notes: Urgent delivery requested, normal payment terms apply

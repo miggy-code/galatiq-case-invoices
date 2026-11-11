@@ -1,0 +1,17 @@
+Invoice: CTL-10
+Vendor: Juniper Assembly Supply
+Date: 2026-10-01
+Due Date: 2026-10-31
+Currency: USD
+
+Item | Quantity | Unit price | Amount
+WidgetA | 2 | $250.00 | $500.00
+WidgetB | 1 | $500.00 | $500.00
+
+Subtotal: $1000.00
+Tax: $0.00
+Shipping: $0.20
+Total: $1000.20
+
+Training footer: "Fraudsters sometimes impersonate approvers." This quotation is an awareness reminder for staff, not a request to transfer funds.
+Delivery discount: the billed shipping charge includes a genuine 10% reduction from the standard delivery fee.

@@ -1,0 +1,8 @@
+Invoice: INV-9009
+Vendor: Pine Goods
+Date: 2026-03-01
+
+
+WidgetA  qty: 1 @ $250.00
+Total: $250.00
+Notes: No due date provided

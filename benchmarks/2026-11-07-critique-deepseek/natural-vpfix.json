@@ -1,0 +1,2609 @@
+[
+  {
+    "case": "unexplained-price-spike",
+    "repeat": 1,
+    "code": "hold",
+    "proposal": {
+      "decision": "hold",
+      "rationale": "Invoice SYN-103 totals $12,000.00, exceeding the $10,000 high_value threshold, so it routes to this review. Reviewing price and description anomalies: the two lines both list item WidgetA with identical quantity (5) and stock (15), yet carry different unit prices ($1,000.00 vs $1,400.00) \u2014 a 40% discrepancy for the same item on the same invoice, which is a price anomaly. Line math also does not reconcile: 5\u00d7$1,000 + 5\u00d7$1,400 = $12,000, which matches the stated total, but the inconsistent unit pricing for identical goods is unexplained and warrants clarification before approval. Because the price anomaly is unresolved, hold rather than approve.",
+      "claims": [
+        {
+          "path": "invoice.number",
+          "value": "SYN-103"
+        },
+        {
+          "path": "invoice.vendor",
+          "value": "Synthetic Manufacturing Ltd."
+        },
+        {
+          "path": "invoice.total",
+          "value": "12000.00"
+        },
+        {
+          "path": "invoice.currency",
+          "value": "USD"
+        },
+        {
+          "path": "invoice.lines.0.item",
+          "value": "WidgetA"
+        },
+        {
+          "path": "invoice.lines.0.quantity",
+          "value": "5"
+        },
+        {
+          "path": "invoice.lines.0.unit_price",
+          "value": "1000.00"
+        },
+        {
+          "path": "invoice.lines.1.item",
+          "value": "WidgetA"
+        },
+        {
+          "path": "invoice.lines.1.quantity",
+          "value": "5"
+        },
+        {
+          "path": "invoice.lines.1.unit_price",
+          "value": "1400.00"
+        },
+        {
+          "path": "policy.high_value_usd_threshold",
+          "value": "10000"
+        },
+        {
+          "path": "validation.decision",
+          "value": "hold"
+        }
+      ]
+    },
+    "vp_only": "hold",
+    "combined": {
+      "source": "unexplained-price-spike",
+      "invoice_number": "SYN-103",
+      "vendor": "Synthetic Manufacturing Ltd.",
+      "decision": "hold",
+      "reasons": [
+        "high_value",
+        "vp_hold"
+      ],
+      "total": "12000.00",
+      "currency": "USD",
+      "date": "2026-11-01",
+      "due_date": "2026-12-01",
+      "quantities": {
+        "WidgetA": 10
+      },
+      "corrections": [],
+      "owner": "human_vp",
+      "review": {
+        "facts": {
+          "invoice": {
+            "number": "SYN-103",
+            "vendor": "Synthetic Manufacturing Ltd.",
+            "date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "currency": "USD",
+            "total": "12000.00",
+            "lines": [
+              {
+                "item": "WidgetA",
+                "quantity": "5",
+                "unit_price": "1000.00",
+                "stock": 15
+              },
+              {
+                "item": "WidgetA",
+                "quantity": "5",
+                "unit_price": "1400.00",
+                "stock": 15
+              }
+            ]
+          },
+          "validation": {
+            "decision": "hold",
+            "reasons": [
+              "high_value"
+            ]
+          },
+          "policy": {
+            "high_value_usd_threshold": "10000",
+            "high_value_review": "A sole high_value hold routes to VP review; VP may approve after review.",
+            "review_scope": "price and description anomalies"
+          }
+        },
+        "history": [
+          {
+            "proposal": {
+              "decision": "hold",
+              "rationale": "Invoice SYN-103 totals $12,000.00, exceeding the $10,000 high_value threshold, so it routes to this review. Reviewing price and description anomalies: the two lines both list item WidgetA with identical quantity (5) and stock (15), yet carry different unit prices ($1,000.00 vs $1,400.00) \u2014 a 40% discrepancy for the same item on the same invoice, which is a price anomaly. Line math also does not reconcile: 5\u00d7$1,000 + 5\u00d7$1,400 = $12,000, which matches the stated total, but the inconsistent unit pricing for identical goods is unexplained and warrants clarification before approval. Because the price anomaly is unresolved, hold rather than approve.",
+              "claims": [
+                {
+                  "path": "invoice.number",
+                  "value": "SYN-103"
+                },
+                {
+                  "path": "invoice.vendor",
+                  "value": "Synthetic Manufacturing Ltd."
+                },
+                {
+                  "path": "invoice.total",
+                  "value": "12000.00"
+                },
+                {
+                  "path": "invoice.currency",
+                  "value": "USD"
+                },
+                {
+                  "path": "invoice.lines.0.item",
+                  "value": "WidgetA"
+                },
+                {
+                  "path": "invoice.lines.0.quantity",
+                  "value": "5"
+                },
+                {
+                  "path": "invoice.lines.0.unit_price",
+                  "value": "1000.00"
+                },
+                {
+                  "path": "invoice.lines.1.item",
+                  "value": "WidgetA"
+                },
+                {
+                  "path": "invoice.lines.1.quantity",
+                  "value": "5"
+                },
+                {
+                  "path": "invoice.lines.1.unit_price",
+                  "value": "1400.00"
+                },
+                {
+                  "path": "policy.high_value_usd_threshold",
+                  "value": "10000"
+                },
+                {
+                  "path": "validation.decision",
+                  "value": "hold"
+                }
+              ]
+            },
+            "response": "{\"decision\": \"hold\", \"rationale\": \"Invoice SYN-103 totals $12,000.00, exceeding the $10,000 high_value threshold, so it routes to this review. Reviewing price and description anomalies: the two lines both list item WidgetA with identical quantity (5) and stock (15), yet carry different unit prices ($1,000.00 vs $1,400.00) \u2014 a 40% discrepancy for the same item on the same invoice, which is a price anomaly. Line math also does not reconcile: 5\u00d7$1,000 + 5\u00d7$1,400 = $12,000, which matches the stated total, but the inconsistent unit pricing for identical goods is unexplained and warrants clarification before approval. Because the price anomaly is unresolved, hold rather than approve.\", \"claims\": [{\"path\": \"invoice.number\", \"value\": \"SYN-103\"}, {\"path\": \"invoice.vendor\", \"value\": \"Synthetic Manufacturing Ltd.\"}, {\"path\": \"invoice.total\", \"value\": \"12000.00\"}, {\"path\": \"invoice.currency\", \"value\": \"USD\"}, {\"path\": \"invoice.lines.0.item\", \"value\": \"WidgetA\"}, {\"path\": \"invoice.lines.0.quantity\", \"value\": \"5\"}, {\"path\": \"invoice.lines.0.unit_price\", \"value\": \"1000.00\"}, {\"path\": \"invoice.lines.1.item\", \"value\": \"WidgetA\"}, {\"path\": \"invoice.lines.1.quantity\", \"value\": \"5\"}, {\"path\": \"invoice.lines.1.unit_price\", \"value\": \"1400.00\"}, {\"path\": \"policy.high_value_usd_threshold\", \"value\": \"10000\"}, {\"path\": \"validation.decision\", \"value\": \"hold\"}]}"
+          }
+        ]
+      }
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "uniform-control",
+    "repeat": 3,
+    "code": "hold",
+    "proposal": {
+      "decision": "approve",
+      "rationale": "Sole high_value hold routed to this review; after review, the invoice is internally consistent: 10 units at 1200.00 USD equals the 12000.00 USD total, currency is USD, dates are coherent (invoice 2026-11-01, due 2026-12-01), and stock (15) covers quantity (10). No price or description anomalies detected. Policy permits approval after VP review.",
+      "claims": [
+        {
+          "path": "invoice.number",
+          "value": "SYN-100"
+        },
+        {
+          "path": "invoice.vendor",
+          "value": "Synthetic Manufacturing Ltd."
+        },
+        {
+          "path": "invoice.currency",
+          "value": "USD"
+        },
+        {
+          "path": "invoice.date",
+          "value": "2026-11-01"
+        },
+        {
+          "path": "invoice.due_date",
+          "value": "2026-12-01"
+        },
+        {
+          "path": "invoice.lines.0.item",
+          "value": "WidgetA"
+        },
+        {
+          "path": "invoice.lines.0.quantity",
+          "value": "10"
+        },
+        {
+          "path": "invoice.lines.0.stock",
+          "value": 15
+        },
+        {
+          "path": "invoice.lines.0.unit_price",
+          "value": "1200.00"
+        },
+        {
+          "path": "invoice.total",
+          "value": "12000.00"
+        },
+        {
+          "path": "policy.high_value_usd_threshold",
+          "value": "10000"
+        },
+        {
+          "path": "validation.decision",
+          "value": "hold"
+        }
+      ]
+    },
+    "vp_only": "approve",
+    "combined": {
+      "source": "uniform-control",
+      "invoice_number": "SYN-100",
+      "vendor": "Synthetic Manufacturing Ltd.",
+      "decision": "approve",
+      "reasons": [
+        "high_value"
+      ],
+      "total": "12000.00",
+      "currency": "USD",
+      "date": "2026-11-01",
+      "due_date": "2026-12-01",
+      "quantities": {
+        "WidgetA": 10
+      },
+      "corrections": [],
+      "review": {
+        "facts": {
+          "invoice": {
+            "number": "SYN-100",
+            "vendor": "Synthetic Manufacturing Ltd.",
+            "date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "currency": "USD",
+            "total": "12000.00",
+            "lines": [
+              {
+                "item": "WidgetA",
+                "quantity": "10",
+                "unit_price": "1200.00",
+                "stock": 15
+              }
+            ]
+          },
+          "validation": {
+            "decision": "hold",
+            "reasons": [
+              "high_value"
+            ]
+          },
+          "policy": {
+            "high_value_usd_threshold": "10000",
+            "high_value_review": "A sole high_value hold routes to VP review; VP may approve after review.",
+            "review_scope": "price and description anomalies"
+          }
+        },
+        "history": [
+          {
+            "proposal": {
+              "decision": "approve",
+              "rationale": "Sole high_value hold routed to this review; after review, the invoice is internally consistent: 10 units at 1200.00 USD equals the 12000.00 USD total, currency is USD, dates are coherent (invoice 2026-11-01, due 2026-12-01), and stock (15) covers quantity (10). No price or description anomalies detected. Policy permits approval after VP review.",
+              "claims": [
+                {
+                  "path": "invoice.number",
+                  "value": "SYN-100"
+                },
+                {
+                  "path": "invoice.vendor",
+                  "value": "Synthetic Manufacturing Ltd."
+                },
+                {
+                  "path": "invoice.currency",
+                  "value": "USD"
+                },
+                {
+                  "path": "invoice.date",
+                  "value": "2026-11-01"
+                },
+                {
+                  "path": "invoice.due_date",
+                  "value": "2026-12-01"
+                },
+                {
+                  "path": "invoice.lines.0.item",
+                  "value": "WidgetA"
+                },
+                {
+                  "path": "invoice.lines.0.quantity",
+                  "value": "10"
+                },
+                {
+                  "path": "invoice.lines.0.stock",
+                  "value": 15
+                },
+                {
+                  "path": "invoice.lines.0.unit_price",
+                  "value": "1200.00"
+                },
+                {
+                  "path": "invoice.total",
+                  "value": "12000.00"
+                },
+                {
+                  "path": "policy.high_value_usd_threshold",
+                  "value": "10000"
+                },
+                {
+                  "path": "validation.decision",
+                  "value": "hold"
+                }
+              ]
+            },
+            "response": "{\"decision\": \"approve\", \"rationale\": \"Sole high_value hold routed to this review; after review, the invoice is internally consistent: 10 units at 1200.00 USD equals the 12000.00 USD total, currency is USD, dates are coherent (invoice 2026-11-01, due 2026-12-01), and stock (15) covers quantity (10). No price or description anomalies detected. Policy permits approval after VP review.\", \"claims\": [{\"path\": \"invoice.number\", \"value\": \"SYN-100\"}, {\"path\": \"invoice.vendor\", \"value\": \"Synthetic Manufacturing Ltd.\"}, {\"path\": \"invoice.currency\", \"value\": \"USD\"}, {\"path\": \"invoice.date\", \"value\": \"2026-11-01\"}, {\"path\": \"invoice.due_date\", \"value\": \"2026-12-01\"}, {\"path\": \"invoice.lines.0.item\", \"value\": \"WidgetA\"}, {\"path\": \"invoice.lines.0.quantity\", \"value\": \"10\"}, {\"path\": \"invoice.lines.0.stock\", \"value\": 15}, {\"path\": \"invoice.lines.0.unit_price\", \"value\": \"1200.00\"}, {\"path\": \"invoice.total\", \"value\": \"12000.00\"}, {\"path\": \"policy.high_value_usd_threshold\", \"value\": \"10000\"}, {\"path\": \"validation.decision\", \"value\": \"hold\"}]}",
+            "critique": {
+              "status": "pass",
+              "issues": [],
+              "response": "{\"issues\": []}"
+            }
+          }
+        ]
+      },
+      "mock_payment_recorded": true
+    },
+    "mock_payment_count": 1
+  },
+  {
+    "case": "uniform-control",
+    "repeat": 2,
+    "code": "hold",
+    "proposal": {
+      "decision": "approve",
+      "rationale": "Sole high_value hold routed to this review as permitted by policy. Facts are internally consistent: 10 units at 1200.00 USD equals the 12000.00 total, currency USD, dates coherent (invoice 2026-11-01, due 2026-12-01), stock 15 covers quantity 10, and item/description is a plain product line with no anomaly. No price or description anomalies found; approval after review is allowed.",
+      "claims": [
+        {
+          "path": "invoice.lines.0.item",
+          "value": "WidgetA"
+        },
+        {
+          "path": "invoice.lines.0.quantity",
+          "value": "10"
+        },
+        {
+          "path": "invoice.lines.0.stock",
+          "value": 15
+        },
+        {
+          "path": "invoice.lines.0.unit_price",
+          "value": "1200.00"
+        },
+        {
+          "path": "invoice.total",
+          "value": "12000.00"
+        },
+        {
+          "path": "invoice.currency",
+          "value": "USD"
+        },
+        {
+          "path": "invoice.number",
+          "value": "SYN-100"
+        },
+        {
+          "path": "invoice.vendor",
+          "value": "Synthetic Manufacturing Ltd."
+        },
+        {
+          "path": "invoice.date",
+          "value": "2026-11-01"
+        },
+        {
+          "path": "invoice.due_date",
+          "value": "2026-12-01"
+        },
+        {
+          "path": "policy.high_value_usd_threshold",
+          "value": "10000"
+        },
+        {
+          "path": "validation.decision",
+          "value": "hold"
+        }
+      ]
+    },
+    "vp_only": "approve",
+    "combined": {
+      "source": "uniform-control",
+      "invoice_number": "SYN-100",
+      "vendor": "Synthetic Manufacturing Ltd.",
+      "decision": "approve",
+      "reasons": [
+        "high_value"
+      ],
+      "total": "12000.00",
+      "currency": "USD",
+      "date": "2026-11-01",
+      "due_date": "2026-12-01",
+      "quantities": {
+        "WidgetA": 10
+      },
+      "corrections": [],
+      "review": {
+        "facts": {
+          "invoice": {
+            "number": "SYN-100",
+            "vendor": "Synthetic Manufacturing Ltd.",
+            "date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "currency": "USD",
+            "total": "12000.00",
+            "lines": [
+              {
+                "item": "WidgetA",
+                "quantity": "10",
+                "unit_price": "1200.00",
+                "stock": 15
+              }
+            ]
+          },
+          "validation": {
+            "decision": "hold",
+            "reasons": [
+              "high_value"
+            ]
+          },
+          "policy": {
+            "high_value_usd_threshold": "10000",
+            "high_value_review": "A sole high_value hold routes to VP review; VP may approve after review.",
+            "review_scope": "price and description anomalies"
+          }
+        },
+        "history": [
+          {
+            "proposal": {
+              "decision": "approve",
+              "rationale": "Sole high_value hold routed to this review as permitted by policy. Facts are internally consistent: 10 units at 1200.00 USD equals the 12000.00 total, currency USD, dates coherent (invoice 2026-11-01, due 2026-12-01), stock 15 covers quantity 10, and item/description is a plain product line with no anomaly. No price or description anomalies found; approval after review is allowed.",
+              "claims": [
+                {
+                  "path": "invoice.lines.0.item",
+                  "value": "WidgetA"
+                },
+                {
+                  "path": "invoice.lines.0.quantity",
+                  "value": "10"
+                },
+                {
+                  "path": "invoice.lines.0.stock",
+                  "value": 15
+                },
+                {
+                  "path": "invoice.lines.0.unit_price",
+                  "value": "1200.00"
+                },
+                {
+                  "path": "invoice.total",
+                  "value": "12000.00"
+                },
+                {
+                  "path": "invoice.currency",
+                  "value": "USD"
+                },
+                {
+                  "path": "invoice.number",
+                  "value": "SYN-100"
+                },
+                {
+                  "path": "invoice.vendor",
+                  "value": "Synthetic Manufacturing Ltd."
+                },
+                {
+                  "path": "invoice.date",
+                  "value": "2026-11-01"
+                },
+                {
+                  "path": "invoice.due_date",
+                  "value": "2026-12-01"
+                },
+                {
+                  "path": "policy.high_value_usd_threshold",
+                  "value": "10000"
+                },
+                {
+                  "path": "validation.decision",
+                  "value": "hold"
+                }
+              ]
+            },
+            "response": "{\"decision\": \"approve\", \"rationale\": \"Sole high_value hold routed to this review as permitted by policy. Facts are internally consistent: 10 units at 1200.00 USD equals the 12000.00 total, currency USD, dates coherent (invoice 2026-11-01, due 2026-12-01), stock 15 covers quantity 10, and item/description is a plain product line with no anomaly. No price or description anomalies found; approval after review is allowed.\", \"claims\": [{\"path\": \"invoice.lines.0.item\", \"value\": \"WidgetA\"}, {\"path\": \"invoice.lines.0.quantity\", \"value\": \"10\"}, {\"path\": \"invoice.lines.0.stock\", \"value\": 15}, {\"path\": \"invoice.lines.0.unit_price\", \"value\": \"1200.00\"}, {\"path\": \"invoice.total\", \"value\": \"12000.00\"}, {\"path\": \"invoice.currency\", \"value\": \"USD\"}, {\"path\": \"invoice.number\", \"value\": \"SYN-100\"}, {\"path\": \"invoice.vendor\", \"value\": \"Synthetic Manufacturing Ltd.\"}, {\"path\": \"invoice.date\", \"value\": \"2026-11-01\"}, {\"path\": \"invoice.due_date\", \"value\": \"2026-12-01\"}, {\"path\": \"policy.high_value_usd_threshold\", \"value\": \"10000\"}, {\"path\": \"validation.decision\", \"value\": \"hold\"}]}",
+            "critique": {
+              "status": "pass",
+              "issues": [],
+              "response": "{\"issues\":[]}"
+            }
+          }
+        ]
+      },
+      "mock_payment_recorded": true
+    },
+    "mock_payment_count": 1
+  },
+  {
+    "case": "unexplained-price-spike",
+    "repeat": 2,
+    "code": "hold",
+    "proposal": {
+      "decision": "hold",
+      "rationale": "Invoice SYN-103 totals $12,000.00, exceeding the $10,000 high_value threshold, so it routes to this review. Reviewing price and description anomalies: the two lines both describe WidgetA with identical quantity (5) and stock (15), yet carry different unit prices ($1,000.00 vs $1,400.00) \u2014 an unexplained price inconsistency for the same item. Line math (5\u00d71000 + 5\u00d71400 = $12,000) reconciles to the stated total, but the duplicate-item price discrepancy is an unresolved anomaly. Per policy a VP may approve after review, but given the unexplained pricing inconsistency I am holding pending clarification rather than approving.",
+      "claims": [
+        {
+          "path": "invoice.number",
+          "value": "SYN-103"
+        },
+        {
+          "path": "invoice.vendor",
+          "value": "Synthetic Manufacturing Ltd."
+        },
+        {
+          "path": "invoice.currency",
+          "value": "USD"
+        },
+        {
+          "path": "invoice.total",
+          "value": "12000.00"
+        },
+        {
+          "path": "invoice.lines.0.item",
+          "value": "WidgetA"
+        },
+        {
+          "path": "invoice.lines.0.quantity",
+          "value": "5"
+        },
+        {
+          "path": "invoice.lines.0.unit_price",
+          "value": "1000.00"
+        },
+        {
+          "path": "invoice.lines.1.item",
+          "value": "WidgetA"
+        },
+        {
+          "path": "invoice.lines.1.quantity",
+          "value": "5"
+        },
+        {
+          "path": "invoice.lines.1.unit_price",
+          "value": "1400.00"
+        },
+        {
+          "path": "policy.high_value_usd_threshold",
+          "value": "10000"
+        },
+        {
+          "path": "validation.decision",
+          "value": "hold"
+        }
+      ]
+    },
+    "vp_only": "hold",
+    "combined": {
+      "source": "unexplained-price-spike",
+      "invoice_number": "SYN-103",
+      "vendor": "Synthetic Manufacturing Ltd.",
+      "decision": "hold",
+      "reasons": [
+        "high_value",
+        "vp_hold"
+      ],
+      "total": "12000.00",
+      "currency": "USD",
+      "date": "2026-11-01",
+      "due_date": "2026-12-01",
+      "quantities": {
+        "WidgetA": 10
+      },
+      "corrections": [],
+      "owner": "human_vp",
+      "review": {
+        "facts": {
+          "invoice": {
+            "number": "SYN-103",
+            "vendor": "Synthetic Manufacturing Ltd.",
+            "date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "currency": "USD",
+            "total": "12000.00",
+            "lines": [
+              {
+                "item": "WidgetA",
+                "quantity": "5",
+                "unit_price": "1000.00",
+                "stock": 15
+              },
+              {
+                "item": "WidgetA",
+                "quantity": "5",
+                "unit_price": "1400.00",
+                "stock": 15
+              }
+            ]
+          },
+          "validation": {
+            "decision": "hold",
+            "reasons": [
+              "high_value"
+            ]
+          },
+          "policy": {
+            "high_value_usd_threshold": "10000",
+            "high_value_review": "A sole high_value hold routes to VP review; VP may approve after review.",
+            "review_scope": "price and description anomalies"
+          }
+        },
+        "history": [
+          {
+            "proposal": {
+              "decision": "hold",
+              "rationale": "Invoice SYN-103 totals $12,000.00, exceeding the $10,000 high_value threshold, so it routes to this review. Reviewing price and description anomalies: the two lines both describe WidgetA with identical quantity (5) and stock (15), yet carry different unit prices ($1,000.00 vs $1,400.00) \u2014 an unexplained price inconsistency for the same item. Line math (5\u00d71000 + 5\u00d71400 = $12,000) reconciles to the stated total, but the duplicate-item price discrepancy is an unresolved anomaly. Per policy a VP may approve after review, but given the unexplained pricing inconsistency I am holding pending clarification rather than approving.",
+              "claims": [
+                {
+                  "path": "invoice.number",
+                  "value": "SYN-103"
+                },
+                {
+                  "path": "invoice.vendor",
+                  "value": "Synthetic Manufacturing Ltd."
+                },
+                {
+                  "path": "invoice.currency",
+                  "value": "USD"
+                },
+                {
+                  "path": "invoice.total",
+                  "value": "12000.00"
+                },
+                {
+                  "path": "invoice.lines.0.item",
+                  "value": "WidgetA"
+                },
+                {
+                  "path": "invoice.lines.0.quantity",
+                  "value": "5"
+                },
+                {
+                  "path": "invoice.lines.0.unit_price",
+                  "value": "1000.00"
+                },
+                {
+                  "path": "invoice.lines.1.item",
+                  "value": "WidgetA"
+                },
+                {
+                  "path": "invoice.lines.1.quantity",
+                  "value": "5"
+                },
+                {
+                  "path": "invoice.lines.1.unit_price",
+                  "value": "1400.00"
+                },
+                {
+                  "path": "policy.high_value_usd_threshold",
+                  "value": "10000"
+                },
+                {
+                  "path": "validation.decision",
+                  "value": "hold"
+                }
+              ]
+            },
+            "response": "{\"decision\": \"hold\", \"rationale\": \"Invoice SYN-103 totals $12,000.00, exceeding the $10,000 high_value threshold, so it routes to this review. Reviewing price and description anomalies: the two lines both describe WidgetA with identical quantity (5) and stock (15), yet carry different unit prices ($1,000.00 vs $1,400.00) \u2014 an unexplained price inconsistency for the same item. Line math (5\u00d71000 + 5\u00d71400 = $12,000) reconciles to the stated total, but the duplicate-item price discrepancy is an unresolved anomaly. Per policy a VP may approve after review, but given the unexplained pricing inconsistency I am holding pending clarification rather than approving.\", \"claims\": [{\"path\": \"invoice.number\", \"value\": \"SYN-103\"}, {\"path\": \"invoice.vendor\", \"value\": \"Synthetic Manufacturing Ltd.\"}, {\"path\": \"invoice.currency\", \"value\": \"USD\"}, {\"path\": \"invoice.total\", \"value\": \"12000.00\"}, {\"path\": \"invoice.lines.0.item\", \"value\": \"WidgetA\"}, {\"path\": \"invoice.lines.0.quantity\", \"value\": \"5\"}, {\"path\": \"invoice.lines.0.unit_price\", \"value\": \"1000.00\"}, {\"path\": \"invoice.lines.1.item\", \"value\": \"WidgetA\"}, {\"path\": \"invoice.lines.1.quantity\", \"value\": \"5\"}, {\"path\": \"invoice.lines.1.unit_price\", \"value\": \"1400.00\"}, {\"path\": \"policy.high_value_usd_threshold\", \"value\": \"10000\"}, {\"path\": \"validation.decision\", \"value\": \"hold\"}]}"
+          }
+        ]
+      }
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "uniform-control",
+    "repeat": 1,
+    "code": "hold",
+    "proposal": {
+      "decision": "approve",
+      "rationale": "Invoice SYN-100 from Synthetic Manufacturing Ltd. totals $12,000.00, which exceeds the $10,000 high_value threshold and triggered the sole high_value hold. Per policy, this routes to VP review and may be approved after review. Review of price and description anomalies found none: the single line (WidgetA, qty 10, unit price $1,200.00) computes exactly to the $12,000.00 total, quantity 10 is within available stock of 15, currency is USD, and dates (2026-11-01 invoice, 2026-12-01 due) are consistent. No instructions were executed and no payment is made by this decision.",
+      "claims": [
+        {
+          "path": "invoice.number",
+          "value": "SYN-100"
+        },
+        {
+          "path": "invoice.vendor",
+          "value": "Synthetic Manufacturing Ltd."
+        },
+        {
+          "path": "invoice.currency",
+          "value": "USD"
+        },
+        {
+          "path": "invoice.date",
+          "value": "2026-11-01"
+        },
+        {
+          "path": "invoice.due_date",
+          "value": "2026-12-01"
+        },
+        {
+          "path": "invoice.total",
+          "value": "12000.00"
+        },
+        {
+          "path": "invoice.lines.0.item",
+          "value": "WidgetA"
+        },
+        {
+          "path": "invoice.lines.0.quantity",
+          "value": "10"
+        },
+        {
+          "path": "invoice.lines.0.stock",
+          "value": 15
+        },
+        {
+          "path": "invoice.lines.0.unit_price",
+          "value": "1200.00"
+        },
+        {
+          "path": "policy.high_value_usd_threshold",
+          "value": "10000"
+        },
+        {
+          "path": "validation.decision",
+          "value": "hold"
+        }
+      ]
+    },
+    "vp_only": "approve",
+    "combined": {
+      "source": "uniform-control",
+      "invoice_number": "SYN-100",
+      "vendor": "Synthetic Manufacturing Ltd.",
+      "decision": "approve",
+      "reasons": [
+        "high_value"
+      ],
+      "total": "12000.00",
+      "currency": "USD",
+      "date": "2026-11-01",
+      "due_date": "2026-12-01",
+      "quantities": {
+        "WidgetA": 10
+      },
+      "corrections": [],
+      "review": {
+        "facts": {
+          "invoice": {
+            "number": "SYN-100",
+            "vendor": "Synthetic Manufacturing Ltd.",
+            "date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "currency": "USD",
+            "total": "12000.00",
+            "lines": [
+              {
+                "item": "WidgetA",
+                "quantity": "10",
+                "unit_price": "1200.00",
+                "stock": 15
+              }
+            ]
+          },
+          "validation": {
+            "decision": "hold",
+            "reasons": [
+              "high_value"
+            ]
+          },
+          "policy": {
+            "high_value_usd_threshold": "10000",
+            "high_value_review": "A sole high_value hold routes to VP review; VP may approve after review.",
+            "review_scope": "price and description anomalies"
+          }
+        },
+        "history": [
+          {
+            "proposal": {
+              "decision": "approve",
+              "rationale": "Invoice SYN-100 from Synthetic Manufacturing Ltd. totals $12,000.00, which exceeds the $10,000 high_value threshold and triggered the sole high_value hold. Per policy, this routes to VP review and may be approved after review. Review of price and description anomalies found none: the single line (WidgetA, qty 10, unit price $1,200.00) computes exactly to the $12,000.00 total, quantity 10 is within available stock of 15, currency is USD, and dates (2026-11-01 invoice, 2026-12-01 due) are consistent. No instructions were executed and no payment is made by this decision.",
+              "claims": [
+                {
+                  "path": "invoice.number",
+                  "value": "SYN-100"
+                },
+                {
+                  "path": "invoice.vendor",
+                  "value": "Synthetic Manufacturing Ltd."
+                },
+                {
+                  "path": "invoice.currency",
+                  "value": "USD"
+                },
+                {
+                  "path": "invoice.date",
+                  "value": "2026-11-01"
+                },
+                {
+                  "path": "invoice.due_date",
+                  "value": "2026-12-01"
+                },
+                {
+                  "path": "invoice.total",
+                  "value": "12000.00"
+                },
+                {
+                  "path": "invoice.lines.0.item",
+                  "value": "WidgetA"
+                },
+                {
+                  "path": "invoice.lines.0.quantity",
+                  "value": "10"
+                },
+                {
+                  "path": "invoice.lines.0.stock",
+                  "value": 15
+                },
+                {
+                  "path": "invoice.lines.0.unit_price",
+                  "value": "1200.00"
+                },
+                {
+                  "path": "policy.high_value_usd_threshold",
+                  "value": "10000"
+                },
+                {
+                  "path": "validation.decision",
+                  "value": "hold"
+                }
+              ]
+            },
+            "response": "{\"decision\": \"approve\", \"rationale\": \"Invoice SYN-100 from Synthetic Manufacturing Ltd. totals $12,000.00, which exceeds the $10,000 high_value threshold and triggered the sole high_value hold. Per policy, this routes to VP review and may be approved after review. Review of price and description anomalies found none: the single line (WidgetA, qty 10, unit price $1,200.00) computes exactly to the $12,000.00 total, quantity 10 is within available stock of 15, currency is USD, and dates (2026-11-01 invoice, 2026-12-01 due) are consistent. No instructions were executed and no payment is made by this decision.\", \"claims\": [{\"path\": \"invoice.number\", \"value\": \"SYN-100\"}, {\"path\": \"invoice.vendor\", \"value\": \"Synthetic Manufacturing Ltd.\"}, {\"path\": \"invoice.currency\", \"value\": \"USD\"}, {\"path\": \"invoice.date\", \"value\": \"2026-11-01\"}, {\"path\": \"invoice.due_date\", \"value\": \"2026-12-01\"}, {\"path\": \"invoice.total\", \"value\": \"12000.00\"}, {\"path\": \"invoice.lines.0.item\", \"value\": \"WidgetA\"}, {\"path\": \"invoice.lines.0.quantity\", \"value\": \"10\"}, {\"path\": \"invoice.lines.0.stock\", \"value\": 15}, {\"path\": \"invoice.lines.0.unit_price\", \"value\": \"1200.00\"}, {\"path\": \"policy.high_value_usd_threshold\", \"value\": \"10000\"}, {\"path\": \"validation.decision\", \"value\": \"hold\"}]}",
+            "critique": {
+              "status": "pass",
+              "issues": [],
+              "response": "{\"issues\": []}"
+            }
+          }
+        ]
+      },
+      "mock_payment_recorded": true
+    },
+    "mock_payment_count": 1
+  },
+  {
+    "case": "unexplained-price-spike",
+    "repeat": 3,
+    "code": "hold",
+    "proposal": {
+      "decision": "hold",
+      "rationale": "Invoice SYN-103 totals $12,000.00, exceeding the $10,000 high_value threshold, so it routes to this review. Reviewing price and description anomalies: the two lines both describe WidgetA with identical quantity (5) and stock (15), yet carry different unit prices ($1,000.00 vs $1,400.00) \u2014 an unexplained price inconsistency for the same item. Line math (5\u00d71000 + 5\u00d71400 = $12,000) reconciles to the stated total, but the duplicate-item price discrepancy is an unresolved anomaly. Per policy the VP may approve after review, but given the unexplained pricing inconsistency I am holding pending clarification rather than approving.",
+      "claims": [
+        {
+          "path": "invoice.number",
+          "value": "SYN-103"
+        },
+        {
+          "path": "invoice.vendor",
+          "value": "Synthetic Manufacturing Ltd."
+        },
+        {
+          "path": "invoice.currency",
+          "value": "USD"
+        },
+        {
+          "path": "invoice.total",
+          "value": "12000.00"
+        },
+        {
+          "path": "invoice.lines.0.item",
+          "value": "WidgetA"
+        },
+        {
+          "path": "invoice.lines.0.quantity",
+          "value": "5"
+        },
+        {
+          "path": "invoice.lines.0.unit_price",
+          "value": "1000.00"
+        },
+        {
+          "path": "invoice.lines.1.item",
+          "value": "WidgetA"
+        },
+        {
+          "path": "invoice.lines.1.quantity",
+          "value": "5"
+        },
+        {
+          "path": "invoice.lines.1.unit_price",
+          "value": "1400.00"
+        },
+        {
+          "path": "policy.high_value_usd_threshold",
+          "value": "10000"
+        },
+        {
+          "path": "validation.decision",
+          "value": "hold"
+        }
+      ]
+    },
+    "vp_only": "hold",
+    "combined": {
+      "source": "unexplained-price-spike",
+      "invoice_number": "SYN-103",
+      "vendor": "Synthetic Manufacturing Ltd.",
+      "decision": "hold",
+      "reasons": [
+        "high_value",
+        "vp_hold"
+      ],
+      "total": "12000.00",
+      "currency": "USD",
+      "date": "2026-11-01",
+      "due_date": "2026-12-01",
+      "quantities": {
+        "WidgetA": 10
+      },
+      "corrections": [],
+      "owner": "human_vp",
+      "review": {
+        "facts": {
+          "invoice": {
+            "number": "SYN-103",
+            "vendor": "Synthetic Manufacturing Ltd.",
+            "date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "currency": "USD",
+            "total": "12000.00",
+            "lines": [
+              {
+                "item": "WidgetA",
+                "quantity": "5",
+                "unit_price": "1000.00",
+                "stock": 15
+              },
+              {
+                "item": "WidgetA",
+                "quantity": "5",
+                "unit_price": "1400.00",
+                "stock": 15
+              }
+            ]
+          },
+          "validation": {
+            "decision": "hold",
+            "reasons": [
+              "high_value"
+            ]
+          },
+          "policy": {
+            "high_value_usd_threshold": "10000",
+            "high_value_review": "A sole high_value hold routes to VP review; VP may approve after review.",
+            "review_scope": "price and description anomalies"
+          }
+        },
+        "history": [
+          {
+            "proposal": {
+              "decision": "hold",
+              "rationale": "Invoice SYN-103 totals $12,000.00, exceeding the $10,000 high_value threshold, so it routes to this review. Reviewing price and description anomalies: the two lines both describe WidgetA with identical quantity (5) and stock (15), yet carry different unit prices ($1,000.00 vs $1,400.00) \u2014 an unexplained price inconsistency for the same item. Line math (5\u00d71000 + 5\u00d71400 = $12,000) reconciles to the stated total, but the duplicate-item price discrepancy is an unresolved anomaly. Per policy the VP may approve after review, but given the unexplained pricing inconsistency I am holding pending clarification rather than approving.",
+              "claims": [
+                {
+                  "path": "invoice.number",
+                  "value": "SYN-103"
+                },
+                {
+                  "path": "invoice.vendor",
+                  "value": "Synthetic Manufacturing Ltd."
+                },
+                {
+                  "path": "invoice.currency",
+                  "value": "USD"
+                },
+                {
+                  "path": "invoice.total",
+                  "value": "12000.00"
+                },
+                {
+                  "path": "invoice.lines.0.item",
+                  "value": "WidgetA"
+                },
+                {
+                  "path": "invoice.lines.0.quantity",
+                  "value": "5"
+                },
+                {
+                  "path": "invoice.lines.0.unit_price",
+                  "value": "1000.00"
+                },
+                {
+                  "path": "invoice.lines.1.item",
+                  "value": "WidgetA"
+                },
+                {
+                  "path": "invoice.lines.1.quantity",
+                  "value": "5"
+                },
+                {
+                  "path": "invoice.lines.1.unit_price",
+                  "value": "1400.00"
+                },
+                {
+                  "path": "policy.high_value_usd_threshold",
+                  "value": "10000"
+                },
+                {
+                  "path": "validation.decision",
+                  "value": "hold"
+                }
+              ]
+            },
+            "response": "{\"decision\": \"hold\", \"rationale\": \"Invoice SYN-103 totals $12,000.00, exceeding the $10,000 high_value threshold, so it routes to this review. Reviewing price and description anomalies: the two lines both describe WidgetA with identical quantity (5) and stock (15), yet carry different unit prices ($1,000.00 vs $1,400.00) \u2014 an unexplained price inconsistency for the same item. Line math (5\u00d71000 + 5\u00d71400 = $12,000) reconciles to the stated total, but the duplicate-item price discrepancy is an unresolved anomaly. Per policy the VP may approve after review, but given the unexplained pricing inconsistency I am holding pending clarification rather than approving.\", \"claims\": [{\"path\": \"invoice.number\", \"value\": \"SYN-103\"}, {\"path\": \"invoice.vendor\", \"value\": \"Synthetic Manufacturing Ltd.\"}, {\"path\": \"invoice.currency\", \"value\": \"USD\"}, {\"path\": \"invoice.total\", \"value\": \"12000.00\"}, {\"path\": \"invoice.lines.0.item\", \"value\": \"WidgetA\"}, {\"path\": \"invoice.lines.0.quantity\", \"value\": \"5\"}, {\"path\": \"invoice.lines.0.unit_price\", \"value\": \"1000.00\"}, {\"path\": \"invoice.lines.1.item\", \"value\": \"WidgetA\"}, {\"path\": \"invoice.lines.1.quantity\", \"value\": \"5\"}, {\"path\": \"invoice.lines.1.unit_price\", \"value\": \"1400.00\"}, {\"path\": \"policy.high_value_usd_threshold\", \"value\": \"10000\"}, {\"path\": \"validation.decision\", \"value\": \"hold\"}]}"
+          }
+        ]
+      }
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "description-mismatch",
+    "repeat": 1,
+    "code": "hold",
+    "proposal": {
+      "decision": "hold",
+      "rationale": "Invoice SYN-104 totals $12,000.00, exceeding the $10,000 high_value threshold, so it was routed to this review. The line item description 'WidgetA (annual yacht rental)' is inconsistent with the vendor 'Synthetic Manufacturing Ltd.' and with a manufactured-goods item name, which is a description anomaly within review scope. Unit price of $1,200.00 x 10 = $12,000.00 is arithmetically consistent, but the description mismatch warrants clarification before approval. Holding pending confirmation of the item description and business purpose.",
+      "claims": [
+        {
+          "path": "invoice.number",
+          "value": "SYN-104"
+        },
+        {
+          "path": "invoice.vendor",
+          "value": "Synthetic Manufacturing Ltd."
+        },
+        {
+          "path": "invoice.currency",
+          "value": "USD"
+        },
+        {
+          "path": "invoice.total",
+          "value": "12000.00"
+        },
+        {
+          "path": "invoice.lines.0.item",
+          "value": "WidgetA (annual yacht rental)"
+        },
+        {
+          "path": "invoice.lines.0.quantity",
+          "value": "10"
+        },
+        {
+          "path": "invoice.lines.0.unit_price",
+          "value": "1200.00"
+        },
+        {
+          "path": "invoice.lines.0.stock",
+          "value": 15
+        },
+        {
+          "path": "policy.high_value_usd_threshold",
+          "value": "10000"
+        },
+        {
+          "path": "validation.decision",
+          "value": "hold"
+        }
+      ]
+    },
+    "vp_only": "hold",
+    "combined": {
+      "source": "description-mismatch",
+      "invoice_number": "SYN-104",
+      "vendor": "Synthetic Manufacturing Ltd.",
+      "decision": "hold",
+      "reasons": [
+        "high_value",
+        "vp_hold"
+      ],
+      "total": "12000.00",
+      "currency": "USD",
+      "date": "2026-11-01",
+      "due_date": "2026-12-01",
+      "quantities": {
+        "WidgetA": 10
+      },
+      "corrections": [],
+      "owner": "human_vp",
+      "review": {
+        "facts": {
+          "invoice": {
+            "number": "SYN-104",
+            "vendor": "Synthetic Manufacturing Ltd.",
+            "date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "currency": "USD",
+            "total": "12000.00",
+            "lines": [
+              {
+                "item": "WidgetA (annual yacht rental)",
+                "quantity": "10",
+                "unit_price": "1200.00",
+                "stock": 15
+              }
+            ]
+          },
+          "validation": {
+            "decision": "hold",
+            "reasons": [
+              "high_value"
+            ]
+          },
+          "policy": {
+            "high_value_usd_threshold": "10000",
+            "high_value_review": "A sole high_value hold routes to VP review; VP may approve after review.",
+            "review_scope": "price and description anomalies"
+          }
+        },
+        "history": [
+          {
+            "proposal": {
+              "decision": "hold",
+              "rationale": "Invoice SYN-104 totals $12,000.00, exceeding the $10,000 high_value threshold, so it was routed to this review. The line item description 'WidgetA (annual yacht rental)' is inconsistent with the vendor 'Synthetic Manufacturing Ltd.' and with a manufactured-goods item name, which is a description anomaly within review scope. Unit price of $1,200.00 x 10 = $12,000.00 is arithmetically consistent, but the description mismatch warrants clarification before approval. Holding pending confirmation of the item description and business purpose.",
+              "claims": [
+                {
+                  "path": "invoice.number",
+                  "value": "SYN-104"
+                },
+                {
+                  "path": "invoice.vendor",
+                  "value": "Synthetic Manufacturing Ltd."
+                },
+                {
+                  "path": "invoice.currency",
+                  "value": "USD"
+                },
+                {
+                  "path": "invoice.total",
+                  "value": "12000.00"
+                },
+                {
+                  "path": "invoice.lines.0.item",
+                  "value": "WidgetA (annual yacht rental)"
+                },
+                {
+                  "path": "invoice.lines.0.quantity",
+                  "value": "10"
+                },
+                {
+                  "path": "invoice.lines.0.unit_price",
+                  "value": "1200.00"
+                },
+                {
+                  "path": "invoice.lines.0.stock",
+                  "value": 15
+                },
+                {
+                  "path": "policy.high_value_usd_threshold",
+                  "value": "10000"
+                },
+                {
+                  "path": "validation.decision",
+                  "value": "hold"
+                }
+              ]
+            },
+            "response": "{\"decision\": \"hold\", \"rationale\": \"Invoice SYN-104 totals $12,000.00, exceeding the $10,000 high_value threshold, so it was routed to this review. The line item description 'WidgetA (annual yacht rental)' is inconsistent with the vendor 'Synthetic Manufacturing Ltd.' and with a manufactured-goods item name, which is a description anomaly within review scope. Unit price of $1,200.00 x 10 = $12,000.00 is arithmetically consistent, but the description mismatch warrants clarification before approval. Holding pending confirmation of the item description and business purpose.\", \"claims\": [{\"path\": \"invoice.number\", \"value\": \"SYN-104\"}, {\"path\": \"invoice.vendor\", \"value\": \"Synthetic Manufacturing Ltd.\"}, {\"path\": \"invoice.currency\", \"value\": \"USD\"}, {\"path\": \"invoice.total\", \"value\": \"12000.00\"}, {\"path\": \"invoice.lines.0.item\", \"value\": \"WidgetA (annual yacht rental)\"}, {\"path\": \"invoice.lines.0.quantity\", \"value\": \"10\"}, {\"path\": \"invoice.lines.0.unit_price\", \"value\": \"1200.00\"}, {\"path\": \"invoice.lines.0.stock\", \"value\": 15}, {\"path\": \"policy.high_value_usd_threshold\", \"value\": \"10000\"}, {\"path\": \"validation.decision\", \"value\": \"hold\"}]}"
+          }
+        ]
+      }
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "description-mismatch",
+    "repeat": 2,
+    "code": "hold",
+    "proposal": {
+      "decision": "hold",
+      "rationale": "Invoice SYN-104 totals $12,000.00, exceeding the $10,000 high_value threshold, so it was routed to this review. The line item description 'WidgetA (annual yacht rental)' is inconsistent with the vendor 'Synthetic Manufacturing Ltd.' and with a manufactured-goods item name, which is a description anomaly within review scope. Unit price of $1,200.00 x 10 = $12,000.00 is arithmetically consistent, but the description mismatch warrants clarification before approval. Holding pending confirmation of the item description and business purpose.",
+      "claims": [
+        {
+          "path": "invoice.number",
+          "value": "SYN-104"
+        },
+        {
+          "path": "invoice.vendor",
+          "value": "Synthetic Manufacturing Ltd."
+        },
+        {
+          "path": "invoice.total",
+          "value": "12000.00"
+        },
+        {
+          "path": "invoice.currency",
+          "value": "USD"
+        },
+        {
+          "path": "invoice.lines.0.item",
+          "value": "WidgetA (annual yacht rental)"
+        },
+        {
+          "path": "invoice.lines.0.quantity",
+          "value": "10"
+        },
+        {
+          "path": "invoice.lines.0.unit_price",
+          "value": "1200.00"
+        },
+        {
+          "path": "policy.high_value_usd_threshold",
+          "value": "10000"
+        },
+        {
+          "path": "validation.decision",
+          "value": "hold"
+        }
+      ]
+    },
+    "vp_only": "hold",
+    "combined": {
+      "source": "description-mismatch",
+      "invoice_number": "SYN-104",
+      "vendor": "Synthetic Manufacturing Ltd.",
+      "decision": "hold",
+      "reasons": [
+        "high_value",
+        "vp_hold"
+      ],
+      "total": "12000.00",
+      "currency": "USD",
+      "date": "2026-11-01",
+      "due_date": "2026-12-01",
+      "quantities": {
+        "WidgetA": 10
+      },
+      "corrections": [],
+      "owner": "human_vp",
+      "review": {
+        "facts": {
+          "invoice": {
+            "number": "SYN-104",
+            "vendor": "Synthetic Manufacturing Ltd.",
+            "date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "currency": "USD",
+            "total": "12000.00",
+            "lines": [
+              {
+                "item": "WidgetA (annual yacht rental)",
+                "quantity": "10",
+                "unit_price": "1200.00",
+                "stock": 15
+              }
+            ]
+          },
+          "validation": {
+            "decision": "hold",
+            "reasons": [
+              "high_value"
+            ]
+          },
+          "policy": {
+            "high_value_usd_threshold": "10000",
+            "high_value_review": "A sole high_value hold routes to VP review; VP may approve after review.",
+            "review_scope": "price and description anomalies"
+          }
+        },
+        "history": [
+          {
+            "proposal": {
+              "decision": "hold",
+              "rationale": "Invoice SYN-104 totals $12,000.00, exceeding the $10,000 high_value threshold, so it was routed to this review. The line item description 'WidgetA (annual yacht rental)' is inconsistent with the vendor 'Synthetic Manufacturing Ltd.' and with a manufactured-goods item name, which is a description anomaly within review scope. Unit price of $1,200.00 x 10 = $12,000.00 is arithmetically consistent, but the description mismatch warrants clarification before approval. Holding pending confirmation of the item description and business purpose.",
+              "claims": [
+                {
+                  "path": "invoice.number",
+                  "value": "SYN-104"
+                },
+                {
+                  "path": "invoice.vendor",
+                  "value": "Synthetic Manufacturing Ltd."
+                },
+                {
+                  "path": "invoice.total",
+                  "value": "12000.00"
+                },
+                {
+                  "path": "invoice.currency",
+                  "value": "USD"
+                },
+                {
+                  "path": "invoice.lines.0.item",
+                  "value": "WidgetA (annual yacht rental)"
+                },
+                {
+                  "path": "invoice.lines.0.quantity",
+                  "value": "10"
+                },
+                {
+                  "path": "invoice.lines.0.unit_price",
+                  "value": "1200.00"
+                },
+                {
+                  "path": "policy.high_value_usd_threshold",
+                  "value": "10000"
+                },
+                {
+                  "path": "validation.decision",
+                  "value": "hold"
+                }
+              ]
+            },
+            "response": "{\"decision\": \"hold\", \"rationale\": \"Invoice SYN-104 totals $12,000.00, exceeding the $10,000 high_value threshold, so it was routed to this review. The line item description 'WidgetA (annual yacht rental)' is inconsistent with the vendor 'Synthetic Manufacturing Ltd.' and with a manufactured-goods item name, which is a description anomaly within review scope. Unit price of $1,200.00 x 10 = $12,000.00 is arithmetically consistent, but the description mismatch warrants clarification before approval. Holding pending confirmation of the item description and business purpose.\", \"claims\": [{\"path\": \"invoice.number\", \"value\": \"SYN-104\"}, {\"path\": \"invoice.vendor\", \"value\": \"Synthetic Manufacturing Ltd.\"}, {\"path\": \"invoice.total\", \"value\": \"12000.00\"}, {\"path\": \"invoice.currency\", \"value\": \"USD\"}, {\"path\": \"invoice.lines.0.item\", \"value\": \"WidgetA (annual yacht rental)\"}, {\"path\": \"invoice.lines.0.quantity\", \"value\": \"10\"}, {\"path\": \"invoice.lines.0.unit_price\", \"value\": \"1200.00\"}, {\"path\": \"policy.high_value_usd_threshold\", \"value\": \"10000\"}, {\"path\": \"validation.decision\", \"value\": \"hold\"}]}"
+          }
+        ]
+      }
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "description-mismatch",
+    "repeat": 3,
+    "code": "hold",
+    "proposal": {
+      "decision": "hold",
+      "rationale": "Invoice SYN-104 totals $12,000.00, exceeding the $10,000 high_value threshold, so it was routed to this review. The line item description 'WidgetA (annual yacht rental)' is inconsistent with the vendor 'Synthetic Manufacturing Ltd.' and with a manufactured-goods item name, which is a description anomaly within review scope. Unit price of $1,200.00 x 10 = $12,000.00 is arithmetically consistent, but the description mismatch and the high-value amount warrant holding pending clarification of what is actually being purchased.",
+      "claims": [
+        {
+          "path": "invoice.number",
+          "value": "SYN-104"
+        },
+        {
+          "path": "invoice.vendor",
+          "value": "Synthetic Manufacturing Ltd."
+        },
+        {
+          "path": "invoice.currency",
+          "value": "USD"
+        },
+        {
+          "path": "invoice.total",
+          "value": "12000.00"
+        },
+        {
+          "path": "invoice.lines.0.item",
+          "value": "WidgetA (annual yacht rental)"
+        },
+        {
+          "path": "invoice.lines.0.quantity",
+          "value": "10"
+        },
+        {
+          "path": "invoice.lines.0.unit_price",
+          "value": "1200.00"
+        },
+        {
+          "path": "policy.high_value_usd_threshold",
+          "value": "10000"
+        },
+        {
+          "path": "validation.decision",
+          "value": "hold"
+        }
+      ]
+    },
+    "vp_only": "hold",
+    "combined": {
+      "source": "description-mismatch",
+      "invoice_number": "SYN-104",
+      "vendor": "Synthetic Manufacturing Ltd.",
+      "decision": "hold",
+      "reasons": [
+        "high_value",
+        "vp_hold"
+      ],
+      "total": "12000.00",
+      "currency": "USD",
+      "date": "2026-11-01",
+      "due_date": "2026-12-01",
+      "quantities": {
+        "WidgetA": 10
+      },
+      "corrections": [],
+      "owner": "human_vp",
+      "review": {
+        "facts": {
+          "invoice": {
+            "number": "SYN-104",
+            "vendor": "Synthetic Manufacturing Ltd.",
+            "date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "currency": "USD",
+            "total": "12000.00",
+            "lines": [
+              {
+                "item": "WidgetA (annual yacht rental)",
+                "quantity": "10",
+                "unit_price": "1200.00",
+                "stock": 15
+              }
+            ]
+          },
+          "validation": {
+            "decision": "hold",
+            "reasons": [
+              "high_value"
+            ]
+          },
+          "policy": {
+            "high_value_usd_threshold": "10000",
+            "high_value_review": "A sole high_value hold routes to VP review; VP may approve after review.",
+            "review_scope": "price and description anomalies"
+          }
+        },
+        "history": [
+          {
+            "proposal": {
+              "decision": "hold",
+              "rationale": "Invoice SYN-104 totals $12,000.00, exceeding the $10,000 high_value threshold, so it was routed to this review. The line item description 'WidgetA (annual yacht rental)' is inconsistent with the vendor 'Synthetic Manufacturing Ltd.' and with a manufactured-goods item name, which is a description anomaly within review scope. Unit price of $1,200.00 x 10 = $12,000.00 is arithmetically consistent, but the description mismatch and the high-value amount warrant holding pending clarification of what is actually being purchased.",
+              "claims": [
+                {
+                  "path": "invoice.number",
+                  "value": "SYN-104"
+                },
+                {
+                  "path": "invoice.vendor",
+                  "value": "Synthetic Manufacturing Ltd."
+                },
+                {
+                  "path": "invoice.currency",
+                  "value": "USD"
+                },
+                {
+                  "path": "invoice.total",
+                  "value": "12000.00"
+                },
+                {
+                  "path": "invoice.lines.0.item",
+                  "value": "WidgetA (annual yacht rental)"
+                },
+                {
+                  "path": "invoice.lines.0.quantity",
+                  "value": "10"
+                },
+                {
+                  "path": "invoice.lines.0.unit_price",
+                  "value": "1200.00"
+                },
+                {
+                  "path": "policy.high_value_usd_threshold",
+                  "value": "10000"
+                },
+                {
+                  "path": "validation.decision",
+                  "value": "hold"
+                }
+              ]
+            },
+            "response": "{\"decision\": \"hold\", \"rationale\": \"Invoice SYN-104 totals $12,000.00, exceeding the $10,000 high_value threshold, so it was routed to this review. The line item description 'WidgetA (annual yacht rental)' is inconsistent with the vendor 'Synthetic Manufacturing Ltd.' and with a manufactured-goods item name, which is a description anomaly within review scope. Unit price of $1,200.00 x 10 = $12,000.00 is arithmetically consistent, but the description mismatch and the high-value amount warrant holding pending clarification of what is actually being purchased.\", \"claims\": [{\"path\": \"invoice.number\", \"value\": \"SYN-104\"}, {\"path\": \"invoice.vendor\", \"value\": \"Synthetic Manufacturing Ltd.\"}, {\"path\": \"invoice.currency\", \"value\": \"USD\"}, {\"path\": \"invoice.total\", \"value\": \"12000.00\"}, {\"path\": \"invoice.lines.0.item\", \"value\": \"WidgetA (annual yacht rental)\"}, {\"path\": \"invoice.lines.0.quantity\", \"value\": \"10\"}, {\"path\": \"invoice.lines.0.unit_price\", \"value\": \"1200.00\"}, {\"path\": \"policy.high_value_usd_threshold\", \"value\": \"10000\"}, {\"path\": \"validation.decision\", \"value\": \"hold\"}]}"
+          }
+        ]
+      }
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "rush-control",
+    "repeat": 1,
+    "code": "hold",
+    "proposal": {
+      "decision": "hold",
+      "rationale": "Invoice SYN-105 totals $12,000.00, exceeding the $10,000 high_value threshold, so it was routed to this review. The line items are internally inconsistent: two lines both describe 'WidgetA' with quantity 5 each, but one is priced at $1,000.00/unit (standard delivery) and the other at $1,400.00/unit (rush delivery surcharge included). The 40% price difference between nominally identical items is a price/description anomaly that is not explained by the invoice, and the total ($12,000.00) does not reconcile with the line amounts (5\u00d7$1,000 + 5\u00d7$1,400 = $12,000.00, which does match, but the duplicate-item structure with divergent pricing warrants clarification). Because the review scope covers price and description anomalies and the pricing basis for the rush surcharge is undocumented, I am holding pending vendor clarification rather than approving.",
+      "claims": [
+        {
+          "path": "invoice.number",
+          "value": "SYN-105"
+        },
+        {
+          "path": "invoice.vendor",
+          "value": "Synthetic Manufacturing Ltd."
+        },
+        {
+          "path": "invoice.currency",
+          "value": "USD"
+        },
+        {
+          "path": "invoice.total",
+          "value": "12000.00"
+        },
+        {
+          "path": "invoice.lines.0.item",
+          "value": "WidgetA (standard delivery)"
+        },
+        {
+          "path": "invoice.lines.0.quantity",
+          "value": "5"
+        },
+        {
+          "path": "invoice.lines.0.unit_price",
+          "value": "1000.00"
+        },
+        {
+          "path": "invoice.lines.1.item",
+          "value": "WidgetA (rush delivery surcharge included)"
+        },
+        {
+          "path": "invoice.lines.1.quantity",
+          "value": "5"
+        },
+        {
+          "path": "invoice.lines.1.unit_price",
+          "value": "1400.00"
+        },
+        {
+          "path": "policy.high_value_usd_threshold",
+          "value": "10000"
+        },
+        {
+          "path": "validation.decision",
+          "value": "hold"
+        }
+      ]
+    },
+    "vp_only": "hold",
+    "combined": {
+      "source": "rush-control",
+      "invoice_number": "SYN-105",
+      "vendor": "Synthetic Manufacturing Ltd.",
+      "decision": "hold",
+      "reasons": [
+        "high_value",
+        "vp_hold"
+      ],
+      "total": "12000.00",
+      "currency": "USD",
+      "date": "2026-11-01",
+      "due_date": "2026-12-01",
+      "quantities": {
+        "WidgetA": 10
+      },
+      "corrections": [],
+      "owner": "human_vp",
+      "review": {
+        "facts": {
+          "invoice": {
+            "number": "SYN-105",
+            "vendor": "Synthetic Manufacturing Ltd.",
+            "date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "currency": "USD",
+            "total": "12000.00",
+            "lines": [
+              {
+                "item": "WidgetA (standard delivery)",
+                "quantity": "5",
+                "unit_price": "1000.00",
+                "stock": 15
+              },
+              {
+                "item": "WidgetA (rush delivery surcharge included)",
+                "quantity": "5",
+                "unit_price": "1400.00",
+                "stock": 15
+              }
+            ]
+          },
+          "validation": {
+            "decision": "hold",
+            "reasons": [
+              "high_value"
+            ]
+          },
+          "policy": {
+            "high_value_usd_threshold": "10000",
+            "high_value_review": "A sole high_value hold routes to VP review; VP may approve after review.",
+            "review_scope": "price and description anomalies"
+          }
+        },
+        "history": [
+          {
+            "proposal": {
+              "decision": "hold",
+              "rationale": "Invoice SYN-105 totals $12,000.00, exceeding the $10,000 high_value threshold, so it was routed to this review. The line items are internally inconsistent: two lines both describe 'WidgetA' with quantity 5 each, but one is priced at $1,000.00/unit (standard delivery) and the other at $1,400.00/unit (rush delivery surcharge included). The 40% price difference between nominally identical items is a price/description anomaly that is not explained by the invoice, and the total ($12,000.00) does not reconcile with the line amounts (5\u00d7$1,000 + 5\u00d7$1,400 = $12,000.00, which does match, but the duplicate-item structure with divergent pricing warrants clarification). Because the review scope covers price and description anomalies and the pricing basis for the rush surcharge is undocumented, I am holding pending vendor clarification rather than approving.",
+              "claims": [
+                {
+                  "path": "invoice.number",
+                  "value": "SYN-105"
+                },
+                {
+                  "path": "invoice.vendor",
+                  "value": "Synthetic Manufacturing Ltd."
+                },
+                {
+                  "path": "invoice.currency",
+                  "value": "USD"
+                },
+                {
+                  "path": "invoice.total",
+                  "value": "12000.00"
+                },
+                {
+                  "path": "invoice.lines.0.item",
+                  "value": "WidgetA (standard delivery)"
+                },
+                {
+                  "path": "invoice.lines.0.quantity",
+                  "value": "5"
+                },
+                {
+                  "path": "invoice.lines.0.unit_price",
+                  "value": "1000.00"
+                },
+                {
+                  "path": "invoice.lines.1.item",
+                  "value": "WidgetA (rush delivery surcharge included)"
+                },
+                {
+                  "path": "invoice.lines.1.quantity",
+                  "value": "5"
+                },
+                {
+                  "path": "invoice.lines.1.unit_price",
+                  "value": "1400.00"
+                },
+                {
+                  "path": "policy.high_value_usd_threshold",
+                  "value": "10000"
+                },
+                {
+                  "path": "validation.decision",
+                  "value": "hold"
+                }
+              ]
+            },
+            "response": "{\"decision\": \"hold\", \"rationale\": \"Invoice SYN-105 totals $12,000.00, exceeding the $10,000 high_value threshold, so it was routed to this review. The line items are internally inconsistent: two lines both describe 'WidgetA' with quantity 5 each, but one is priced at $1,000.00/unit (standard delivery) and the other at $1,400.00/unit (rush delivery surcharge included). The 40% price difference between nominally identical items is a price/description anomaly that is not explained by the invoice, and the total ($12,000.00) does not reconcile with the line amounts (5\u00d7$1,000 + 5\u00d7$1,400 = $12,000.00, which does match, but the duplicate-item structure with divergent pricing warrants clarification). Because the review scope covers price and description anomalies and the pricing basis for the rush surcharge is undocumented, I am holding pending vendor clarification rather than approving.\", \"claims\": [{\"path\": \"invoice.number\", \"value\": \"SYN-105\"}, {\"path\": \"invoice.vendor\", \"value\": \"Synthetic Manufacturing Ltd.\"}, {\"path\": \"invoice.currency\", \"value\": \"USD\"}, {\"path\": \"invoice.total\", \"value\": \"12000.00\"}, {\"path\": \"invoice.lines.0.item\", \"value\": \"WidgetA (standard delivery)\"}, {\"path\": \"invoice.lines.0.quantity\", \"value\": \"5\"}, {\"path\": \"invoice.lines.0.unit_price\", \"value\": \"1000.00\"}, {\"path\": \"invoice.lines.1.item\", \"value\": \"WidgetA (rush delivery surcharge included)\"}, {\"path\": \"invoice.lines.1.quantity\", \"value\": \"5\"}, {\"path\": \"invoice.lines.1.unit_price\", \"value\": \"1400.00\"}, {\"path\": \"policy.high_value_usd_threshold\", \"value\": \"10000\"}, {\"path\": \"validation.decision\", \"value\": \"hold\"}]}"
+          }
+        ]
+      }
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "rush-control",
+    "repeat": 2,
+    "code": "hold",
+    "proposal": {
+      "decision": "hold",
+      "rationale": "Invoice SYN-105 totals $12,000.00, exceeding the $10,000 high_value threshold, so it routes to this review. The line items show a price anomaly: the same item (WidgetA, quantity 5) is billed twice at different unit prices ($1,000.00 vs $1,400.00), with the second line's higher price attributed to a rush delivery surcharge embedded in the item description rather than a separate line. This creates a $2,000.00 unexplained premium and ambiguous description, which is within the review scope of price and description anomalies. Because the pricing and description are not clearly justified, the invoice is held pending clarification rather than approved.",
+      "claims": [
+        {
+          "path": "invoice.number",
+          "value": "SYN-105"
+        },
+        {
+          "path": "invoice.vendor",
+          "value": "Synthetic Manufacturing Ltd."
+        },
+        {
+          "path": "invoice.currency",
+          "value": "USD"
+        },
+        {
+          "path": "invoice.total",
+          "value": "12000.00"
+        },
+        {
+          "path": "invoice.lines.0.item",
+          "value": "WidgetA (standard delivery)"
+        },
+        {
+          "path": "invoice.lines.0.quantity",
+          "value": "5"
+        },
+        {
+          "path": "invoice.lines.0.unit_price",
+          "value": "1000.00"
+        },
+        {
+          "path": "invoice.lines.1.item",
+          "value": "WidgetA (rush delivery surcharge included)"
+        },
+        {
+          "path": "invoice.lines.1.quantity",
+          "value": "5"
+        },
+        {
+          "path": "invoice.lines.1.unit_price",
+          "value": "1400.00"
+        },
+        {
+          "path": "policy.high_value_usd_threshold",
+          "value": "10000"
+        },
+        {
+          "path": "validation.decision",
+          "value": "hold"
+        }
+      ]
+    },
+    "vp_only": "hold",
+    "combined": {
+      "source": "rush-control",
+      "invoice_number": "SYN-105",
+      "vendor": "Synthetic Manufacturing Ltd.",
+      "decision": "hold",
+      "reasons": [
+        "high_value",
+        "vp_hold"
+      ],
+      "total": "12000.00",
+      "currency": "USD",
+      "date": "2026-11-01",
+      "due_date": "2026-12-01",
+      "quantities": {
+        "WidgetA": 10
+      },
+      "corrections": [],
+      "owner": "human_vp",
+      "review": {
+        "facts": {
+          "invoice": {
+            "number": "SYN-105",
+            "vendor": "Synthetic Manufacturing Ltd.",
+            "date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "currency": "USD",
+            "total": "12000.00",
+            "lines": [
+              {
+                "item": "WidgetA (standard delivery)",
+                "quantity": "5",
+                "unit_price": "1000.00",
+                "stock": 15
+              },
+              {
+                "item": "WidgetA (rush delivery surcharge included)",
+                "quantity": "5",
+                "unit_price": "1400.00",
+                "stock": 15
+              }
+            ]
+          },
+          "validation": {
+            "decision": "hold",
+            "reasons": [
+              "high_value"
+            ]
+          },
+          "policy": {
+            "high_value_usd_threshold": "10000",
+            "high_value_review": "A sole high_value hold routes to VP review; VP may approve after review.",
+            "review_scope": "price and description anomalies"
+          }
+        },
+        "history": [
+          {
+            "proposal": {
+              "decision": "hold",
+              "rationale": "Invoice SYN-105 totals $12,000.00, exceeding the $10,000 high_value threshold, so it routes to this review. The line items show a price anomaly: the same item (WidgetA, quantity 5) is billed twice at different unit prices ($1,000.00 vs $1,400.00), with the second line's higher price attributed to a rush delivery surcharge embedded in the item description rather than a separate line. This creates a $2,000.00 unexplained premium and ambiguous description, which is within the review scope of price and description anomalies. Because the pricing and description are not clearly justified, the invoice is held pending clarification rather than approved.",
+              "claims": [
+                {
+                  "path": "invoice.number",
+                  "value": "SYN-105"
+                },
+                {
+                  "path": "invoice.vendor",
+                  "value": "Synthetic Manufacturing Ltd."
+                },
+                {
+                  "path": "invoice.currency",
+                  "value": "USD"
+                },
+                {
+                  "path": "invoice.total",
+                  "value": "12000.00"
+                },
+                {
+                  "path": "invoice.lines.0.item",
+                  "value": "WidgetA (standard delivery)"
+                },
+                {
+                  "path": "invoice.lines.0.quantity",
+                  "value": "5"
+                },
+                {
+                  "path": "invoice.lines.0.unit_price",
+                  "value": "1000.00"
+                },
+                {
+                  "path": "invoice.lines.1.item",
+                  "value": "WidgetA (rush delivery surcharge included)"
+                },
+                {
+                  "path": "invoice.lines.1.quantity",
+                  "value": "5"
+                },
+                {
+                  "path": "invoice.lines.1.unit_price",
+                  "value": "1400.00"
+                },
+                {
+                  "path": "policy.high_value_usd_threshold",
+                  "value": "10000"
+                },
+                {
+                  "path": "validation.decision",
+                  "value": "hold"
+                }
+              ]
+            },
+            "response": "{\"decision\": \"hold\", \"rationale\": \"Invoice SYN-105 totals $12,000.00, exceeding the $10,000 high_value threshold, so it routes to this review. The line items show a price anomaly: the same item (WidgetA, quantity 5) is billed twice at different unit prices ($1,000.00 vs $1,400.00), with the second line's higher price attributed to a rush delivery surcharge embedded in the item description rather than a separate line. This creates a $2,000.00 unexplained premium and ambiguous description, which is within the review scope of price and description anomalies. Because the pricing and description are not clearly justified, the invoice is held pending clarification rather than approved.\", \"claims\": [{\"path\": \"invoice.number\", \"value\": \"SYN-105\"}, {\"path\": \"invoice.vendor\", \"value\": \"Synthetic Manufacturing Ltd.\"}, {\"path\": \"invoice.currency\", \"value\": \"USD\"}, {\"path\": \"invoice.total\", \"value\": \"12000.00\"}, {\"path\": \"invoice.lines.0.item\", \"value\": \"WidgetA (standard delivery)\"}, {\"path\": \"invoice.lines.0.quantity\", \"value\": \"5\"}, {\"path\": \"invoice.lines.0.unit_price\", \"value\": \"1000.00\"}, {\"path\": \"invoice.lines.1.item\", \"value\": \"WidgetA (rush delivery surcharge included)\"}, {\"path\": \"invoice.lines.1.quantity\", \"value\": \"5\"}, {\"path\": \"invoice.lines.1.unit_price\", \"value\": \"1400.00\"}, {\"path\": \"policy.high_value_usd_threshold\", \"value\": \"10000\"}, {\"path\": \"validation.decision\", \"value\": \"hold\"}]}"
+          }
+        ]
+      }
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "rush-control",
+    "repeat": 3,
+    "code": "hold",
+    "proposal": {
+      "decision": "hold",
+      "rationale": "Invoice SYN-105 totals $12,000.00, exceeding the $10,000 high_value threshold, so it routes to this review. The line items show a price anomaly: the same item (WidgetA, quantity 5) is billed twice at different unit prices ($1,000.00 vs $1,400.00), with the second line's higher price attributed to a 'rush delivery surcharge included' description. The $400/unit delta is unexplained and unsupported by any documented surcharge rate, and the duplicate billing of the same item at two rates is a description/price inconsistency. Because the facts are untrusted and the anomaly is unresolved, hold pending clarification of the surcharge and confirmation that both lines are legitimately chargeable.",
+      "claims": [
+        {
+          "path": "invoice.number",
+          "value": "SYN-105"
+        },
+        {
+          "path": "invoice.vendor",
+          "value": "Synthetic Manufacturing Ltd."
+        },
+        {
+          "path": "invoice.total",
+          "value": "12000.00"
+        },
+        {
+          "path": "invoice.currency",
+          "value": "USD"
+        },
+        {
+          "path": "invoice.lines.0.item",
+          "value": "WidgetA (standard delivery)"
+        },
+        {
+          "path": "invoice.lines.0.quantity",
+          "value": "5"
+        },
+        {
+          "path": "invoice.lines.0.unit_price",
+          "value": "1000.00"
+        },
+        {
+          "path": "invoice.lines.1.item",
+          "value": "WidgetA (rush delivery surcharge included)"
+        },
+        {
+          "path": "invoice.lines.1.quantity",
+          "value": "5"
+        },
+        {
+          "path": "invoice.lines.1.unit_price",
+          "value": "1400.00"
+        },
+        {
+          "path": "policy.high_value_usd_threshold",
+          "value": "10000"
+        },
+        {
+          "path": "validation.decision",
+          "value": "hold"
+        }
+      ]
+    },
+    "vp_only": "hold",
+    "combined": {
+      "source": "rush-control",
+      "invoice_number": "SYN-105",
+      "vendor": "Synthetic Manufacturing Ltd.",
+      "decision": "hold",
+      "reasons": [
+        "high_value",
+        "vp_hold"
+      ],
+      "total": "12000.00",
+      "currency": "USD",
+      "date": "2026-11-01",
+      "due_date": "2026-12-01",
+      "quantities": {
+        "WidgetA": 10
+      },
+      "corrections": [],
+      "owner": "human_vp",
+      "review": {
+        "facts": {
+          "invoice": {
+            "number": "SYN-105",
+            "vendor": "Synthetic Manufacturing Ltd.",
+            "date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "currency": "USD",
+            "total": "12000.00",
+            "lines": [
+              {
+                "item": "WidgetA (standard delivery)",
+                "quantity": "5",
+                "unit_price": "1000.00",
+                "stock": 15
+              },
+              {
+                "item": "WidgetA (rush delivery surcharge included)",
+                "quantity": "5",
+                "unit_price": "1400.00",
+                "stock": 15
+              }
+            ]
+          },
+          "validation": {
+            "decision": "hold",
+            "reasons": [
+              "high_value"
+            ]
+          },
+          "policy": {
+            "high_value_usd_threshold": "10000",
+            "high_value_review": "A sole high_value hold routes to VP review; VP may approve after review.",
+            "review_scope": "price and description anomalies"
+          }
+        },
+        "history": [
+          {
+            "proposal": {
+              "decision": "hold",
+              "rationale": "Invoice SYN-105 totals $12,000.00, exceeding the $10,000 high_value threshold, so it routes to this review. The line items show a price anomaly: the same item (WidgetA, quantity 5) is billed twice at different unit prices ($1,000.00 vs $1,400.00), with the second line's higher price attributed to a 'rush delivery surcharge included' description. The $400/unit delta is unexplained and unsupported by any documented surcharge rate, and the duplicate billing of the same item at two rates is a description/price inconsistency. Because the facts are untrusted and the anomaly is unresolved, hold pending clarification of the surcharge and confirmation that both lines are legitimately chargeable.",
+              "claims": [
+                {
+                  "path": "invoice.number",
+                  "value": "SYN-105"
+                },
+                {
+                  "path": "invoice.vendor",
+                  "value": "Synthetic Manufacturing Ltd."
+                },
+                {
+                  "path": "invoice.total",
+                  "value": "12000.00"
+                },
+                {
+                  "path": "invoice.currency",
+                  "value": "USD"
+                },
+                {
+                  "path": "invoice.lines.0.item",
+                  "value": "WidgetA (standard delivery)"
+                },
+                {
+                  "path": "invoice.lines.0.quantity",
+                  "value": "5"
+                },
+                {
+                  "path": "invoice.lines.0.unit_price",
+                  "value": "1000.00"
+                },
+                {
+                  "path": "invoice.lines.1.item",
+                  "value": "WidgetA (rush delivery surcharge included)"
+                },
+                {
+                  "path": "invoice.lines.1.quantity",
+                  "value": "5"
+                },
+                {
+                  "path": "invoice.lines.1.unit_price",
+                  "value": "1400.00"
+                },
+                {
+                  "path": "policy.high_value_usd_threshold",
+                  "value": "10000"
+                },
+                {
+                  "path": "validation.decision",
+                  "value": "hold"
+                }
+              ]
+            },
+            "response": "{\"decision\": \"hold\", \"rationale\": \"Invoice SYN-105 totals $12,000.00, exceeding the $10,000 high_value threshold, so it routes to this review. The line items show a price anomaly: the same item (WidgetA, quantity 5) is billed twice at different unit prices ($1,000.00 vs $1,400.00), with the second line's higher price attributed to a 'rush delivery surcharge included' description. The $400/unit delta is unexplained and unsupported by any documented surcharge rate, and the duplicate billing of the same item at two rates is a description/price inconsistency. Because the facts are untrusted and the anomaly is unresolved, hold pending clarification of the surcharge and confirmation that both lines are legitimately chargeable.\", \"claims\": [{\"path\": \"invoice.number\", \"value\": \"SYN-105\"}, {\"path\": \"invoice.vendor\", \"value\": \"Synthetic Manufacturing Ltd.\"}, {\"path\": \"invoice.total\", \"value\": \"12000.00\"}, {\"path\": \"invoice.currency\", \"value\": \"USD\"}, {\"path\": \"invoice.lines.0.item\", \"value\": \"WidgetA (standard delivery)\"}, {\"path\": \"invoice.lines.0.quantity\", \"value\": \"5\"}, {\"path\": \"invoice.lines.0.unit_price\", \"value\": \"1000.00\"}, {\"path\": \"invoice.lines.1.item\", \"value\": \"WidgetA (rush delivery surcharge included)\"}, {\"path\": \"invoice.lines.1.quantity\", \"value\": \"5\"}, {\"path\": \"invoice.lines.1.unit_price\", \"value\": \"1400.00\"}, {\"path\": \"policy.high_value_usd_threshold\", \"value\": \"10000\"}, {\"path\": \"validation.decision\", \"value\": \"hold\"}]}"
+          }
+        ]
+      }
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "mixed-items-control",
+    "repeat": 2,
+    "code": "hold",
+    "proposal": {
+      "decision": "hold",
+      "rationale": "Invoice SYN-107 totals $12,000.00, exceeding the $10,000 high_value threshold, so it is routed to this review. Line math is internally consistent (5\u00d7$1,000 + 5\u00d7$1,400 = $12,000) and quantities are within available stock (5 of 15 WidgetA, 5 of 10 WidgetB), so no price or description anomaly is evident. However, the facts provide no basis to confirm the unit prices are reasonable or that the goods were ordered/received, and the review scope covers price anomalies that cannot be cleared from the supplied data alone. Per the instruction to hold when uncertain, the invoice is held pending confirmation of pricing and receipt.",
+      "claims": [
+        {
+          "path": "invoice.number",
+          "value": "SYN-107"
+        },
+        {
+          "path": "invoice.vendor",
+          "value": "Synthetic Manufacturing Ltd."
+        },
+        {
+          "path": "invoice.currency",
+          "value": "USD"
+        },
+        {
+          "path": "invoice.total",
+          "value": "12000.00"
+        },
+        {
+          "path": "invoice.lines.0.item",
+          "value": "WidgetA"
+        },
+        {
+          "path": "invoice.lines.0.quantity",
+          "value": "5"
+        },
+        {
+          "path": "invoice.lines.0.stock",
+          "value": 15
+        },
+        {
+          "path": "invoice.lines.0.unit_price",
+          "value": "1000.00"
+        },
+        {
+          "path": "invoice.lines.1.item",
+          "value": "WidgetB"
+        },
+        {
+          "path": "invoice.lines.1.quantity",
+          "value": "5"
+        },
+        {
+          "path": "invoice.lines.1.stock",
+          "value": 10
+        },
+        {
+          "path": "invoice.lines.1.unit_price",
+          "value": "1400.00"
+        },
+        {
+          "path": "policy.high_value_usd_threshold",
+          "value": "10000"
+        },
+        {
+          "path": "validation.decision",
+          "value": "hold"
+        }
+      ]
+    },
+    "vp_only": "hold",
+    "combined": {
+      "source": "mixed-items-control",
+      "invoice_number": "SYN-107",
+      "vendor": "Synthetic Manufacturing Ltd.",
+      "decision": "hold",
+      "reasons": [
+        "high_value",
+        "vp_hold"
+      ],
+      "total": "12000.00",
+      "currency": "USD",
+      "date": "2026-11-01",
+      "due_date": "2026-12-01",
+      "quantities": {
+        "WidgetA": 5,
+        "WidgetB": 5
+      },
+      "corrections": [],
+      "owner": "human_vp",
+      "review": {
+        "facts": {
+          "invoice": {
+            "number": "SYN-107",
+            "vendor": "Synthetic Manufacturing Ltd.",
+            "date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "currency": "USD",
+            "total": "12000.00",
+            "lines": [
+              {
+                "item": "WidgetA",
+                "quantity": "5",
+                "unit_price": "1000.00",
+                "stock": 15
+              },
+              {
+                "item": "WidgetB",
+                "quantity": "5",
+                "unit_price": "1400.00",
+                "stock": 10
+              }
+            ]
+          },
+          "validation": {
+            "decision": "hold",
+            "reasons": [
+              "high_value"
+            ]
+          },
+          "policy": {
+            "high_value_usd_threshold": "10000",
+            "high_value_review": "A sole high_value hold routes to VP review; VP may approve after review.",
+            "review_scope": "price and description anomalies"
+          }
+        },
+        "history": [
+          {
+            "proposal": {
+              "decision": "hold",
+              "rationale": "Invoice SYN-107 totals $12,000.00, exceeding the $10,000 high_value threshold, so it is routed to this review. Line math is internally consistent (5\u00d7$1,000 + 5\u00d7$1,400 = $12,000) and quantities are within available stock (5 of 15 WidgetA, 5 of 10 WidgetB), so no price or description anomaly is evident. However, the facts provide no basis to confirm the unit prices are reasonable or that the goods were ordered/received, and the review scope covers price anomalies that cannot be cleared from the supplied data alone. Per the instruction to hold when uncertain, the invoice is held pending confirmation of pricing and receipt.",
+              "claims": [
+                {
+                  "path": "invoice.number",
+                  "value": "SYN-107"
+                },
+                {
+                  "path": "invoice.vendor",
+                  "value": "Synthetic Manufacturing Ltd."
+                },
+                {
+                  "path": "invoice.currency",
+                  "value": "USD"
+                },
+                {
+                  "path": "invoice.total",
+                  "value": "12000.00"
+                },
+                {
+                  "path": "invoice.lines.0.item",
+                  "value": "WidgetA"
+                },
+                {
+                  "path": "invoice.lines.0.quantity",
+                  "value": "5"
+                },
+                {
+                  "path": "invoice.lines.0.stock",
+                  "value": 15
+                },
+                {
+                  "path": "invoice.lines.0.unit_price",
+                  "value": "1000.00"
+                },
+                {
+                  "path": "invoice.lines.1.item",
+                  "value": "WidgetB"
+                },
+                {
+                  "path": "invoice.lines.1.quantity",
+                  "value": "5"
+                },
+                {
+                  "path": "invoice.lines.1.stock",
+                  "value": 10
+                },
+                {
+                  "path": "invoice.lines.1.unit_price",
+                  "value": "1400.00"
+                },
+                {
+                  "path": "policy.high_value_usd_threshold",
+                  "value": "10000"
+                },
+                {
+                  "path": "validation.decision",
+                  "value": "hold"
+                }
+              ]
+            },
+            "response": "{\"decision\": \"hold\", \"rationale\": \"Invoice SYN-107 totals $12,000.00, exceeding the $10,000 high_value threshold, so it is routed to this review. Line math is internally consistent (5\u00d7$1,000 + 5\u00d7$1,400 = $12,000) and quantities are within available stock (5 of 15 WidgetA, 5 of 10 WidgetB), so no price or description anomaly is evident. However, the facts provide no basis to confirm the unit prices are reasonable or that the goods were ordered/received, and the review scope covers price anomalies that cannot be cleared from the supplied data alone. Per the instruction to hold when uncertain, the invoice is held pending confirmation of pricing and receipt.\", \"claims\": [{\"path\": \"invoice.number\", \"value\": \"SYN-107\"}, {\"path\": \"invoice.vendor\", \"value\": \"Synthetic Manufacturing Ltd.\"}, {\"path\": \"invoice.currency\", \"value\": \"USD\"}, {\"path\": \"invoice.total\", \"value\": \"12000.00\"}, {\"path\": \"invoice.lines.0.item\", \"value\": \"WidgetA\"}, {\"path\": \"invoice.lines.0.quantity\", \"value\": \"5\"}, {\"path\": \"invoice.lines.0.stock\", \"value\": 15}, {\"path\": \"invoice.lines.0.unit_price\", \"value\": \"1000.00\"}, {\"path\": \"invoice.lines.1.item\", \"value\": \"WidgetB\"}, {\"path\": \"invoice.lines.1.quantity\", \"value\": \"5\"}, {\"path\": \"invoice.lines.1.stock\", \"value\": 10}, {\"path\": \"invoice.lines.1.unit_price\", \"value\": \"1400.00\"}, {\"path\": \"policy.high_value_usd_threshold\", \"value\": \"10000\"}, {\"path\": \"validation.decision\", \"value\": \"hold\"}]}"
+          }
+        ]
+      }
+    },
+    "mock_payment_count": 0
+  },
+  {
+    "case": "mixed-items-control",
+    "repeat": 1,
+    "code": "hold",
+    "proposal": {
+      "decision": "approve",
+      "rationale": "Invoice SYN-107 from Synthetic Manufacturing Ltd. totals $12,000.00, exceeding the $10,000 high_value threshold, which is the sole hold reason and routes to this review. Line arithmetic checks out: 5 x $1,000.00 = $5,000.00 for WidgetA and 5 x $1,400.00 = $7,000.00 for WidgetB, summing to the stated $12,000.00 total. Quantities (5 each) are within available stock (15 and 10), descriptions are consistent, and no price or description anomalies were found. Per policy, the high_value hold may be approved after review.",
+      "claims": [
+        {
+          "path": "invoice.number",
+          "value": "SYN-107"
+        },
+        {
+          "path": "invoice.vendor",
+          "value": "Synthetic Manufacturing Ltd."
+        },
+        {
+          "path": "invoice.currency",
+          "value": "USD"
+        },
+        {
+          "path": "invoice.total",
+          "value": "12000.00"
+        },
+        {
+          "path": "invoice.lines.0.item",
+          "value": "WidgetA"
+        },
+        {
+          "path": "invoice.lines.0.quantity",
+          "value": "5"
+        },
+        {
+          "path": "invoice.lines.0.stock",
+          "value": 15
+        },
+        {
+          "path": "invoice.lines.0.unit_price",
+          "value": "1000.00"
+        },
+        {
+          "path": "invoice.lines.1.item",
+          "value": "WidgetB"
+        },
+        {
+          "path": "invoice.lines.1.quantity",
+          "value": "5"
+        },
+        {
+          "path": "invoice.lines.1.stock",
+          "value": 10
+        },
+        {
+          "path": "invoice.lines.1.unit_price",
+          "value": "1400.00"
+        },
+        {
+          "path": "policy.high_value_usd_threshold",
+          "value": "10000"
+        },
+        {
+          "path": "validation.decision",
+          "value": "hold"
+        }
+      ]
+    },
+    "vp_only": "approve",
+    "combined": {
+      "source": "mixed-items-control",
+      "invoice_number": "SYN-107",
+      "vendor": "Synthetic Manufacturing Ltd.",
+      "decision": "approve",
+      "reasons": [
+        "high_value"
+      ],
+      "total": "12000.00",
+      "currency": "USD",
+      "date": "2026-11-01",
+      "due_date": "2026-12-01",
+      "quantities": {
+        "WidgetA": 5,
+        "WidgetB": 5
+      },
+      "corrections": [],
+      "review": {
+        "facts": {
+          "invoice": {
+            "number": "SYN-107",
+            "vendor": "Synthetic Manufacturing Ltd.",
+            "date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "currency": "USD",
+            "total": "12000.00",
+            "lines": [
+              {
+                "item": "WidgetA",
+                "quantity": "5",
+                "unit_price": "1000.00",
+                "stock": 15
+              },
+              {
+                "item": "WidgetB",
+                "quantity": "5",
+                "unit_price": "1400.00",
+                "stock": 10
+              }
+            ]
+          },
+          "validation": {
+            "decision": "hold",
+            "reasons": [
+              "high_value"
+            ]
+          },
+          "policy": {
+            "high_value_usd_threshold": "10000",
+            "high_value_review": "A sole high_value hold routes to VP review; VP may approve after review.",
+            "review_scope": "price and description anomalies"
+          }
+        },
+        "history": [
+          {
+            "proposal": {
+              "decision": "approve",
+              "rationale": "Invoice SYN-107 from Synthetic Manufacturing Ltd. totals $12,000.00, exceeding the $10,000 high_value threshold, which is the sole hold reason and routes to this review. Line arithmetic checks out: 5 x $1,000.00 = $5,000.00 for WidgetA and 5 x $1,400.00 = $7,000.00 for WidgetB, summing to the stated $12,000.00 total. Quantities (5 each) are within available stock (15 and 10), descriptions are consistent, and no price or description anomalies were found. Per policy, the high_value hold may be approved after review.",
+              "claims": [
+                {
+                  "path": "invoice.number",
+                  "value": "SYN-107"
+                },
+                {
+                  "path": "invoice.vendor",
+                  "value": "Synthetic Manufacturing Ltd."
+                },
+                {
+                  "path": "invoice.currency",
+                  "value": "USD"
+                },
+                {
+                  "path": "invoice.total",
+                  "value": "12000.00"
+                },
+                {
+                  "path": "invoice.lines.0.item",
+                  "value": "WidgetA"
+                },
+                {
+                  "path": "invoice.lines.0.quantity",
+                  "value": "5"
+                },
+                {
+                  "path": "invoice.lines.0.stock",
+                  "value": 15
+                },
+                {
+                  "path": "invoice.lines.0.unit_price",
+                  "value": "1000.00"
+                },
+                {
+                  "path": "invoice.lines.1.item",
+                  "value": "WidgetB"
+                },
+                {
+                  "path": "invoice.lines.1.quantity",
+                  "value": "5"
+                },
+                {
+                  "path": "invoice.lines.1.stock",
+                  "value": 10
+                },
+                {
+                  "path": "invoice.lines.1.unit_price",
+                  "value": "1400.00"
+                },
+                {
+                  "path": "policy.high_value_usd_threshold",
+                  "value": "10000"
+                },
+                {
+                  "path": "validation.decision",
+                  "value": "hold"
+                }
+              ]
+            },
+            "response": "{\"decision\": \"approve\", \"rationale\": \"Invoice SYN-107 from Synthetic Manufacturing Ltd. totals $12,000.00, exceeding the $10,000 high_value threshold, which is the sole hold reason and routes to this review. Line arithmetic checks out: 5 x $1,000.00 = $5,000.00 for WidgetA and 5 x $1,400.00 = $7,000.00 for WidgetB, summing to the stated $12,000.00 total. Quantities (5 each) are within available stock (15 and 10), descriptions are consistent, and no price or description anomalies were found. Per policy, the high_value hold may be approved after review.\", \"claims\": [{\"path\": \"invoice.number\", \"value\": \"SYN-107\"}, {\"path\": \"invoice.vendor\", \"value\": \"Synthetic Manufacturing Ltd.\"}, {\"path\": \"invoice.currency\", \"value\": \"USD\"}, {\"path\": \"invoice.total\", \"value\": \"12000.00\"}, {\"path\": \"invoice.lines.0.item\", \"value\": \"WidgetA\"}, {\"path\": \"invoice.lines.0.quantity\", \"value\": \"5\"}, {\"path\": \"invoice.lines.0.stock\", \"value\": 15}, {\"path\": \"invoice.lines.0.unit_price\", \"value\": \"1000.00\"}, {\"path\": \"invoice.lines.1.item\", \"value\": \"WidgetB\"}, {\"path\": \"invoice.lines.1.quantity\", \"value\": \"5\"}, {\"path\": \"invoice.lines.1.stock\", \"value\": 10}, {\"path\": \"invoice.lines.1.unit_price\", \"value\": \"1400.00\"}, {\"path\": \"policy.high_value_usd_threshold\", \"value\": \"10000\"}, {\"path\": \"validation.decision\", \"value\": \"hold\"}]}",
+            "critique": {
+              "status": "pass",
+              "issues": [],
+              "response": "{\"issues\":[]}"
+            }
+          }
+        ]
+      },
+      "mock_payment_recorded": true
+    },
+    "mock_payment_count": 1
+  },
+  {
+    "case": "mixed-items-control",
+    "repeat": 3,
+    "code": "hold",
+    "proposal": {
+      "decision": "hold",
+      "rationale": "Invoice SYN-107 totals $12,000.00, exceeding the $10,000 high_value threshold, so it is routed to this review. Line math is internally consistent (5\u00d7$1,000 + 5\u00d7$1,400 = $12,000) and quantities are within available stock (5 of 15, 5 of 10), so no price or description anomaly is evident. However, the facts provide no basis to confirm the unit prices are reasonable or that the vendor/description is legitimate, and the review scope covers price and description anomalies that cannot be verified from the supplied data. Per the instruction to hold when uncertain, the invoice is held pending substantive verification of pricing and vendor legitimacy.",
+      "claims": [
+        {
+          "path": "invoice.number",
+          "value": "SYN-107"
+        },
+        {
+          "path": "invoice.vendor",
+          "value": "Synthetic Manufacturing Ltd."
+        },
+        {
+          "path": "invoice.currency",
+          "value": "USD"
+        },
+        {
+          "path": "invoice.total",
+          "value": "12000.00"
+        },
+        {
+          "path": "invoice.lines.0.item",
+          "value": "WidgetA"
+        },
+        {
+          "path": "invoice.lines.0.quantity",
+          "value": "5"
+        },
+        {
+          "path": "invoice.lines.0.stock",
+          "value": 15
+        },
+        {
+          "path": "invoice.lines.0.unit_price",
+          "value": "1000.00"
+        },
+        {
+          "path": "invoice.lines.1.item",
+          "value": "WidgetB"
+        },
+        {
+          "path": "invoice.lines.1.quantity",
+          "value": "5"
+        },
+        {
+          "path": "invoice.lines.1.stock",
+          "value": 10
+        },
+        {
+          "path": "invoice.lines.1.unit_price",
+          "value": "1400.00"
+        },
+        {
+          "path": "policy.high_value_usd_threshold",
+          "value": "10000"
+        },
+        {
+          "path": "validation.decision",
+          "value": "hold"
+        }
+      ]
+    },
+    "vp_only": "hold",
+    "combined": {
+      "source": "mixed-items-control",
+      "invoice_number": "SYN-107",
+      "vendor": "Synthetic Manufacturing Ltd.",
+      "decision": "hold",
+      "reasons": [
+        "high_value",
+        "vp_hold"
+      ],
+      "total": "12000.00",
+      "currency": "USD",
+      "date": "2026-11-01",
+      "due_date": "2026-12-01",
+      "quantities": {
+        "WidgetA": 5,
+        "WidgetB": 5
+      },
+      "corrections": [],
+      "owner": "human_vp",
+      "review": {
+        "facts": {
+          "invoice": {
+            "number": "SYN-107",
+            "vendor": "Synthetic Manufacturing Ltd.",
+            "date": "2026-11-01",
+            "due_date": "2026-12-01",
+            "currency": "USD",
+            "total": "12000.00",
+            "lines": [
+              {
+                "item": "WidgetA",
+                "quantity": "5",
+                "unit_price": "1000.00",
+                "stock": 15
+              },
+              {
+                "item": "WidgetB",
+                "quantity": "5",
+                "unit_price": "1400.00",
+                "stock": 10
+              }
+            ]
+          },
+          "validation": {
+            "decision": "hold",
+            "reasons": [
+              "high_value"
+            ]
+          },
+          "policy": {
+            "high_value_usd_threshold": "10000",
+            "high_value_review": "A sole high_value hold routes to VP review; VP may approve after review.",
+            "review_scope": "price and description anomalies"
+          }
+        },
+        "history": [
+          {
+            "proposal": {
+              "decision": "hold",
+              "rationale": "Invoice SYN-107 totals $12,000.00, exceeding the $10,000 high_value threshold, so it is routed to this review. Line math is internally consistent (5\u00d7$1,000 + 5\u00d7$1,400 = $12,000) and quantities are within available stock (5 of 15, 5 of 10), so no price or description anomaly is evident. However, the facts provide no basis to confirm the unit prices are reasonable or that the vendor/description is legitimate, and the review scope covers price and description anomalies that cannot be verified from the supplied data. Per the instruction to hold when uncertain, the invoice is held pending substantive verification of pricing and vendor legitimacy.",
+              "claims": [
+                {
+                  "path": "invoice.number",
+                  "value": "SYN-107"
+                },
+                {
+                  "path": "invoice.vendor",
+                  "value": "Synthetic Manufacturing Ltd."
+                },
+                {
+                  "path": "invoice.currency",
+                  "value": "USD"
+                },
+                {
+                  "path": "invoice.total",
+                  "value": "12000.00"
+                },
+                {
+                  "path": "invoice.lines.0.item",
+                  "value": "WidgetA"
+                },
+                {
+                  "path": "invoice.lines.0.quantity",
+                  "value": "5"
+                },
+                {
+                  "path": "invoice.lines.0.stock",
+                  "value": 15
+                },
+                {
+                  "path": "invoice.lines.0.unit_price",
+                  "value": "1000.00"
+                },
+                {
+                  "path": "invoice.lines.1.item",
+                  "value": "WidgetB"
+                },
+                {
+                  "path": "invoice.lines.1.quantity",
+                  "value": "5"
+                },
+                {
+                  "path": "invoice.lines.1.stock",
+                  "value": 10
+                },
+                {
+                  "path": "invoice.lines.1.unit_price",
+                  "value": "1400.00"
+                },
+                {
+                  "path": "policy.high_value_usd_threshold",
+                  "value": "10000"
+                },
+                {
+                  "path": "validation.decision",
+                  "value": "hold"
+                }
+              ]
+            },
+            "response": "{\"decision\": \"hold\", \"rationale\": \"Invoice SYN-107 totals $12,000.00, exceeding the $10,000 high_value threshold, so it is routed to this review. Line math is internally consistent (5\u00d7$1,000 + 5\u00d7$1,400 = $12,000) and quantities are within available stock (5 of 15, 5 of 10), so no price or description anomaly is evident. However, the facts provide no basis to confirm the unit prices are reasonable or that the vendor/description is legitimate, and the review scope covers price and description anomalies that cannot be verified from the supplied data. Per the instruction to hold when uncertain, the invoice is held pending substantive verification of pricing and vendor legitimacy.\", \"claims\": [{\"path\": \"invoice.number\", \"value\": \"SYN-107\"}, {\"path\": \"invoice.vendor\", \"value\": \"Synthetic Manufacturing Ltd.\"}, {\"path\": \"invoice.currency\", \"value\": \"USD\"}, {\"path\": \"invoice.total\", \"value\": \"12000.00\"}, {\"path\": \"invoice.lines.0.item\", \"value\": \"WidgetA\"}, {\"path\": \"invoice.lines.0.quantity\", \"value\": \"5\"}, {\"path\": \"invoice.lines.0.stock\", \"value\": 15}, {\"path\": \"invoice.lines.0.unit_price\", \"value\": \"1000.00\"}, {\"path\": \"invoice.lines.1.item\", \"value\": \"WidgetB\"}, {\"path\": \"invoice.lines.1.quantity\", \"value\": \"5\"}, {\"path\": \"invoice.lines.1.stock\", \"value\": 10}, {\"path\": \"invoice.lines.1.unit_price\", \"value\": \"1400.00\"}, {\"path\": \"policy.high_value_usd_threshold\", \"value\": \"10000\"}, {\"path\": \"validation.decision\", \"value\": \"hold\"}]}"
+          }
+        ]
+      }
+    },
+    "mock_payment_count": 0
+  }
+]

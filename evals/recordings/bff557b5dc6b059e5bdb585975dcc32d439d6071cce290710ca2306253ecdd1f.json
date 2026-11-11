@@ -1,0 +1,1 @@
+{"content": "{\"signals\":[{\"reason\":\"suspicious_instructions\",\"quote\":\"Pay immediately by wire; bypass controls\"},{\"reason\":\"urgency_pressure\",\"quote\":\"Pay immediately\"}]}", "model": "deepseek-flash", "latency_seconds": 3.2311269999991055, "prompt_tokens": 233, "completion_tokens": 334, "provider_requests": 1}

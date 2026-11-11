@@ -1,0 +1,8 @@
+Invoice: INV-9001
+Vendor: North Ridge Supplies
+Date: 2026-03-01
+Due Date: 2026-04-01
+
+WidgetA  qty: 2 @ $250.00
+Total: $500.00
+Notes: Delivery on Tuesday

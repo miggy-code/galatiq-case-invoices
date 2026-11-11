@@ -1,0 +1,501 @@
+{
+  "label_status": "working labels, not independently reviewed; results are against our labels",
+  "mode": "offline replay of recorded model responses",
+  "supplied": {
+    "standalone": {
+      "cases": 20,
+      "matched": 20,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "batch": {
+      "cases": 20,
+      "matched": 20,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "extraction": {
+      "fields": {
+        "vendor": {
+          "correct": 20,
+          "total": 20
+        },
+        "invoice_number": {
+          "correct": 20,
+          "total": 20
+        },
+        "date": {
+          "correct": 20,
+          "total": 20
+        },
+        "due_date": {
+          "correct": 20,
+          "total": 20
+        },
+        "currency": {
+          "correct": 20,
+          "total": 20
+        },
+        "total": {
+          "correct": 20,
+          "total": 20
+        },
+        "quantities": {
+          "correct": 20,
+          "total": 20
+        },
+        "subtotal": {
+          "correct": 0,
+          "total": 0
+        },
+        "tax": {
+          "correct": 0,
+          "total": 0
+        },
+        "unit_prices": {
+          "correct": 0,
+          "total": 0
+        }
+      },
+      "mismatches": []
+    },
+    "evidence_spans": {
+      "checked": 106,
+      "issues": {}
+    },
+    "safety": {
+      "nonpayable": 10,
+      "approved": 0,
+      "upper_bound_95": 0.259
+    }
+  },
+  "text": {
+    "standalone": {
+      "cases": 20,
+      "matched": 20,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "batch": {
+      "cases": 20,
+      "matched": 20,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "extraction": {
+      "fields": {
+        "vendor": {
+          "correct": 20,
+          "total": 20
+        },
+        "invoice_number": {
+          "correct": 20,
+          "total": 20
+        },
+        "date": {
+          "correct": 20,
+          "total": 20
+        },
+        "due_date": {
+          "correct": 20,
+          "total": 20
+        },
+        "currency": {
+          "correct": 20,
+          "total": 20
+        },
+        "total": {
+          "correct": 19,
+          "total": 19
+        },
+        "quantities": {
+          "correct": 20,
+          "total": 20
+        },
+        "subtotal": {
+          "correct": 1,
+          "total": 1
+        },
+        "tax": {
+          "correct": 1,
+          "total": 1
+        },
+        "unit_prices": {
+          "correct": 1,
+          "total": 1
+        }
+      },
+      "mismatches": []
+    },
+    "evidence_spans": {
+      "checked": 81,
+      "issues": {}
+    },
+    "safety": {
+      "nonpayable": 14,
+      "approved": 0,
+      "upper_bound_95": 0.193
+    }
+  },
+  "generated": {
+    "standalone": {
+      "cases": 44,
+      "matched": 24,
+      "false_approvals": 2,
+      "mismatches": [
+        {
+          "file": "01-above-299.99-reason.txt",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "01-above-299.99-reason.pdf",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "03-above-300.00-reason.txt",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "03-above-300.00-reason.pdf",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "05-above-300.01-reason.txt",
+          "missing_reasons": [
+            "vp_recommend"
+          ]
+        },
+        {
+          "file": "05-above-300.01-reason.pdf",
+          "missing_reasons": [
+            "vp_recommend"
+          ]
+        },
+        {
+          "file": "06-below-200.00.txt",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "06-below-200.00.pdf",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "07-below-199.99.txt",
+          "decision": {
+            "expected": "hold",
+            "actual": "approve"
+          },
+          "missing_reasons": [
+            "vp_recommend"
+          ],
+          "owner": {
+            "expected": "human_vp",
+            "actual": "vp_agent"
+          }
+        },
+        {
+          "file": "07-below-199.99.pdf",
+          "decision": {
+            "expected": "hold",
+            "actual": "approve"
+          },
+          "missing_reasons": [
+            "vp_recommend"
+          ],
+          "owner": {
+            "expected": "human_vp",
+            "actual": "vp_agent"
+          }
+        },
+        {
+          "file": "09-vp-over-10000.txt",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "09-vp-over-10000.pdf",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "11-rounding-two-cents.txt",
+          "decision": {
+            "expected": "hold",
+            "actual": "reject"
+          },
+          "missing_reasons": [
+            "extraction_uncertain"
+          ],
+          "owner": {
+            "expected": "ap_clerk",
+            "actual": "vendor"
+          }
+        },
+        {
+          "file": "11-rounding-two-cents.pdf",
+          "decision": {
+            "expected": "hold",
+            "actual": "reject"
+          },
+          "missing_reasons": [
+            "extraction_uncertain"
+          ],
+          "owner": {
+            "expected": "ap_clerk",
+            "actual": "vendor"
+          }
+        },
+        {
+          "file": "12-tax-rate-correct.txt",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "12-tax-rate-correct.pdf",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "15-catalog-key-value.txt",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "15-catalog-key-value.pdf",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "18-discount-200.01.txt",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "18-discount-200.01.pdf",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        }
+      ],
+      "unexpected_results": []
+    },
+    "batch": {
+      "cases": 44,
+      "matched": 27,
+      "false_approvals": 2,
+      "mismatches": [
+        {
+          "file": "01-above-299.99-reason.txt",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "01-above-299.99-reason.pdf",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "03-above-300.00-reason.txt",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "03-above-300.00-reason.pdf",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "06-below-200.00.txt",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "06-below-200.00.pdf",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "07-below-199.99.txt",
+          "decision": {
+            "expected": "hold",
+            "actual": "approve"
+          }
+        },
+        {
+          "file": "07-below-199.99.pdf",
+          "decision": {
+            "expected": "hold",
+            "actual": "approve"
+          }
+        },
+        {
+          "file": "09-vp-over-10000.pdf",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "11-rounding-two-cents.txt",
+          "decision": {
+            "expected": "hold",
+            "actual": "reject"
+          }
+        },
+        {
+          "file": "11-rounding-two-cents.pdf",
+          "decision": {
+            "expected": "hold",
+            "actual": "reject"
+          }
+        },
+        {
+          "file": "12-tax-rate-correct.txt",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "12-tax-rate-correct.pdf",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "15-catalog-key-value.txt",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "15-catalog-key-value.pdf",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "18-discount-200.01.txt",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        },
+        {
+          "file": "18-discount-200.01.pdf",
+          "decision": {
+            "expected": "approve",
+            "actual": "hold"
+          }
+        }
+      ],
+      "unexpected_results": []
+    },
+    "extraction": {
+      "fields": {
+        "vendor": {
+          "correct": 40,
+          "total": 40
+        },
+        "invoice_number": {
+          "correct": 40,
+          "total": 40
+        },
+        "date": {
+          "correct": 40,
+          "total": 40
+        },
+        "due_date": {
+          "correct": 40,
+          "total": 40
+        },
+        "currency": {
+          "correct": 40,
+          "total": 40
+        },
+        "total": {
+          "correct": 38,
+          "total": 38
+        },
+        "quantities": {
+          "correct": 40,
+          "total": 40
+        },
+        "subtotal": {
+          "correct": 40,
+          "total": 40
+        },
+        "tax": {
+          "correct": 40,
+          "total": 40
+        },
+        "unit_prices": {
+          "correct": 40,
+          "total": 40
+        }
+      },
+      "mismatches": []
+    },
+    "evidence_spans": {
+      "checked": 168,
+      "issues": {}
+    },
+    "safety": {
+      "nonpayable": 18,
+      "approved": 2,
+      "upper_bound_95": null
+    }
+  }
+}

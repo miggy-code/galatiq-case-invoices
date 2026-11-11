@@ -1,0 +1,11 @@
+{
+  "request_attempts": 49,
+  "completed_requests": 48,
+  "interrupted_requests": 1,
+  "prompt_tokens_observed": 19098,
+  "completion_tokens_observed": 10923,
+  "known_usage_cost_ceiling_usd_at_benchmark_rates": 0.018837,
+  "interrupted_request_cost_usd": null,
+  "budget_estimate_usd_including_0_006_interruption_allowance": 0.024836999999999998,
+  "rate_note": "Same convention as 2026-11-09 benchmark: $0.30/M input, $1.20/M output, all input as cache miss; not verified billing or a current provider price claim."
+}

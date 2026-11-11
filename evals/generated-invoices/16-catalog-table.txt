@@ -1,0 +1,13 @@
+INVOICE
+Vendor: Boundary 16 TXT Supply
+Invoice Number: INV-G161
+Date: 2026-05-01
+Due Date: 2026-05-31
+Currency: USD
+
+Item | Quantity | Unit Price | Amount
+WidgetB | 4 | $500.00 | $2000.00
+
+Subtotal: $2000.00
+Tax (0%): $0.00
+Amount due: $2000.00

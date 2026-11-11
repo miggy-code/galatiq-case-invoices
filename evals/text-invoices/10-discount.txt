@@ -1,0 +1,6 @@
+BILL FROM: Lumen Trading
+Invoice ID INV-9010
+Issued 2026-03-01; payable 2026-04-01
+Items: two WidgetB at $500 each
+AMOUNT DUE $1,000.00
+No discount applied.

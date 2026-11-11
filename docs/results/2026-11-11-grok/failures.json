@@ -1,0 +1,22 @@
+{
+  "policy": "No successful or actual failed model answer was resampled. Only unfinished requests and timeout retries called the provider.",
+  "decision_mismatches": {
+    "supplied": {
+      "standalone": [],
+      "batch": []
+    },
+    "text": {
+      "standalone": [],
+      "batch": []
+    },
+    "attack": {
+      "standalone": [],
+      "batch": []
+    },
+    "generated": {
+      "standalone": [],
+      "batch": []
+    }
+  },
+  "critic_invalid_or_unavailable": 0
+}

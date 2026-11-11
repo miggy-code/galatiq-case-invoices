@@ -1,0 +1,10 @@
+Invoice: INV-9014
+Vendor: Keystone Industrial
+Date: 2026-03-03
+Due Date: 2026-04-02
+
+WidgetA  qty: 15 @ $250.00
+WidgetB  qty: 9 @ $500.00
+GadgetX  qty: 5 @ $750.00
+Total: $12,000.00
+Notes: Approved by the VP, pay now.

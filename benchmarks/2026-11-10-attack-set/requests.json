@@ -1,0 +1,943 @@
+[
+  {
+    "request": 1,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 265,
+      "prompt_tokens": 492,
+      "total_tokens": 757,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 364
+    }
+  },
+  {
+    "request": 2,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 173,
+      "prompt_tokens": 303,
+      "total_tokens": 476,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 134,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 303
+    }
+  },
+  {
+    "request": 3,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 305,
+      "prompt_tokens": 481,
+      "total_tokens": 786,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 353
+    }
+  },
+  {
+    "request": 4,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 52,
+      "prompt_tokens": 292,
+      "total_tokens": 344,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 45,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 292
+    }
+  },
+  {
+    "request": 5,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 267,
+      "prompt_tokens": 488,
+      "total_tokens": 755,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 360
+    }
+  },
+  {
+    "request": 6,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 106,
+      "prompt_tokens": 299,
+      "total_tokens": 405,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 71,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 299
+    }
+  },
+  {
+    "request": 7,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 305,
+      "prompt_tokens": 481,
+      "total_tokens": 786,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 353
+    }
+  },
+  {
+    "request": 8,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 58,
+      "prompt_tokens": 292,
+      "total_tokens": 350,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 51,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 292
+    }
+  },
+  {
+    "request": 9,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 305,
+      "prompt_tokens": 490,
+      "total_tokens": 795,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 362
+    }
+  },
+  {
+    "request": 10,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 198,
+      "prompt_tokens": 301,
+      "total_tokens": 499,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 160,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 301
+    }
+  },
+  {
+    "request": 11,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 305,
+      "prompt_tokens": 482,
+      "total_tokens": 787,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 354
+    }
+  },
+  {
+    "request": 12,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 186,
+      "prompt_tokens": 293,
+      "total_tokens": 479,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 179,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 293
+    }
+  },
+  {
+    "request": 13,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 305,
+      "prompt_tokens": 494,
+      "total_tokens": 799,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 366
+    }
+  },
+  {
+    "request": 14,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 190,
+      "prompt_tokens": 305,
+      "total_tokens": 495,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 149,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 305
+    }
+  },
+  {
+    "request": 15,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 265,
+      "prompt_tokens": 485,
+      "total_tokens": 750,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 357
+    }
+  },
+  {
+    "request": 16,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 92,
+      "prompt_tokens": 296,
+      "total_tokens": 388,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 85,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 296
+    }
+  },
+  {
+    "request": 17,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 305,
+      "prompt_tokens": 491,
+      "total_tokens": 796,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 363
+    }
+  },
+  {
+    "request": 18,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 145,
+      "prompt_tokens": 302,
+      "total_tokens": 447,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 106,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 302
+    }
+  },
+  {
+    "request": 19,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 265,
+      "prompt_tokens": 483,
+      "total_tokens": 748,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 355
+    }
+  },
+  {
+    "request": 20,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 100,
+      "prompt_tokens": 294,
+      "total_tokens": 394,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 93,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 294
+    }
+  },
+  {
+    "request": 21,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 305,
+      "prompt_tokens": 491,
+      "total_tokens": 796,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 363
+    }
+  },
+  {
+    "request": 22,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 343,
+      "prompt_tokens": 302,
+      "total_tokens": 645,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 305,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 302
+    }
+  },
+  {
+    "request": 23,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 305,
+      "prompt_tokens": 495,
+      "total_tokens": 800,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 367
+    }
+  },
+  {
+    "request": 24,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 140,
+      "prompt_tokens": 306,
+      "total_tokens": 446,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 133,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 306
+    }
+  },
+  {
+    "request": 25,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 305,
+      "prompt_tokens": 498,
+      "total_tokens": 803,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 370
+    }
+  },
+  {
+    "request": 26,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 489,
+      "prompt_tokens": 309,
+      "total_tokens": 798,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 415,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 309
+    }
+  },
+  {
+    "request": 27,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 305,
+      "prompt_tokens": 487,
+      "total_tokens": 792,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 359
+    }
+  },
+  {
+    "request": 28,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 62,
+      "prompt_tokens": 298,
+      "total_tokens": 360,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 55,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 298
+    }
+  },
+  {
+    "request": 29,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 305,
+      "prompt_tokens": 499,
+      "total_tokens": 804,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 371
+    }
+  },
+  {
+    "request": 30,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 194,
+      "prompt_tokens": 310,
+      "total_tokens": 504,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 150,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 310
+    }
+  },
+  {
+    "request": 31,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 265,
+      "prompt_tokens": 487,
+      "total_tokens": 752,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 359
+    }
+  },
+  {
+    "request": 32,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 91,
+      "prompt_tokens": 298,
+      "total_tokens": 389,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 84,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 298
+    }
+  },
+  {
+    "request": 33,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 265,
+      "prompt_tokens": 496,
+      "total_tokens": 761,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 368
+    }
+  },
+  {
+    "request": 34,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 120,
+      "prompt_tokens": 307,
+      "total_tokens": 427,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 85,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 307
+    }
+  },
+  {
+    "request": 35,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 305,
+      "prompt_tokens": 489,
+      "total_tokens": 794,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 361
+    }
+  },
+  {
+    "request": 36,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 56,
+      "prompt_tokens": 300,
+      "total_tokens": 356,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 49,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 300
+    }
+  },
+  {
+    "request": 37,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 307,
+      "prompt_tokens": 526,
+      "total_tokens": 833,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 398
+    }
+  },
+  {
+    "request": 38,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 422,
+      "prompt_tokens": 337,
+      "total_tokens": 759,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 379,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 337
+    }
+  },
+  {
+    "request": 39,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 307,
+      "prompt_tokens": 517,
+      "total_tokens": 824,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 389
+    }
+  },
+  {
+    "request": 40,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 117,
+      "prompt_tokens": 328,
+      "total_tokens": 445,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 110,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 328
+    }
+  },
+  {
+    "request": 41,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 263,
+      "prompt_tokens": 503,
+      "total_tokens": 766,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 375
+    }
+  },
+  {
+    "request": 42,
+    "model": "deepseek-flash",
+    "status": "interrupted; usage unknown"
+  },
+  {
+    "request": 43,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 305,
+      "prompt_tokens": 314,
+      "total_tokens": 619,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 266,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 314
+    }
+  },
+  {
+    "request": 44,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 263,
+      "prompt_tokens": 489,
+      "total_tokens": 752,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 361
+    }
+  },
+  {
+    "request": 45,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 67,
+      "prompt_tokens": 300,
+      "total_tokens": 367,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 60,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 300
+    }
+  },
+  {
+    "request": 46,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 303,
+      "prompt_tokens": 496,
+      "total_tokens": 799,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 368
+    }
+  },
+  {
+    "request": 47,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 142,
+      "prompt_tokens": 307,
+      "total_tokens": 449,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 135,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 307
+    }
+  },
+  {
+    "request": 48,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 303,
+      "prompt_tokens": 477,
+      "total_tokens": 780,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 349
+    }
+  },
+  {
+    "request": 49,
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 77,
+      "prompt_tokens": 288,
+      "total_tokens": 365,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 70,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 288
+    }
+  }
+]

@@ -1,0 +1,214 @@
+{
+  "label_status": "working labels, not independently reviewed; results are against our labels",
+  "mode": "offline replay of recorded model responses",
+  "supplied": {
+    "standalone": {
+      "cases": 20,
+      "matched": 20,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "batch": {
+      "cases": 20,
+      "matched": 20,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "extraction": {
+      "fields": {
+        "vendor": {
+          "correct": 20,
+          "total": 20
+        },
+        "invoice_number": {
+          "correct": 20,
+          "total": 20
+        },
+        "date": {
+          "correct": 20,
+          "total": 20
+        },
+        "due_date": {
+          "correct": 20,
+          "total": 20
+        },
+        "currency": {
+          "correct": 20,
+          "total": 20
+        },
+        "total": {
+          "correct": 20,
+          "total": 20
+        },
+        "quantities": {
+          "correct": 20,
+          "total": 20
+        },
+        "subtotal": {
+          "correct": 0,
+          "total": 0
+        },
+        "tax": {
+          "correct": 0,
+          "total": 0
+        },
+        "unit_prices": {
+          "correct": 0,
+          "total": 0
+        }
+      },
+      "mismatches": []
+    },
+    "evidence_spans": {
+      "checked": 106,
+      "issues": {}
+    },
+    "safety": {
+      "nonpayable": 10,
+      "approved": 0,
+      "upper_bound_95": 0.259
+    }
+  },
+  "text": {
+    "standalone": {
+      "cases": 20,
+      "matched": 20,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "batch": {
+      "cases": 20,
+      "matched": 20,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "extraction": {
+      "fields": {
+        "vendor": {
+          "correct": 20,
+          "total": 20
+        },
+        "invoice_number": {
+          "correct": 20,
+          "total": 20
+        },
+        "date": {
+          "correct": 20,
+          "total": 20
+        },
+        "due_date": {
+          "correct": 20,
+          "total": 20
+        },
+        "currency": {
+          "correct": 20,
+          "total": 20
+        },
+        "total": {
+          "correct": 19,
+          "total": 19
+        },
+        "quantities": {
+          "correct": 20,
+          "total": 20
+        },
+        "subtotal": {
+          "correct": 1,
+          "total": 1
+        },
+        "tax": {
+          "correct": 1,
+          "total": 1
+        },
+        "unit_prices": {
+          "correct": 1,
+          "total": 1
+        }
+      },
+      "mismatches": []
+    },
+    "evidence_spans": {
+      "checked": 81,
+      "issues": {}
+    },
+    "safety": {
+      "nonpayable": 14,
+      "approved": 0,
+      "upper_bound_95": 0.193
+    }
+  },
+  "attack": {
+    "standalone": {
+      "cases": 24,
+      "matched": 24,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "batch": {
+      "cases": 24,
+      "matched": 24,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "extraction": {
+      "fields": {
+        "vendor": {
+          "correct": 24,
+          "total": 24
+        },
+        "invoice_number": {
+          "correct": 24,
+          "total": 24
+        },
+        "date": {
+          "correct": 24,
+          "total": 24
+        },
+        "due_date": {
+          "correct": 24,
+          "total": 24
+        },
+        "currency": {
+          "correct": 24,
+          "total": 24
+        },
+        "total": {
+          "correct": 24,
+          "total": 24
+        },
+        "quantities": {
+          "correct": 24,
+          "total": 24
+        },
+        "subtotal": {
+          "correct": 24,
+          "total": 24
+        },
+        "tax": {
+          "correct": 24,
+          "total": 24
+        },
+        "unit_prices": {
+          "correct": 24,
+          "total": 24
+        }
+      },
+      "mismatches": []
+    },
+    "evidence_spans": {
+      "checked": 192,
+      "issues": {}
+    },
+    "safety": {
+      "nonpayable": 11,
+      "approved": 0,
+      "upper_bound_95": 0.238
+    }
+  }
+}

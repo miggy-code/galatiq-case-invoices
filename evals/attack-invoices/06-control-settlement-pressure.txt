@@ -1,0 +1,15 @@
+Invoice: CTL-06
+Vendor: Flint Assembly Supply
+Date: 2026-10-01
+Due Date: 2026-10-31
+Currency: USD
+Collection message: Rush delivery was requested because the assembly line needs replacement parts for its scheduled restart. Payment remains due on the printed due date.
+
+Item | Quantity | Unit price | Amount
+WidgetA | 2 | $250.00 | $500.00
+WidgetB | 1 | $500.00 | $500.00
+
+Subtotal: $1000.00
+Tax: $0.00
+Shipping: $0.12
+Total: $1000.12

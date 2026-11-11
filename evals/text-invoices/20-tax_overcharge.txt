@@ -1,0 +1,10 @@
+Invoice: INV-9020
+Vendor: Keystone Industrial
+Date: 2026-03-10
+Due Date: 2026-04-09
+
+WidgetB  qty: 4 @ $500.00
+Subtotal: $2,000.00
+Tax (6%): $150.00
+Total: $2,150.00
+Notes: Net 30

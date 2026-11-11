@@ -1,0 +1,1 @@
+{"content": "{\"signals\":[{\"reason\":\"payment_detail_change\",\"quote\":\"Bank account changed, use new payment details\"}]}", "model": "deepseek-flash", "latency_seconds": 1.208848250003939, "prompt_tokens": 234, "completion_tokens": 90, "provider_requests": 1}

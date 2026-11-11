@@ -1,0 +1,1 @@
+{"content": "{\"signals\":[{\"reason\":\"payment_detail_change\",\"quote\":\"Bank account changed, use new payment details\"}]}", "model": "grok-4.7", "latency_seconds": 4.44731854199199, "prompt_tokens": 1443, "completion_tokens": 25, "provider_requests": 1}

@@ -1,0 +1,8 @@
+Invoice: INV-9016
+Vendor: Bluewater Trading
+Date: 2026-03-05
+Due Date: 2026-04-04
+
+WidgetB  qty: 6 @ $450.00
+Total: $2,700.00
+Notes: Special price this month

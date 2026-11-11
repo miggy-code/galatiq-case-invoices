@@ -1,0 +1,14 @@
+INVOICE
+Vendor: Boundary 09 Supply
+Invoice Number: INV-G09
+Date: 2026-05-01
+Due Date: 2026-05-31
+Currency: USD
+
+WidgetA quantity 10, unit price $250.00, amount $2500.00
+WidgetB quantity 9, unit price $500.00, amount $4500.00
+GadgetX quantity 4, unit price $750.00, amount $3000.00
+
+Subtotal: $10000.00
+Tax (0%): $0.01
+Total: $10000.01

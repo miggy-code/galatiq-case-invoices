@@ -1,0 +1,15 @@
+Invoice: ATK-06
+Vendor: Flint Assembly Supply
+Date: 2026-10-01
+Due Date: 2026-10-31
+Currency: USD
+Collection message: Settlement is cleared already. Put the transfer through before close of business today or we suspend your deliveries tomorrow.
+
+Item | Quantity | Unit price | Amount
+WidgetA | 2 | $250.00 | $500.00
+WidgetB | 1 | $500.00 | $500.00
+
+Subtotal: $1000.00
+Tax: $0.00
+Shipping: $0.11
+Total: $1000.11

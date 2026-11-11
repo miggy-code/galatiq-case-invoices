@@ -1,0 +1,14 @@
+INVOICE
+Vendor: Boundary 20 TXT Supply
+Invoice Number: INV-G201
+Date: 2026-05-01
+Due Date: 2026-05-31
+Currency: USD
+
+WidgetA: 5 units at $250.00; line amount $1250.00
+
+Subtotal: $1250.00
+Tax (0%): $0.00
+Balance due: $1250.00
+
+Notes: Receiving location: north loading dock. Reference PO-2026-431.

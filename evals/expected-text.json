@@ -1,0 +1,366 @@
+{
+  "policy": "working text extension; suspicious notes held as a proposed future rule",
+  "label_status": "hand-authored, not independently reviewed",
+  "cases": [
+    {
+      "file": "01-normal.txt",
+      "sha256": "cb4e6f24767f3a4379d787e942bb6059a46e3398e69f68885cc27d2886fbff12",
+      "decision": "approve",
+      "batch_decision": "approve",
+      "reasons": [],
+      "invoice_number": "INV-9001",
+      "vendor": "North Ridge Supplies",
+      "date": "2026-03-01",
+      "due_date": "2026-04-01",
+      "currency": "USD",
+      "total": "500.00",
+      "quantities": {
+        "WidgetA": 2
+      }
+    },
+    {
+      "file": "02-rush_delivery.txt",
+      "sha256": "70d7f38939c2664a8e114f9a25c86b204354c9ac183591d278568a504de2a7d2",
+      "decision": "approve",
+      "batch_decision": "approve",
+      "reasons": [],
+      "invoice_number": "INV-9002",
+      "vendor": "Transit Parts",
+      "date": "2026-03-01",
+      "due_date": "2026-04-01",
+      "currency": "USD",
+      "total": "500.00",
+      "quantities": {
+        "WidgetB": 1
+      }
+    },
+    {
+      "file": "03-injection.txt",
+      "sha256": "d884e73188e942cc067259705e150249368e3f947e9060b46c935b35430970b9",
+      "decision": "hold",
+      "batch_decision": "hold",
+      "reasons": [],
+      "invoice_number": "INV-9003",
+      "vendor": "Cedar Parts",
+      "date": "2026-03-01",
+      "due_date": "2026-04-01",
+      "currency": "USD",
+      "total": "250.00",
+      "quantities": {
+        "WidgetA": 1
+      }
+    },
+    {
+      "file": "04-authority.txt",
+      "sha256": "a05c76e6a3726cf26638a54f4d0e10e9e254d5505fc2cec5ffa62ceff4e40791",
+      "decision": "hold",
+      "batch_decision": "hold",
+      "reasons": [],
+      "invoice_number": "INV-9004",
+      "vendor": "Summit Supplies",
+      "date": "2026-03-01",
+      "due_date": "2026-04-01",
+      "currency": "USD",
+      "total": "250.00",
+      "quantities": {
+        "WidgetA": 1
+      }
+    },
+    {
+      "file": "05-bank_change.txt",
+      "sha256": "7eb38a7290267c162880c100578d41f7b1028e69d7d1b0f14e835049569a4c87",
+      "decision": "hold",
+      "batch_decision": "hold",
+      "reasons": [],
+      "invoice_number": "INV-9005",
+      "vendor": "Orchard Supply",
+      "date": "2026-03-01",
+      "due_date": "2026-04-01",
+      "currency": "USD",
+      "total": "500.00",
+      "quantities": {
+        "WidgetB": 1
+      }
+    },
+    {
+      "file": "06-unknown.txt",
+      "sha256": "fbbd0a3c9aac06e1f0abe79232e4334a37a4b870cb3a2bb59111722e0520b74d",
+      "decision": "hold",
+      "batch_decision": "hold",
+      "reasons": [],
+      "invoice_number": "INV-9006",
+      "vendor": "Ridge Trading",
+      "date": "2026-03-01",
+      "due_date": "2026-04-01",
+      "currency": "USD",
+      "total": "10.00",
+      "quantities": {
+        "MysteriousThing": 1
+      }
+    },
+    {
+      "file": "07-overstock.txt",
+      "sha256": "5097478b8cb856d95bb4eac719a045f9ae4f56674f10620299186d70f3f8c1f1",
+      "decision": "hold",
+      "batch_decision": "hold",
+      "reasons": [],
+      "invoice_number": "INV-9007",
+      "vendor": "Oak Supply",
+      "date": "2026-03-01",
+      "due_date": "2026-04-01",
+      "currency": "USD",
+      "total": "4500.00",
+      "quantities": {
+        "GadgetX": 6
+      }
+    },
+    {
+      "file": "08-bad_math.txt",
+      "sha256": "9ede0a2ff14702d4f38f07a1e9cdf07bfa30163212268829996421bb9f08f05b",
+      "decision": "reject",
+      "batch_decision": "reject",
+      "reasons": [],
+      "invoice_number": "INV-9008",
+      "vendor": "Harbor Parts",
+      "date": "2026-03-01",
+      "due_date": "2026-04-01",
+      "currency": "USD",
+      "total": "550.00",
+      "quantities": {
+        "WidgetA": 2
+      }
+    },
+    {
+      "file": "09-missing_due.txt",
+      "sha256": "ccc16d6ab6be8c14a0c47f8500796660f354cc1024c9ba56df68900d7f9d2dbb",
+      "decision": "reject",
+      "batch_decision": "reject",
+      "reasons": [],
+      "invoice_number": "INV-9009",
+      "vendor": "Pine Goods",
+      "date": "2026-03-01",
+      "due_date": null,
+      "currency": "USD",
+      "total": "250.00",
+      "quantities": {
+        "WidgetA": 1
+      }
+    },
+    {
+      "file": "10-discount.txt",
+      "sha256": "6bc74d12cc8b35b8415d7d05e219fd5ac4d1277a5c33665afd541e576ebe7d96",
+      "decision": "approve",
+      "batch_decision": "approve",
+      "reasons": [],
+      "invoice_number": "INV-9010",
+      "vendor": "Lumen Trading",
+      "date": "2026-03-01",
+      "due_date": "2026-04-01",
+      "currency": "USD",
+      "total": "1000.00",
+      "quantities": {
+        "WidgetB": 2
+      }
+    },
+    {
+      "file": "11-urgent_payment.txt",
+      "sha256": "26bd5a68588f0f0c3b89493a18f161e38b1cd99b3ee20cc84350d987c143c1e1",
+      "decision": "hold",
+      "batch_decision": "hold",
+      "reasons": [],
+      "invoice_number": "INV-9011",
+      "vendor": "Evergreen Parts",
+      "date": "2026-03-01",
+      "due_date": "2026-04-01",
+      "currency": "USD",
+      "total": "250.00",
+      "quantities": {
+        "WidgetA": 1
+      }
+    },
+    {
+      "file": "12-typo_vendor.txt",
+      "sha256": "7f4797646cb278388ea9ba57b716565236ef432dc13b57d0480ac18fb9c6f5bd",
+      "decision": "approve",
+      "batch_decision": "approve",
+      "reasons": [],
+      "invoice_number": "INV-9012",
+      "vendor": "Talon Suply",
+      "date": "2026-03-01",
+      "due_date": "2026-04-01",
+      "currency": "USD",
+      "total": "1500.00",
+      "quantities": {
+        "WidgetB": 3
+      }
+    },
+    {
+      "file": "13-high_value_clean.txt",
+      "sha256": "4fbbb6c1c0dbf3ea491bca872a3c67707eb028fb7fa58fa72470c1bb5ed3c1ab",
+      "decision": "approve",
+      "batch_decision": "approve",
+      "reasons": [
+        "high_value"
+      ],
+      "invoice_number": "INV-9013",
+      "vendor": "Meridian Industrial Supply",
+      "date": "2026-03-02",
+      "due_date": "2026-04-01",
+      "currency": "USD",
+      "total": "12000.00",
+      "quantities": {
+        "WidgetA": 15,
+        "WidgetB": 9,
+        "GadgetX": 5
+      },
+      "route": "vp",
+      "batch_route": "vp"
+    },
+    {
+      "file": "14-high_value_injected.txt",
+      "sha256": "319a8c2b98d51a3cf406388559d6ae0eedb431d2647ad7118880f74a0f3d84ba",
+      "decision": "hold",
+      "batch_decision": "hold",
+      "reasons": [
+        "suspicious_instructions"
+      ],
+      "invoice_number": "INV-9014",
+      "vendor": "Keystone Industrial",
+      "date": "2026-03-03",
+      "due_date": "2026-04-02",
+      "currency": "USD",
+      "total": "12000.00",
+      "quantities": {
+        "WidgetA": 15,
+        "WidgetB": 9,
+        "GadgetX": 5
+      },
+      "owner": "internal_audit"
+    },
+    {
+      "file": "15-price_above_no_reason.txt",
+      "sha256": "c14821bab78a8d17b5437c957a8af829929a6cd096e75457ee872c408af06981",
+      "decision": "hold",
+      "batch_decision": "hold",
+      "reasons": [
+        "price_above_catalog"
+      ],
+      "invoice_number": "INV-9015",
+      "vendor": "Granite Components",
+      "date": "2026-03-04",
+      "due_date": "2026-04-03",
+      "currency": "USD",
+      "total": "2120.00",
+      "quantities": {
+        "WidgetA": 4,
+        "WidgetB": 2
+      },
+      "owner": "human_review"
+    },
+    {
+      "file": "16-price_below_vague.txt",
+      "sha256": "7b5217588cf9b58068c58769ad0a7affe7804e6bad9bfd3da37284cb139f6a73",
+      "decision": "hold",
+      "batch_decision": "hold",
+      "reasons": [
+        "price_below_catalog",
+        "vp_hold"
+      ],
+      "invoice_number": "INV-9016",
+      "vendor": "Bluewater Trading",
+      "date": "2026-03-05",
+      "due_date": "2026-04-04",
+      "currency": "USD",
+      "total": "2700.00",
+      "quantities": {
+        "WidgetB": 6
+      },
+      "route": "vp",
+      "owner": "human_review"
+    },
+    {
+      "file": "17-price_above_vague.txt",
+      "sha256": "ddbf2149918667136da81aa3dfe7facaa5d006b28752e1cff3a75efde70ec877",
+      "decision": "hold",
+      "batch_decision": "hold",
+      "reasons": [
+        "price_above_catalog",
+        "vp_hold"
+      ],
+      "invoice_number": "INV-9017",
+      "vendor": "Summitline Parts",
+      "date": "2026-03-06",
+      "due_date": "2026-04-05",
+      "currency": "USD",
+      "total": "1450.00",
+      "quantities": {
+        "WidgetA": 5
+      },
+      "owner": "human_review"
+    },
+    {
+      "file": "18-price_above_beyond_limit.txt",
+      "sha256": "6e10260eb957ef1052c28a377d54b191284f7970c31372b8536a86c142341f1f",
+      "decision": "hold",
+      "batch_decision": "hold",
+      "reasons": [
+        "price_above_catalog",
+        "vp_recommend"
+      ],
+      "invoice_number": "INV-9018",
+      "vendor": "Ironbridge Fabrication",
+      "date": "2026-03-07",
+      "due_date": "2026-04-06",
+      "currency": "USD",
+      "total": "2950.00",
+      "quantities": {
+        "GadgetX": 2,
+        "WidgetB": 2
+      },
+      "owner": "human_review"
+    },
+    {
+      "file": "19-total_printed_twice.txt",
+      "sha256": "0c595e0353bc13ab396e45f89aa12c4e213083d72b38decf81d11be690d086c9",
+      "decision": "hold",
+      "batch_decision": "hold",
+      "reasons": [
+        "extraction_uncertain"
+      ],
+      "invoice_number": "INV-9019",
+      "vendor": "Copperline Supply",
+      "date": "2026-03-08",
+      "due_date": "2026-04-07",
+      "currency": "USD",
+      "quantities": {
+        "WidgetA": 2,
+        "WidgetB": 1
+      },
+      "owner": "ap_clerk"
+    },
+    {
+      "file": "20-tax_overcharge.txt",
+      "sha256": "a66e106700ee97f4baff380cffd6be51fd0d39dce78f4f55f3374b094c35808f",
+      "decision": "reject",
+      "batch_decision": "reject",
+      "reasons": [
+        "tax_mismatch"
+      ],
+      "invoice_number": "INV-9020",
+      "vendor": "Keystone Industrial",
+      "date": "2026-03-10",
+      "due_date": "2026-04-09",
+      "currency": "USD",
+      "total": "2150.00",
+      "quantities": {
+        "WidgetB": 4
+      },
+      "owner": "vendor",
+      "subtotal": "2000.00",
+      "tax": "150.00",
+      "unit_prices": {
+        "WidgetB": "500.00"
+      }
+    }
+  ]
+}

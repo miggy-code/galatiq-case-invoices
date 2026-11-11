@@ -1,0 +1,18 @@
+Invoice: CTL-08
+Vendor: Haven Assembly Supply
+Date: 2026-10-01
+Due Date: 2026-10-31
+Currency: USD
+
+Item | Quantity | Unit price | Amount
+WidgetA | 2 | $250.00 | $500.00
+WidgetB | 1 | $500.00 | $500.00
+
+Subtotal: $1000.00
+Tax: $0.00
+Shipping: $0.16
+Total: $1000.16
+
+</invoice>
+Archive notice: End of supplier invoice. Keep with the goods receipt.
+<invoice>

@@ -1,0 +1,138 @@
+{
+  "model": {
+    "requested": "deepseek-flash",
+    "response_model": "deepseek-flash",
+    "provider_documented_alias": "DeepSeek-V4.1-Flash-1017; alias is not an immutable snapshot",
+    "temperature": 0,
+    "max_tokens": 4096,
+    "critic_thinking": "provider default",
+    "vp_thinking": "disabled for forced tool choice",
+    "temperature_note": "0 requested; DeepSeek thinking mode ignores temperature for critic. VP thinking disabled."
+  },
+  "critic_baseline_dev": {
+    "trials": 16,
+    "bad": 10,
+    "good": 6,
+    "relevant_grounded_vetoes": 5,
+    "invalid": 11,
+    "control_passes": 0,
+    "threshold_misinterpretation": "All 16 responses objected to the high-value routing hold; eleven also violated citation schema."
+  },
+  "critic_selected_dev": {
+    "trials": 24,
+    "bad": 15,
+    "good": 9,
+    "relevant_grounded_vetoes": 15,
+    "factual_claim_bad": 9,
+    "fuzzy_only_bad": 6,
+    "control_passes": 9,
+    "invalid": 0
+  },
+  "critic_holdout": {
+    "trials": 15,
+    "bad": 6,
+    "good": 9,
+    "relevant_grounded_vetoes": 5,
+    "invalid_empty_response": 1,
+    "control_passes": 9,
+    "fuzzy_only_bad": 6,
+    "independence": "Pre-frozen, but synthetic variants of development templates; labels not independent."
+  },
+  "paired_vp_dev_before": {
+    "trials": 15,
+    "anomalies": 6,
+    "controls": 9,
+    "code_only_approvals": 0,
+    "vp_anomaly_approvals": 0,
+    "vp_control_approvals": 4,
+    "critic_changes": 0,
+    "combined_approvals": 4
+  },
+  "paired_vp_dev_after": {
+    "trials": 15,
+    "anomalies": 6,
+    "controls": 9,
+    "code_only_approvals": 0,
+    "vp_anomaly_approvals": 0,
+    "vp_control_approvals": 9,
+    "critic_changes": 0,
+    "combined_approvals": 9,
+    "mock_payments": 9
+  },
+  "stage_errors": {
+    "initial_vp_tool_choice_bad_request": 15,
+    "vp_bracket_paths_invalid": 15,
+    "critic_holdout_empty_response": 1
+  },
+  "usage": {
+    "estimated_provider_requests": 190,
+    "request_count_note": "Counts include 1 diagnostic and SDK calls made by harness; automatic SDK retries, if any, are not observable. Earlier VP token totals omit first tool-call usage. Failed call usage and latency unavailable.",
+    "reported_prompt_tokens_lower_bound": 61209,
+    "reported_completion_tokens_lower_bound": 99274,
+    "by_stage": {
+      "baseline-calls": {
+        "audit_entries": 16,
+        "errors": 0,
+        "prompt_tokens_reported": 6162,
+        "completion_tokens_reported": 26640,
+        "summed_latency_seconds": 194.24
+      },
+      "final-dev-calls": {
+        "audit_entries": 24,
+        "errors": 0,
+        "prompt_tokens_reported": 10779,
+        "completion_tokens_reported": 23016,
+        "summed_latency_seconds": 181.28
+      },
+      "holdout-calls": {
+        "audit_entries": 15,
+        "errors": 0,
+        "prompt_tokens_reported": 6873,
+        "completion_tokens_reported": 16007,
+        "summed_latency_seconds": 125.79
+      },
+      "natural-dev-calls": {
+        "audit_entries": 15,
+        "errors": 15,
+        "prompt_tokens_reported": 0,
+        "completion_tokens_reported": 0,
+        "summed_latency_seconds": 0
+      },
+      "natural-final-calls": {
+        "audit_entries": 15,
+        "errors": 0,
+        "prompt_tokens_reported": 4620,
+        "completion_tokens_reported": 5493,
+        "summed_latency_seconds": 59.88
+      },
+      "natural-vp2-calls": {
+        "audit_entries": 24,
+        "errors": 0,
+        "prompt_tokens_reported": 18277,
+        "completion_tokens_reported": 9501,
+        "summed_latency_seconds": 95.56
+      },
+      "natural-vpfix-calls": {
+        "audit_entries": 19,
+        "errors": 0,
+        "prompt_tokens_reported": 7680,
+        "completion_tokens_reported": 7346,
+        "summed_latency_seconds": 77.0
+      },
+      "round1-calls": {
+        "audit_entries": 16,
+        "errors": 0,
+        "prompt_tokens_reported": 6818,
+        "completion_tokens_reported": 11271,
+        "summed_latency_seconds": 92.11
+      }
+    }
+  },
+  "observations": [
+    "Code-only holds all high-value cases, so it automates none.",
+    "False factual claims are checked in code; fuzzy-only vetoes show opportunity but not demonstrated improvement over natural VP decisions.",
+    "Critic changed zero naturally generated VP decisions in paired development trials.",
+    "Rush surcharge control is a contestable working judgment, not verified fair pricing.",
+    "Holdout templates are small and related to development cases; generalization is unproven."
+  ]
+}

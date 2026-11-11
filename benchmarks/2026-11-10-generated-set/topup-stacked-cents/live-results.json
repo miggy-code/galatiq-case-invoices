@@ -1,0 +1,168 @@
+{
+  "standalone": {
+    "cases": 46,
+    "matched": 40,
+    "false_approvals": 4,
+    "mismatches": [
+      {
+        "file": "06-below-200.00.txt",
+        "decision": {
+          "expected": "hold",
+          "actual": "approve"
+        },
+        "missing_reasons": [
+          "vp_hold"
+        ],
+        "owner": {
+          "expected": "human_review",
+          "actual": "vp_agent"
+        }
+      },
+      {
+        "file": "06-below-200.00.pdf",
+        "decision": {
+          "expected": "hold",
+          "actual": "approve"
+        },
+        "missing_reasons": [
+          "vp_hold"
+        ],
+        "owner": {
+          "expected": "human_review",
+          "actual": "vp_agent"
+        }
+      },
+      {
+        "file": "07-below-199.99.txt",
+        "missing_reasons": [
+          "vp_hold"
+        ]
+      },
+      {
+        "file": "07-below-199.99.pdf",
+        "missing_reasons": [
+          "vp_hold"
+        ]
+      },
+      {
+        "file": "25-stacked-cents.txt",
+        "decision": {
+          "expected": "reject",
+          "actual": "approve"
+        },
+        "missing_reasons": [
+          "total_mismatch"
+        ],
+        "owner": {
+          "expected": "vendor",
+          "actual": null
+        }
+      },
+      {
+        "file": "25-stacked-cents.pdf",
+        "decision": {
+          "expected": "reject",
+          "actual": "approve"
+        },
+        "missing_reasons": [
+          "total_mismatch"
+        ],
+        "owner": {
+          "expected": "vendor",
+          "actual": null
+        }
+      }
+    ],
+    "unexpected_results": []
+  },
+  "batch": {
+    "cases": 46,
+    "matched": 42,
+    "false_approvals": 4,
+    "mismatches": [
+      {
+        "file": "06-below-200.00.txt",
+        "decision": {
+          "expected": "hold",
+          "actual": "approve"
+        }
+      },
+      {
+        "file": "06-below-200.00.pdf",
+        "decision": {
+          "expected": "hold",
+          "actual": "approve"
+        }
+      },
+      {
+        "file": "25-stacked-cents.txt",
+        "decision": {
+          "expected": "reject",
+          "actual": "approve"
+        }
+      },
+      {
+        "file": "25-stacked-cents.pdf",
+        "decision": {
+          "expected": "reject",
+          "actual": "approve"
+        }
+      }
+    ],
+    "unexpected_results": []
+  },
+  "extraction": {
+    "fields": {
+      "vendor": {
+        "correct": 42,
+        "total": 42
+      },
+      "invoice_number": {
+        "correct": 42,
+        "total": 42
+      },
+      "date": {
+        "correct": 42,
+        "total": 42
+      },
+      "due_date": {
+        "correct": 42,
+        "total": 42
+      },
+      "currency": {
+        "correct": 42,
+        "total": 42
+      },
+      "total": {
+        "correct": 40,
+        "total": 40
+      },
+      "quantities": {
+        "correct": 42,
+        "total": 42
+      },
+      "subtotal": {
+        "correct": 42,
+        "total": 42
+      },
+      "tax": {
+        "correct": 42,
+        "total": 42
+      },
+      "unit_prices": {
+        "correct": 42,
+        "total": 42
+      }
+    },
+    "mismatches": []
+  },
+  "evidence_spans": {
+    "checked": 208,
+    "issues": {}
+  },
+  "safety": {
+    "nonpayable": 22,
+    "approved": 4,
+    "upper_bound_95": null
+  }
+}

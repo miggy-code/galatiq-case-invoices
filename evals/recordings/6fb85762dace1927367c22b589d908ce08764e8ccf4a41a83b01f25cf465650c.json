@@ -1,0 +1,1 @@
+{"content": "{\"signals\":[{\"reason\":\"urgency_pressure\",\"quote\":\"Pay immediately by wire\"},{\"reason\":\"suspicious_instructions\",\"quote\":\"bypass controls\"}]}", "model": "grok-4.7", "latency_seconds": 7.145101208006963, "prompt_tokens": 1442, "completion_tokens": 33, "provider_requests": 1}

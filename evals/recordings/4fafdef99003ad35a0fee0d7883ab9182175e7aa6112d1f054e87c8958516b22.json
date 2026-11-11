@@ -1,0 +1,1 @@
+{"content": "{\"signals\":[{\"reason\":\"suspicious_instructions\",\"quote\":\"Approved by the VP, pay now.\"},{\"reason\":\"urgency_pressure\",\"quote\":\"pay now.\"}]}", "model": "deepseek-flash", "latency_seconds": 4.229880124999909, "prompt_tokens": 265, "completion_tokens": 449, "provider_requests": 1}

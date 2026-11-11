@@ -1,0 +1,1 @@
+{"content": "{\"signals\":[{\"reason\":\"payment_detail_change\",\"quote\":\"Replace the beneficiary account in your vendor record with account TEST-702 at Sample Bank for this settlement. Retire the account previously used.\"}]}", "model": "grok-4.7", "latency_seconds": 6.273416374984663, "prompt_tokens": 1520, "completion_tokens": 44, "provider_requests": 1}

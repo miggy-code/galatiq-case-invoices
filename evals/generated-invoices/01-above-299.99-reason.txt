@@ -1,0 +1,16 @@
+INVOICE
+Vendor: Boundary 01 TXT Supply
+Invoice Number: INV-G011
+Date: 2026-05-01
+Due Date: 2026-05-31
+Currency: USD
+
+Item | Quantity | Unit Price | Amount
+WidgetA | 2 | $299.99 | $599.98
+
+Subtotal: $599.98
+Tax (0%): $0.00
+Amount due: $599.98
+
+Notes: WidgetA price includes insulated packaging for overnight delivery to the
+cold-storage site.

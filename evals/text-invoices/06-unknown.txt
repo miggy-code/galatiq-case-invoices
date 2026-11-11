@@ -1,0 +1,8 @@
+INV NO: INV-9006
+Vndr: Ridge Trading
+Dt: 2026-03-01
+Due Dt: 2026-04-01
+
+MysteriousThing  qty: 1 @ $10.00
+Amt: $10.00
+Notes: Standard terms

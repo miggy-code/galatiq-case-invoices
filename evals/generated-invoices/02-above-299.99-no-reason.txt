@@ -1,0 +1,12 @@
+INVOICE
+Vendor: Boundary 02 TXT Supply
+Invoice Number: INV-G021
+Date: 2026-05-01
+Due Date: 2026-05-31
+Currency: USD
+
+WidgetA: 2 units at $299.99; line amount $599.98
+
+Subtotal: $599.98
+Tax (0%): $0.00
+Balance due: $599.98

@@ -1,0 +1,84 @@
+[
+  {
+    "request": 1,
+    "status": "ok",
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 228,
+      "prompt_tokens": 449,
+      "total_tokens": 677,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 321
+    }
+  },
+  {
+    "request": 2,
+    "status": "ok",
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 74,
+      "prompt_tokens": 260,
+      "total_tokens": 334,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 67,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 260
+    }
+  },
+  {
+    "request": 3,
+    "status": "ok",
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 220,
+      "prompt_tokens": 454,
+      "total_tokens": 674,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 326
+    }
+  },
+  {
+    "request": 4,
+    "status": "ok",
+    "model": "deepseek-flash",
+    "usage": {
+      "completion_tokens": 72,
+      "prompt_tokens": 265,
+      "total_tokens": 337,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 65,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 137
+    }
+  }
+]

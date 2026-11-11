@@ -1,0 +1,10 @@
+Invoice: INV-9019
+Vendor: Copperline Supply
+Date: 2026-03-08
+Due Date: 2026-04-07
+
+WidgetA  qty: 2 @ $250.00
+WidgetB  qty: 1 @ $500.00
+Total: $1,000.00
+Notes: Deliver to dock 3
+Amount due: $1,250.00

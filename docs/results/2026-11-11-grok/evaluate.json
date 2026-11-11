@@ -1,0 +1,432 @@
+{
+  "model": "grok-4.7",
+  "mode": "fresh unique requests, shared across modes; resumed from saved responses",
+  "retry_policy": "only timeouts; actual model and validation failures retained",
+  "timeout_seconds": 180,
+  "reasoning_effort": "cached high results retained; new unfinished and timeout requests use low",
+  "supplied": {
+    "standalone": {
+      "cases": 20,
+      "matched": 20,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "batch": {
+      "cases": 20,
+      "matched": 20,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "extraction": {
+      "fields": {
+        "vendor": {
+          "correct": 20,
+          "total": 20
+        },
+        "invoice_number": {
+          "correct": 20,
+          "total": 20
+        },
+        "date": {
+          "correct": 20,
+          "total": 20
+        },
+        "due_date": {
+          "correct": 20,
+          "total": 20
+        },
+        "currency": {
+          "correct": 20,
+          "total": 20
+        },
+        "total": {
+          "correct": 20,
+          "total": 20
+        },
+        "quantities": {
+          "correct": 20,
+          "total": 20
+        },
+        "subtotal": {
+          "correct": 0,
+          "total": 0
+        },
+        "tax": {
+          "correct": 0,
+          "total": 0
+        },
+        "unit_prices": {
+          "correct": 0,
+          "total": 0
+        }
+      },
+      "mismatches": []
+    },
+    "evidence_spans": {
+      "checked": 104,
+      "issues": {}
+    },
+    "safety": {
+      "nonpayable": 10,
+      "approved": 0,
+      "upper_bound_95": 0.259
+    },
+    "costs": {
+      "standalone": {
+        "false_approvals": [],
+        "dollars_at_risk": "0",
+        "payable": 10,
+        "paid_touchless": 10,
+        "touchless_rate": 1.0,
+        "payable_not_paid": [],
+        "owners": {
+          "checked": 0,
+          "wrong": [],
+          "matrix": {}
+        }
+      },
+      "batch": {
+        "false_approvals": [],
+        "dollars_at_risk": "0",
+        "payable": 7,
+        "paid_touchless": 7,
+        "touchless_rate": 1.0,
+        "payable_not_paid": [],
+        "owners": {
+          "checked": 0,
+          "wrong": [],
+          "matrix": {}
+        }
+      }
+    }
+  },
+  "text": {
+    "standalone": {
+      "cases": 20,
+      "matched": 20,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "batch": {
+      "cases": 20,
+      "matched": 20,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "extraction": {
+      "fields": {
+        "vendor": {
+          "correct": 20,
+          "total": 20
+        },
+        "invoice_number": {
+          "correct": 20,
+          "total": 20
+        },
+        "date": {
+          "correct": 20,
+          "total": 20
+        },
+        "due_date": {
+          "correct": 20,
+          "total": 20
+        },
+        "currency": {
+          "correct": 20,
+          "total": 20
+        },
+        "total": {
+          "correct": 19,
+          "total": 19
+        },
+        "quantities": {
+          "correct": 20,
+          "total": 20
+        },
+        "subtotal": {
+          "correct": 1,
+          "total": 1
+        },
+        "tax": {
+          "correct": 1,
+          "total": 1
+        },
+        "unit_prices": {
+          "correct": 1,
+          "total": 1
+        }
+      },
+      "mismatches": []
+    },
+    "evidence_spans": {
+      "checked": 81,
+      "issues": {}
+    },
+    "safety": {
+      "nonpayable": 15,
+      "approved": 0,
+      "upper_bound_95": 0.181
+    },
+    "costs": {
+      "standalone": {
+        "false_approvals": [],
+        "dollars_at_risk": "0",
+        "payable": 5,
+        "paid_touchless": 5,
+        "touchless_rate": 1.0,
+        "payable_not_paid": [],
+        "owners": {
+          "checked": 7,
+          "wrong": [],
+          "matrix": {
+            "internal_audit": {
+              "internal_audit": 1
+            },
+            "human_review": {
+              "human_review": 4
+            },
+            "ap_clerk": {
+              "ap_clerk": 1
+            },
+            "vendor": {
+              "vendor": 1
+            }
+          }
+        }
+      },
+      "batch": {
+        "false_approvals": [],
+        "dollars_at_risk": "0",
+        "payable": 5,
+        "paid_touchless": 5,
+        "touchless_rate": 1.0,
+        "payable_not_paid": [],
+        "owners": {
+          "checked": 0,
+          "wrong": [],
+          "matrix": {}
+        }
+      }
+    }
+  },
+  "attack": {
+    "standalone": {
+      "cases": 24,
+      "matched": 24,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "batch": {
+      "cases": 24,
+      "matched": 24,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "extraction": {
+      "fields": {
+        "vendor": {
+          "correct": 24,
+          "total": 24
+        },
+        "invoice_number": {
+          "correct": 24,
+          "total": 24
+        },
+        "date": {
+          "correct": 24,
+          "total": 24
+        },
+        "due_date": {
+          "correct": 24,
+          "total": 24
+        },
+        "currency": {
+          "correct": 24,
+          "total": 24
+        },
+        "total": {
+          "correct": 24,
+          "total": 24
+        },
+        "quantities": {
+          "correct": 24,
+          "total": 24
+        },
+        "subtotal": {
+          "correct": 24,
+          "total": 24
+        },
+        "tax": {
+          "correct": 24,
+          "total": 24
+        },
+        "unit_prices": {
+          "correct": 24,
+          "total": 24
+        }
+      },
+      "mismatches": []
+    },
+    "evidence_spans": {
+      "checked": 192,
+      "issues": {}
+    },
+    "safety": {
+      "nonpayable": 11,
+      "approved": 0,
+      "upper_bound_95": 0.238
+    },
+    "costs": {
+      "standalone": {
+        "false_approvals": [],
+        "dollars_at_risk": "0",
+        "payable": 13,
+        "paid_touchless": 13,
+        "touchless_rate": 1.0,
+        "payable_not_paid": [],
+        "owners": {
+          "checked": 11,
+          "wrong": [],
+          "matrix": {
+            "internal_audit": {
+              "internal_audit": 11
+            }
+          }
+        }
+      },
+      "batch": {
+        "false_approvals": [],
+        "dollars_at_risk": "0",
+        "payable": 12,
+        "paid_touchless": 12,
+        "touchless_rate": 1.0,
+        "payable_not_paid": [],
+        "owners": {
+          "checked": 0,
+          "wrong": [],
+          "matrix": {}
+        }
+      }
+    }
+  },
+  "generated": {
+    "standalone": {
+      "cases": 46,
+      "matched": 46,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "batch": {
+      "cases": 46,
+      "matched": 46,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "extraction": {
+      "fields": {
+        "vendor": {
+          "correct": 42,
+          "total": 42
+        },
+        "invoice_number": {
+          "correct": 42,
+          "total": 42
+        },
+        "date": {
+          "correct": 42,
+          "total": 42
+        },
+        "due_date": {
+          "correct": 42,
+          "total": 42
+        },
+        "currency": {
+          "correct": 42,
+          "total": 42
+        },
+        "total": {
+          "correct": 40,
+          "total": 40
+        },
+        "quantities": {
+          "correct": 42,
+          "total": 42
+        },
+        "subtotal": {
+          "correct": 42,
+          "total": 42
+        },
+        "tax": {
+          "correct": 42,
+          "total": 42
+        },
+        "unit_prices": {
+          "correct": 42,
+          "total": 42
+        }
+      },
+      "mismatches": []
+    },
+    "evidence_spans": {
+      "checked": 208,
+      "issues": {}
+    },
+    "safety": {
+      "nonpayable": 24,
+      "approved": 0,
+      "upper_bound_95": 0.117
+    },
+    "costs": {
+      "standalone": {
+        "false_approvals": [],
+        "dollars_at_risk": "0",
+        "payable": 22,
+        "paid_touchless": 22,
+        "touchless_rate": 1.0,
+        "payable_not_paid": [],
+        "owners": {
+          "checked": 24,
+          "wrong": [],
+          "matrix": {
+            "human_review": {
+              "human_review": 12
+            },
+            "vendor": {
+              "vendor": 6
+            },
+            "ap_clerk": {
+              "ap_clerk": 6
+            }
+          }
+        }
+      },
+      "batch": {
+        "false_approvals": [],
+        "dollars_at_risk": "0",
+        "payable": 20,
+        "paid_touchless": 20,
+        "touchless_rate": 1.0,
+        "payable_not_paid": [],
+        "owners": {
+          "checked": 0,
+          "wrong": [],
+          "matrix": {}
+        }
+      }
+    }
+  },
+  "request_counts_after_resume": {
+    "replayed": 130,
+    "fresh_completed": 14,
+    "timeout_retries": 0,
+    "request_failures": 0
+  }
+}

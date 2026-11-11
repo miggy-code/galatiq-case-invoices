@@ -1,0 +1,129 @@
+{
+ "invoice_1004_revised.json": {
+  "decision": "approve",
+  "reasons": [
+   "revision_change"
+  ],
+  "vp_decision": "approve",
+  "outcome": "approved",
+  "rounds": 1,
+  "rationale": "The only trigger is revision_change. The document text states 'additional items added per PO amendment', which is a specific reason explaining the revision (items added at the buyer's request via a purchase-order amendment). All line prices equal catalog prices, so no price_above_catalog justification is needed. Total is below the high-value threshold. Payment is justified.",
+  "justifications": [
+   "additional items added per PO amendment"
+  ],
+  "critic": [
+   {
+    "status": "pass",
+    "issues": []
+   }
+  ],
+  "beyond": null
+ },
+ "invoice_1010.txt": {
+  "decision": "approve",
+  "reasons": [
+   "price_above_catalog"
+  ],
+  "vp_decision": "approve",
+  "outcome": "approved",
+  "rounds": 1,
+  "rationale": "The only trigger is price_above_catalog on line 3 (WidgetA rush order at $300 vs $250 catalog, +20%). The document explicitly labels the line 'rush order', which is a specific stated reason for paying above catalog. Total $7,185 is below the $10,000 high-value threshold, and no revision or description anomalies are present. Payment is justified.",
+  "justifications": [
+   "WidgetA (rush order)        4      $300.00     $1,200.00"
+  ],
+  "critic": [
+   {
+    "status": "pass",
+    "issues": []
+   }
+  ],
+  "beyond": null
+ },
+ "13-high_value_clean.txt": {
+  "decision": "approve",
+  "reasons": [
+   "high_value"
+  ],
+  "vp_decision": "approve",
+  "outcome": "approved",
+  "rounds": 1,
+  "rationale": "Invoice INV-9013 totals $12,000, above the $10,000 high_value threshold, which routes it to VP review but does not by itself bar approval. All three lines are priced exactly at catalog (WidgetA $250, WidgetB $500, GadgetX $750), so no price_above_catalog justification is needed, and there is no revision_change trigger. Item descriptions match the catalog items and quantities are within available stock. Arithmetic was validated by code. Payment is justified.",
+  "justifications": [],
+  "critic": [
+   {
+    "status": "pass",
+    "issues": []
+   }
+  ],
+  "beyond": null
+ },
+ "15-price_above_no_reason.txt": {
+  "decision": "hold",
+  "reasons": [
+   "price_above_catalog",
+   "vp_hold"
+  ],
+  "vp_decision": "hold",
+  "outcome": "vp_hold",
+  "rounds": 1,
+  "rationale": "WidgetA is billed at $280.00 against a catalog price of $250.00 (12% above catalog), and the document states no specific reason for the higher price \u2014 the only note is a generic thank-you. Under the price_above_catalog rule, a specific justification such as a rush order or named surcharge is required; absent that, payment is not justified. The total ($2,120) is below the high-value threshold and WidgetB matches catalog, so those are not issues.",
+  "justifications": [],
+  "critic": null,
+  "beyond": null
+ },
+ "16-price_below_vague.txt": {
+  "decision": "approve",
+  "reasons": [
+   "price_below_catalog"
+  ],
+  "vp_decision": "approve",
+  "outcome": "approved",
+  "rounds": 1,
+  "rationale": "Single line item WidgetB is priced at $450.00 versus a $500.00 catalog price, a 10% discount. A below-catalog price requires no stated reason, and the item description (WidgetB) matches the catalog item, so there is no description mismatch. Total is $2,700.00, well under the $10,000 high-value threshold, and arithmetic is validated. No price_above_catalog or revision_change triggers apply, so no justification quotes are needed.",
+  "justifications": [],
+  "critic": [
+   {
+    "status": "pass",
+    "issues": []
+   }
+  ],
+  "beyond": null
+ },
+ "17-price_above_vague.txt": {
+  "decision": "hold",
+  "reasons": [
+   "price_above_catalog",
+   "vp_hold"
+  ],
+  "vp_decision": "hold",
+  "outcome": "vp_hold",
+  "rounds": 1,
+  "rationale": "WidgetA is billed at $290.00 against a catalog price of $250.00 (16% above catalog). The only stated justification in the document is 'Special price', which is vague wording that does not explain the premium; no rush order, expedited delivery, or named surcharge is cited. Payment above catalog is therefore not justified.",
+  "justifications": [],
+  "critic": null,
+  "beyond": null
+ },
+ "18-price_above_beyond_limit.txt": {
+  "decision": "hold",
+  "reasons": [
+   "price_above_catalog",
+   "vp_recommend"
+  ],
+  "vp_decision": "approve",
+  "outcome": "vp_recommend",
+  "rounds": 1,
+  "rationale": "GadgetX is billed at $975.00 versus a $750.00 catalog price (30% above), which triggers price_above_catalog. The invoice notes state a specific reason: a 30% weekend-production surcharge for an expedited build requested on PO 5520. That is a named surcharge and expedited-delivery reason, so the above-catalog price is justified. WidgetB is at catalog price, arithmetic validates, and the $2,950.00 total is below the $10,000 high-value threshold, so no other trigger applies.",
+  "justifications": [
+   "GadgetX includes a 30% weekend-production surcharge for the expedited build requested on PO 5520"
+  ],
+  "critic": [
+   {
+    "status": "pass",
+    "issues": []
+   }
+  ],
+  "beyond": [
+   "price_above_catalog"
+  ]
+ }
+}

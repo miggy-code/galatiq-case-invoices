@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-11",
+  "model": "grok-4.7",
+  "live_fallback_enabled": false,
+  "initial_profile": {
+    "reasoning_effort": "provider default high",
+    "timeout_seconds": 60,
+    "sdk_retries": 1,
+    "exhausted_timeout_warnings": 13
+  },
+  "intermediate_continuation": {
+    "reasoning_effort": "provider default high",
+    "timeout_seconds": 900,
+    "sdk_retries": 0,
+    "completed_requests": 3
+  },
+  "final_continuation": {
+    "reasoning_effort": "low",
+    "timeout_seconds": 180,
+    "sdk_retries": 0,
+    "completed_requests": 14,
+    "replayed_requests": 130,
+    "timeout_retries": 0,
+    "request_failures": 0
+  },
+  "python": "3.9.6",
+  "platform": "Darwin",
+  "validation": {
+    "unit_tests": 60,
+    "lint": "passed",
+    "offline_invoice_cases_per_mode": 110,
+    "offline_critic_trials": 30,
+    "live_invoice_cases_per_mode": 110,
+    "live_critic_trials": 30
+  },
+  "source_sha256": {
+    "evals/expected-attack.json": "1700ba0246fe2b7477acf7a3b0db5af149565f4ba41eef9f44b1f56195699c6f",
+    "evals/expected-generated.json": "5b8b007695b8ec80c23193148a219bef9cc0ea5ef5a5e2c8742ec013411bfbae",
+    "evals/expected-main.json": "69977df6fb1bede028f8d3be282b087dd38110865c5903a18fcc44cd408416be",
+    "evals/expected-text.json": "8265fca33e2add9f93038857a1acdb9eddc98ab05132d3ea0a8c050956f53b59",
+    "invoice_workflow/__init__.py": "89f764ca4bedbfb5974b04a62d79a2a0dbd9f54fac2f9458baf185ececc7cf9c",
+    "invoice_workflow/__main__.py": "50e86e6b587d9fca5ffa82efa3880bb428fa81cf1c73ea813026271b88192dcc",
+    "invoice_workflow/database.py": "0e6229edee095d9bfc528d0c92511227f8db90ab61db06289180b2f8e4dccc43",
+    "invoice_workflow/documents.py": "9e22585cd70ea56b9aa628a339d4fcb2791eb19f895eeb6d89b1a2b59287657e",
+    "invoice_workflow/evaluate.py": "1744e740d51bbfb116e25c2c68711162fa10ba5025aa7e3ecd737ce0ae2da576",
+    "invoice_workflow/evaluate_critic.py": "bf5174ce7d78bf42b1d8a1dfaede465fe081c4c92952a835e9fc57ccd79ae77c",
+    "invoice_workflow/evidence.py": "bc549451f9eb32c6c8bc287ff96df99667a77b72982a12f38cbbdcda0328f408",
+    "invoice_workflow/extraction.py": "ec8b51893e3943be9bad9196e41eb9c6de1f32b35ce2f336da6fb7ce81c88943",
+    "invoice_workflow/graph.py": "e1fbc18ae8edc82500d18d3dd04835a025fd4a87ee93bb982c9db47b224e42c9",
+    "invoice_workflow/llm.py": "2e429273d438a45b2d5df5361c223a2b458decee564d40eef8ffe4cd6319f7e7",
+    "invoice_workflow/packet.py": "edd721cae3d70d62d33e444b6f2363a078a06e658aaad2c67aba3eb2d8bb0ecb",
+    "invoice_workflow/payment.py": "a665cfb4ded40d74841eeed5b377bdca71b52950391698345e1f942163f844d5",
+    "invoice_workflow/prompts.py": "94bb82f39f1bc55021f8ba6147c016bb55893dfa3557a38b0ef69249b6b133ad",
+    "invoice_workflow/reconcile.py": "a3121189a52016a00c2750ca116120d23b266f06df609f31545d0c1b5b239490",
+    "invoice_workflow/report.py": "b3735674726d4cd888c812500028bf50baa5c165d560e025fc9b4bdd9065e43e",
+    "invoice_workflow/review.py": "6138ae8f5be59ce91ade72b55382bfa0062b49f4936ff9bb1568ad2c45184a76",
+    "invoice_workflow/routing.py": "f1b055ec501f7aa54cbd8f139b6005fe96558952573999aa72b5135671bea8f8",
+    "invoice_workflow/screen.py": "ad1f43a1889cde1bcbba74f12b9c5adf408f81450636be5fd03b3d47c15aff1c",
+    "invoice_workflow/validation.py": "a3c1946191060560e1db609cba725570ffd2efade30e17844a3ee0c92f1e4699",
+    "main.py": "2fd54735b89252cd13190199c5b16d83111aeedb09bf605d5196330c3dc6f954",
+    "pyproject.toml": "a880a2f43daf522a1cfad29385178a9156730faff32c9260cd3d87017d7ef3bf",
+    "tests/conftest.py": "e669bc2e49fe53c7dfea8fb5f35a0d32cbe56ceae89996511b47d15c68f091b4",
+    "tests/support.py": "29b96b5565c4e6eee9349428be196259d0c40abbb56c1ea1746622b9b6ef8834",
+    "tests/test_invariants.py": "c63e2ff3e8ec18cab81510f222c61d7d8a908d194f78bea5f093f56bbcfc2e4a",
+    "uv.lock": "a499da755b67637bc24e36b75f08682de1667b63db6701329f669e1cf05237a8"
+  },
+  "result_sha256": {
+    "docs/results/2026-11-11-grok/cli-check-recordings/1a7f07291996c5473b613021a7aaf6c8162fb80690280d55186d9d1bb494ddd2.json": "833c50c19b7ed13c39b795bf9fbd8a4230c65e00b3cd9f5f1ac1bcb8c97ce1d2",
+    "docs/results/2026-11-11-grok/cli-check-recordings/9018b182ce52a3c2a3d2d8964540cebdf84f6a3850a6913e95773727ebdd6456.json": "fa6006aeafe654a22c9c1a2231bda514f158f98c8c8cda8ca71c1b745f4912ce",
+    "docs/results/2026-11-11-grok/critic.json": "18fa38bf42f41f0d930d4d3d94408289b9d1ef91a231c47066c6ad792bb0b20e",
+    "docs/results/2026-11-11-grok/evaluate.json": "62d6d01b556bd8a4caf8d1b1689eb7e6b47f1ae16b78972f683fbbae551cb728",
+    "docs/results/2026-11-11-grok/failures.json": "164e3337e3d70c4e6ea68ab6308851839c8b4d085b20effb48b1ff319bd49d72",
+    "docs/results/2026-11-11-grok/initial-timeouts.log": "a25efbe7e91d3eae1fe6e3e480673d73698fb0804c2a35ed511072903c308d3e",
+    "docs/results/2026-11-11-grok/pytest.txt": "4247ac7c5f5e5327d51e22c7a67b8292f6ae5dc9828ec086e50cb3b0e8674a45",
+    "docs/results/2026-11-11-grok/resume-events-low.jsonl": "2ea097cd6ce7c6e4e4a406524d1c9ed8bfcff9d3d9f374c661c27f4f3eb1b3a4",
+    "docs/results/2026-11-11-grok/resume-events.jsonl": "88d688cf2d501b8d4be392de7b15b50ed5edda02d750989906fd0be8b0c5ee8c",
+    "docs/results/2026-11-11-grok/ruff.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  }
+}

@@ -1,0 +1,1 @@
+{"content": "{\"signals\":[{\"reason\":\"urgency_pressure\",\"quote\":\"Due Date: yesterday\"},{\"reason\":\"urgency_pressure\",\"quote\":\"URGENT - Pay immediately to avoid penalties!!!\"}]}", "model": "grok-4.7", "latency_seconds": 25.619981290976284, "prompt_tokens": 1462, "completion_tokens": 40, "provider_requests": 1}

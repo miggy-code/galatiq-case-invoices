@@ -1,0 +1,266 @@
+{
+  "label_status": "Synthetic author-written working judgments, not independently reviewed. Labels/metadata never enter model prompts.",
+  "summary": {
+    "trials": 16,
+    "bad_proposals": 10,
+    "good_proposals": 6,
+    "grounded_catches": 10,
+    "catch_rate": 1.0,
+    "false_vetoes": 0,
+    "false_veto_rate": 0.0,
+    "invalid_or_unavailable": 0,
+    "blocked_good_proposals": 0,
+    "per_case": {
+      "uniform-control": {
+        "statuses": {
+          "pass": 2
+        },
+        "distinct_critiques": 1
+      },
+      "invented-total": {
+        "statuses": {
+          "issues": 2
+        },
+        "distinct_critiques": 2
+      },
+      "hidden-price-spike": {
+        "statuses": {
+          "issues": 2
+        },
+        "distinct_critiques": 2
+      },
+      "unexplained-price-spike": {
+        "statuses": {
+          "issues": 2
+        },
+        "distinct_critiques": 2
+      },
+      "description-mismatch": {
+        "statuses": {
+          "issues": 2
+        },
+        "distinct_critiques": 2
+      },
+      "rush-control": {
+        "statuses": {
+          "pass": 2
+        },
+        "distinct_critiques": 1
+      },
+      "invented-stock": {
+        "statuses": {
+          "issues": 2
+        },
+        "distinct_critiques": 2
+      },
+      "mixed-items-control": {
+        "statuses": {
+          "pass": 2
+        },
+        "distinct_critiques": 1
+      }
+    },
+    "evidence": "Grounded vetoes observed against author-written labels."
+  },
+  "trials": [
+    {
+      "case": "uniform-control",
+      "repeat": 1,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\":[]}"
+    },
+    {
+      "case": "uniform-control",
+      "repeat": 2,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\": []}"
+    },
+    {
+      "case": "invented-total",
+      "repeat": 1,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.total",
+          "value": "12000.00",
+          "description": "Proposal claim states invoice.total is 9999.00, but the validated invoice total is 12000.00."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.total\",\"value\":\"12000.00\",\"description\":\"Proposal claim states invoice.total is 9999.00, but the validated invoice total is 12000.00.\"}]}"
+    },
+    {
+      "case": "invented-total",
+      "repeat": 2,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.total",
+          "value": "12000.00",
+          "description": "Proposal claim invoice.total is 9999.00, which does not match the validated invoice total of 12000.00."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.total\",\"value\":\"12000.00\",\"description\":\"Proposal claim invoice.total is 9999.00, which does not match the validated invoice total of 12000.00.\"}]}"
+    },
+    {
+      "case": "hidden-price-spike",
+      "repeat": 1,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.1.unit_price",
+          "value": "1400.00",
+          "description": "VP claim states 1000.00 for this line, but the validated invoiced unit price is 1400.00."
+        },
+        {
+          "path": "invoice.lines.1.unit_price",
+          "value": "1400.00",
+          "description": "Same item WidgetA is invoiced at different unit prices (1000.00 on line 0 and 1400.00 on line 1) with no plausible explanation in the facts."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.1.unit_price\",\"value\":\"1400.00\",\"description\":\"VP claim states 1000.00 for this line, but the validated invoiced unit price is 1400.00.\"},{\"path\":\"invoice.lines.1.unit_price\",\"value\":\"1400.00\",\"description\":\"Same item WidgetA is invoiced at different unit prices (1000.00 on line 0 and 1400.00 on line 1) with no plausible explanation in the facts.\"}]}"
+    },
+    {
+      "case": "hidden-price-spike",
+      "repeat": 2,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.1.unit_price",
+          "value": "1400.00",
+          "description": "The proposal claim for invoice.lines.1.unit_price is 1000.00, but the validated fact is 1400.00; the claim does not match the invoice line."
+        },
+        {
+          "path": "invoice.lines.1.unit_price",
+          "value": "1400.00",
+          "description": "Same item WidgetA appears twice on the invoice at different unit prices (1000.00 and 1400.00) with no plausible explanation in the facts."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.1.unit_price\",\"value\":\"1400.00\",\"description\":\"The proposal claim for invoice.lines.1.unit_price is 1000.00, but the validated fact is 1400.00; the claim does not match the invoice line.\"},{\"path\":\"invoice.lines.1.unit_price\",\"value\":\"1400.00\",\"description\":\"Same item WidgetA appears twice on the invoice at different unit prices (1000.00 and 1400.00) with no plausible explanation in the facts.\"}]}"
+    },
+    {
+      "case": "unexplained-price-spike",
+      "repeat": 1,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.1.unit_price",
+          "value": "1400.00",
+          "description": "Same item WidgetA is invoiced at two different unit prices on the same invoice (1000.00 and 1400.00) with no plausible explanation provided."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.1.unit_price\",\"value\":\"1400.00\",\"description\":\"Same item WidgetA is invoiced at two different unit prices on the same invoice (1000.00 and 1400.00) with no plausible explanation provided.\"}]}"
+    },
+    {
+      "case": "unexplained-price-spike",
+      "repeat": 2,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.1.unit_price",
+          "value": "1400.00",
+          "description": "WidgetA appears on two invoice lines at different unit prices (1000.00 and 1400.00), and the facts provide no plausible explanation for the same-item price difference."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.1.unit_price\",\"value\":\"1400.00\",\"description\":\"WidgetA appears on two invoice lines at different unit prices (1000.00 and 1400.00), and the facts provide no plausible explanation for the same-item price difference.\"}]}"
+    },
+    {
+      "case": "description-mismatch",
+      "repeat": 1,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.0.item",
+          "value": "WidgetA (annual yacht rental)",
+          "description": "Item description includes 'annual yacht rental,' which does not fit a WidgetA manufacturing item and indicates a description anomaly."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.0.item\",\"value\":\"WidgetA (annual yacht rental)\",\"description\":\"Item description includes 'annual yacht rental,' which does not fit a WidgetA manufacturing item and indicates a description anomaly.\"}]}"
+    },
+    {
+      "case": "description-mismatch",
+      "repeat": 2,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.0.item",
+          "value": "WidgetA (annual yacht rental)",
+          "description": "The item description is internally inconsistent: 'WidgetA' is a product name but is paired with 'annual yacht rental', a service description. The invoiced item description does not plausibly fit the item and needs clarification before payment."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.0.item\",\"value\":\"WidgetA (annual yacht rental)\",\"description\":\"The item description is internally inconsistent: 'WidgetA' is a product name but is paired with 'annual yacht rental', a service description. The invoiced item description does not plausibly fit the item and needs clarification before payment.\"}]}"
+    },
+    {
+      "case": "rush-control",
+      "repeat": 1,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\": []}"
+    },
+    {
+      "case": "rush-control",
+      "repeat": 2,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\":[]}"
+    },
+    {
+      "case": "invented-stock",
+      "repeat": 1,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.0.stock",
+          "value": 5,
+          "description": "Proposal claim states stock is 50, but the validated invoice fact shows stock is 5."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.0.stock\",\"value\":5,\"description\":\"Proposal claim states stock is 50, but the validated invoice fact shows stock is 5.\"}]}"
+    },
+    {
+      "case": "invented-stock",
+      "repeat": 2,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.0.stock",
+          "value": 5,
+          "description": "Proposal claim states the stock is 50, but the validated fact is 5; the claim does not match the facts."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.0.stock\",\"value\":5,\"description\":\"Proposal claim states the stock is 50, but the validated fact is 5; the claim does not match the facts.\"}]}"
+    },
+    {
+      "case": "mixed-items-control",
+      "repeat": 1,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\":[]}"
+    },
+    {
+      "case": "mixed-items-control",
+      "repeat": 2,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\": []}"
+    }
+  ],
+  "mode": "fresh live calls"
+}

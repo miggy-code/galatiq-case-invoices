@@ -1,0 +1,1 @@
+{"content": "{\"signals\":[{\"reason\":\"payment_detail_change\",\"quote\":\"Move this remittance from our previous beneficiary account to TEST-711 at Sample Bank; the previous account is retired.\"}]}", "model": "deepseek-flash", "latency_seconds": 2.6585056660114788, "prompt_tokens": 314, "completion_tokens": 305, "provider_requests": 1}

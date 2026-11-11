@@ -1,0 +1,12 @@
+INVOICE
+Vendor: Boundary 12 TXT Supply
+Invoice Number: INV-G121
+Date: 2026-05-01
+Due Date: 2026-05-31
+Currency: USD
+
+WidgetA quantity 11, unit price $250.00, amount $2750.00
+
+Subtotal: $2750.00
+Tax (7.25%): $199.38
+Total: $2949.38

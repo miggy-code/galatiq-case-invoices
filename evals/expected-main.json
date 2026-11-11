@@ -1,0 +1,377 @@
+{
+  "policy": "main-v1-working",
+  "source_commit": "2f150152b962ccd24b35e515e56b04f673d410bc",
+  "cases": [
+    {
+      "file": "invoice_1001.txt",
+      "sha256": "7308ab3d7ff26ee338e16ba304e762f0ac90403958d6211cfab36c94eb14dfd1",
+      "decision": "approve",
+      "reasons": [],
+      "total": "5000.00",
+      "quantities": {
+        "WidgetA": 10,
+        "WidgetB": 5
+      },
+      "batch_decision": "approve",
+      "vendor": "Widgets Inc.",
+      "date": "2026-01-15",
+      "due_date": "2026-02-01",
+      "currency": "USD"
+    },
+    {
+      "file": "invoice_1002.txt",
+      "sha256": "c08f8f1d07aa17791fff4b7b25706b011ed230994b9f9058df75f9ef24f9dbd4",
+      "decision": "hold",
+      "reasons": [
+        "stock_exceeded",
+        "high_value"
+      ],
+      "total": "15000.00",
+      "quantities": {
+        "GadgetX": 20
+      },
+      "batch_decision": "hold",
+      "vendor": "Gadgets Co.",
+      "date": "2026-01-30",
+      "due_date": "2026-01-30",
+      "currency": "USD"
+    },
+    {
+      "file": "invoice_1003.txt",
+      "sha256": "7e71c764fee9d01f42417e8091b0ad26e8c5ce4a88231b545486fbd613967e09",
+      "decision": "hold",
+      "reasons": [
+        "high_value",
+        "invalid_due_date",
+        "out_of_stock",
+        "urgency_pressure"
+      ],
+      "total": "100000.00",
+      "quantities": {
+        "FakeItem": 100
+      },
+      "batch_decision": "hold",
+      "vendor": "Fraudster LLC",
+      "date": "2026-01-20",
+      "due_date": "yesterday",
+      "currency": "USD"
+    },
+    {
+      "file": "invoice_1004.json",
+      "sha256": "4cd1081738ded8532a7e5a36107723b26459b165bbf5b6c4bca89c437c13b351",
+      "decision": "approve",
+      "reasons": [],
+      "total": "1890.00",
+      "quantities": {
+        "WidgetA": 3,
+        "WidgetB": 2
+      },
+      "batch_decision": "superseded",
+      "vendor": "Precision Parts Ltd.",
+      "date": "2026-01-22",
+      "due_date": "2026-02-22",
+      "currency": "USD"
+    },
+    {
+      "file": "invoice_1004_revised.json",
+      "sha256": "4383b9318c589fd835fb247b43fd013c3eab3d0295c55dab72465e71893782d2",
+      "decision": "approve",
+      "reasons": [],
+      "total": "5940.00",
+      "quantities": {
+        "WidgetA": 3,
+        "WidgetB": 2,
+        "GadgetX": 5
+      },
+      "batch_decision": "approve",
+      "vendor": "Precision Parts Ltd.",
+      "date": "2026-01-22",
+      "due_date": "2026-02-22",
+      "currency": "USD",
+      "batch_route": "vp"
+    },
+    {
+      "file": "invoice_1005.json",
+      "sha256": "ab99b9f5a37071378f0c824a63af4776ebafe37be1b04b3e97c4874ebd6a31ac",
+      "decision": "hold",
+      "reasons": [
+        "stock_exceeded",
+        "high_value"
+      ],
+      "total": "15225.00",
+      "quantities": {
+        "WidgetA": 14,
+        "WidgetB": 10,
+        "GadgetX": 8
+      },
+      "batch_decision": "hold",
+      "vendor": "Global Supply Chain Partners",
+      "date": "2026-01-18",
+      "due_date": "2026-03-18",
+      "currency": "USD"
+    },
+    {
+      "file": "invoice_1006.csv",
+      "sha256": "7f8177bebb8054253fd11f873b63272d36da4068a7c7043dce06143e3f5c35a2",
+      "decision": "approve",
+      "reasons": [],
+      "total": "2750.00",
+      "quantities": {
+        "WidgetA": 5,
+        "WidgetB": 3
+      },
+      "batch_decision": "approve",
+      "vendor": "Acme Industrial Supplies",
+      "date": "2026-01-25",
+      "due_date": "2026-02-10",
+      "currency": "USD",
+      "currency_evidence": "catalog_prices"
+    },
+    {
+      "file": "invoice_1007.csv",
+      "sha256": "332b4c6464b59d5a286549ae8c0cc69f0eaec8f15665324a32c2a91839e8f2fe",
+      "decision": "reject",
+      "reasons": [
+        "stock_exceeded",
+        "high_value",
+        "total_mismatch"
+      ],
+      "total": "15525.00",
+      "quantities": {
+        "WidgetA": 20,
+        "WidgetB": 15,
+        "GadgetX": 3
+      },
+      "batch_decision": "reject",
+      "vendor": "MegaWidgets Corp",
+      "date": "2026-01-28",
+      "due_date": "2026-02-28",
+      "currency": "USD"
+    },
+    {
+      "file": "invoice_1008.txt",
+      "sha256": "a72eaf616b0f9fdba3266371bc21b77664ee5627511dd98c976329cb9c906a12",
+      "decision": "hold",
+      "reasons": [
+        "unknown_item"
+      ],
+      "total": "9900.00",
+      "quantities": {
+        "SuperGizmo": 12,
+        "MegaSprocket": 6
+      },
+      "batch_decision": "hold",
+      "vendor": "NoProd Industries",
+      "date": "2026-01-10",
+      "due_date": "2026-01-20",
+      "currency": "USD"
+    },
+    {
+      "file": "invoice_1009.json",
+      "sha256": "305a453ed46b0b54f681b58b4ac218cd93057dd4ee14e2110be61c1ce1a072a2",
+      "decision": "reject",
+      "reasons": [
+        "missing_vendor",
+        "missing_due_date",
+        "invalid_quantity",
+        "invalid_total",
+        "subtotal_mismatch",
+        "total_mismatch"
+      ],
+      "total": "-250.00",
+      "quantities": {
+        "WidgetA": -5,
+        "WidgetB": 2
+      },
+      "batch_decision": "reject",
+      "vendor": "",
+      "date": "2026-01-15",
+      "due_date": null,
+      "currency": "USD"
+    },
+    {
+      "file": "invoice_1010.txt",
+      "sha256": "99d9958bf530d30d0766c26a9b1f2ea4810b0da9399ab8da24ec47e764872871",
+      "decision": "approve",
+      "reasons": [
+        "price_above_catalog"
+      ],
+      "total": "7185.00",
+      "quantities": {
+        "WidgetA": 12,
+        "WidgetB": 4,
+        "GadgetX": 2
+      },
+      "batch_decision": "approve",
+      "vendor": "Consolidated Materials Group",
+      "date": "2026-01-27",
+      "due_date": "2026-02-26",
+      "currency": "USD",
+      "route": "vp",
+      "batch_route": "vp"
+    },
+    {
+      "file": "invoice_1011.pdf",
+      "sha256": "bf3d624f6dceec42f52ac7129c14fcb975f976dc3ccaba1f07abd4f18c511da6",
+      "decision": "approve",
+      "reasons": [],
+      "total": "3000.00",
+      "quantities": {
+        "WidgetA": 6,
+        "WidgetB": 3
+      },
+      "batch_decision": "approve",
+      "vendor": "Summit Manufacturing Co.",
+      "date": "2026-01-20",
+      "due_date": "2026-02-20",
+      "currency": "USD"
+    },
+    {
+      "file": "invoice_1011.txt",
+      "sha256": "fce3d019284fe8d5a1453caaf7903d0a7a1fecd00476ed256767575f03382de7",
+      "decision": "approve",
+      "reasons": [],
+      "total": "3000.00",
+      "quantities": {
+        "WidgetA": 6,
+        "WidgetB": 3
+      },
+      "batch_decision": "duplicate",
+      "vendor": "Summit Manufacturing Co.",
+      "date": "2026-01-20",
+      "due_date": "2026-02-20",
+      "currency": "USD"
+    },
+    {
+      "file": "invoice_1012.pdf",
+      "sha256": "c20e713fe9e64c90b75b8ac4f38b12c719768c38e86428481e8bec6183035d43",
+      "decision": "approve",
+      "reasons": [],
+      "total": "9975.00",
+      "quantities": {
+        "WidgetA": 12,
+        "WidgetB": 7,
+        "GadgetX": 4
+      },
+      "batch_decision": "approve",
+      "vendor": "QuickShip Distributers",
+      "date": "2026-01-26",
+      "due_date": "2026-02-25",
+      "currency": "USD"
+    },
+    {
+      "file": "invoice_1012.txt",
+      "sha256": "e2a9e555b3bb5563fab5a408451586dc2d1c8e107780c9724ce9309ce96a15f7",
+      "decision": "approve",
+      "reasons": [],
+      "total": "9975.00",
+      "quantities": {
+        "WidgetA": 12,
+        "WidgetB": 7,
+        "GadgetX": 4
+      },
+      "batch_decision": "duplicate",
+      "vendor": "QuickShip Distributers",
+      "date": "2026-01-26",
+      "due_date": "2026-02-25",
+      "currency": "USD"
+    },
+    {
+      "file": "invoice_1013.json",
+      "sha256": "70b9e1fe4acf7316d5a0e0f0a0922c50ca4492241dd07c704e74c9dc7881d63b",
+      "decision": "reject",
+      "reasons": [
+        "total_mismatch",
+        "stock_exceeded",
+        "high_value"
+      ],
+      "total": "22562.80",
+      "quantities": {
+        "WidgetA": 22,
+        "WidgetB": 18,
+        "GadgetX": 9
+      },
+      "batch_decision": "reject",
+      "vendor": "Atlas Industrial Supply",
+      "date": "2026-01-24",
+      "due_date": "2026-03-24",
+      "currency": "USD"
+    },
+    {
+      "file": "invoice_1013.pdf",
+      "sha256": "b9c553d0bf2ed57f8000a34a87cf15c725d43edc08f82d2e3ea1a9aa0379e317",
+      "decision": "reject",
+      "reasons": [
+        "total_mismatch",
+        "stock_exceeded",
+        "high_value"
+      ],
+      "total": "22562.80",
+      "quantities": {
+        "WidgetA": 22,
+        "WidgetB": 18,
+        "GadgetX": 9
+      },
+      "batch_decision": "duplicate",
+      "vendor": "Atlas Industrial Supply",
+      "date": "2026-01-24",
+      "due_date": "2026-03-24",
+      "currency": "USD"
+    },
+    {
+      "file": "invoice_1014.xml",
+      "sha256": "dc80f570bac8007c1f360f0a927371ce1ac3813bc2b0b9758570fc738e48a18b",
+      "decision": "hold",
+      "reasons": [
+        "unsupported_currency"
+      ],
+      "total": "4125.00",
+      "quantities": {
+        "WidgetA": 4,
+        "WidgetB": 6
+      },
+      "batch_decision": "hold",
+      "vendor": "TechParts International",
+      "date": "2026-01-26",
+      "due_date": "2026-02-26",
+      "currency": "EUR"
+    },
+    {
+      "file": "invoice_1015.csv",
+      "sha256": "6cbed47ed55eabedc5aab7d22c8a6e6f067baa5addb96969ab58fe118fcaf7e2",
+      "decision": "approve",
+      "reasons": [],
+      "total": "6500.00",
+      "quantities": {
+        "WidgetA": 10,
+        "WidgetB": 5,
+        "GadgetX": 2
+      },
+      "batch_decision": "approve",
+      "vendor": "Reliable Components Inc.",
+      "date": "2026-01-29",
+      "due_date": "2026-02-28",
+      "currency": "USD",
+      "currency_evidence": "catalog_prices"
+    },
+    {
+      "file": "invoice_1016.json",
+      "sha256": "fa57af73e932b9a6900b9c7473efc2a8c584f525d9b8feee33052c72b3d0917c",
+      "decision": "hold",
+      "reasons": [
+        "unknown_item"
+      ],
+      "total": "3233.00",
+      "quantities": {
+        "WidgetA": 4,
+        "WidgetB": 2,
+        "WidgetC": 3
+      },
+      "batch_decision": "hold",
+      "vendor": "Widgets Inc.",
+      "date": "2026-01-27",
+      "due_date": "2026-02-27",
+      "currency": "USD"
+    }
+  ]
+}

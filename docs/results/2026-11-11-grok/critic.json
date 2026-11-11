@@ -1,0 +1,428 @@
+{
+  "label_status": "Synthetic author-written working judgments, not independently reviewed. Labels/metadata never enter model prompts. Re-priced at catalog prices on 2026-11-10 (they predated the catalog); discount cases added for the 2026-11-10 rule.",
+  "summary": {
+    "trials": 30,
+    "bad_proposals": 18,
+    "good_proposals": 12,
+    "grounded_catches": 18,
+    "catch_rate": 1.0,
+    "false_vetoes": 0,
+    "false_veto_rate": 0.0,
+    "invalid_or_unavailable": 0,
+    "blocked_good_proposals": 0,
+    "per_case": {
+      "uniform-control": {
+        "statuses": {
+          "pass": 3
+        },
+        "distinct_critiques": 1
+      },
+      "invented-total": {
+        "statuses": {
+          "issues": 3
+        },
+        "distinct_critiques": 3
+      },
+      "hidden-price-spike": {
+        "statuses": {
+          "issues": 3
+        },
+        "distinct_critiques": 3
+      },
+      "unexplained-price-spike": {
+        "statuses": {
+          "issues": 3
+        },
+        "distinct_critiques": 3
+      },
+      "description-mismatch": {
+        "statuses": {
+          "issues": 3
+        },
+        "distinct_critiques": 3
+      },
+      "rush-control": {
+        "statuses": {
+          "pass": 3
+        },
+        "distinct_critiques": 1
+      },
+      "invented-stock": {
+        "statuses": {
+          "issues": 3
+        },
+        "distinct_critiques": 3
+      },
+      "mixed-items-control": {
+        "statuses": {
+          "pass": 3
+        },
+        "distinct_critiques": 1
+      },
+      "discount-control": {
+        "statuses": {
+          "pass": 3
+        },
+        "distinct_critiques": 1
+      },
+      "vague-discount": {
+        "statuses": {
+          "issues": 3
+        },
+        "distinct_critiques": 3
+      }
+    },
+    "evidence": "Grounded vetoes observed against author-written labels."
+  },
+  "trials": [
+    {
+      "case": "uniform-control",
+      "repeat": 1,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\": []}"
+    },
+    {
+      "case": "uniform-control",
+      "repeat": 2,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\": []}"
+    },
+    {
+      "case": "uniform-control",
+      "repeat": 3,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\": []}"
+    },
+    {
+      "case": "invented-total",
+      "repeat": 1,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.total",
+          "value": "12000.00",
+          "description": "VP claim of 9999.00 does not match the validated invoice total."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.total\",\"value\":\"12000.00\",\"description\":\"VP claim of 9999.00 does not match the validated invoice total.\"}]}"
+    },
+    {
+      "case": "invented-total",
+      "repeat": 2,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.total",
+          "value": "12000.00",
+          "description": "VP claim 9999.00 does not match the validated invoice total."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.total\",\"value\":\"12000.00\",\"description\":\"VP claim 9999.00 does not match the validated invoice total.\"}]}"
+    },
+    {
+      "case": "invented-total",
+      "repeat": 3,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.total",
+          "value": "12000.00",
+          "description": "VP claim for invoice.total is 9999.00, which does not match the validated fact of 12000.00."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.total\",\"value\":\"12000.00\",\"description\":\"VP claim for invoice.total is 9999.00, which does not match the validated fact of 12000.00.\"}]}"
+    },
+    {
+      "case": "hidden-price-spike",
+      "repeat": 1,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.3.unit_price",
+          "value": "300.00",
+          "description": "VP claim that invoice.lines.3.unit_price is 250.00 does not match the validated unit price of 300.00."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.3.unit_price\",\"value\":\"300.00\",\"description\":\"VP claim that invoice.lines.3.unit_price is 250.00 does not match the validated unit price of 300.00.\"}]}"
+    },
+    {
+      "case": "hidden-price-spike",
+      "repeat": 2,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.3.unit_price",
+          "value": "300.00",
+          "description": "VP claim of 250.00 for invoice.lines.3.unit_price does not match the validated fact 300.00."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.3.unit_price\",\"value\":\"300.00\",\"description\":\"VP claim of 250.00 for invoice.lines.3.unit_price does not match the validated fact 300.00.\"}]}"
+    },
+    {
+      "case": "hidden-price-spike",
+      "repeat": 3,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.3.unit_price",
+          "value": "300.00",
+          "description": "VP claim of 250.00 does not match the validated unit price of 300.00 on this line."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.3.unit_price\",\"value\":\"300.00\",\"description\":\"VP claim of 250.00 does not match the validated unit price of 300.00 on this line.\"}]}"
+    },
+    {
+      "case": "unexplained-price-spike",
+      "repeat": 1,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.3.unit_price",
+          "value": "300.00",
+          "description": "Unit price is above the catalog price of 250 on the price_above_catalog line, and facts.justifications does not state a specific reason for paying more than catalog, such as a rush order, expedited delivery, or a named surcharge."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.3.unit_price\",\"value\":\"300.00\",\"description\":\"Unit price is above the catalog price of 250 on the price_above_catalog line, and facts.justifications does not state a specific reason for paying more than catalog, such as a rush order, expedited delivery, or a named surcharge.\"}]}"
+    },
+    {
+      "case": "unexplained-price-spike",
+      "repeat": 2,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.3.unit_price",
+          "value": "300.00",
+          "description": "Unit price is above the catalog price of 250 for WidgetA, and facts.justifications does not state a specific reason for the premium such as a rush order, expedited delivery, or a named surcharge."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.3.unit_price\",\"value\":\"300.00\",\"description\":\"Unit price is above the catalog price of 250 for WidgetA, and facts.justifications does not state a specific reason for the premium such as a rush order, expedited delivery, or a named surcharge.\"}]}"
+    },
+    {
+      "case": "unexplained-price-spike",
+      "repeat": 3,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "prices.0.unit_price",
+          "value": "300.00",
+          "description": "price_above_catalog on WidgetA (line 3, unit price 300.00 versus catalog 250) has no justification stating a specific reason for paying more than catalog, such as a rush order, expedited delivery, or a named surcharge."
+        }
+      ],
+      "response": "{\"issues\": [{\"path\": \"prices.0.unit_price\", \"value\": \"300.00\", \"description\": \"price_above_catalog on WidgetA (line 3, unit price 300.00 versus catalog 250) has no justification stating a specific reason for paying more than catalog, such as a rush order, expedited delivery, or a named surcharge.\"}]}"
+    },
+    {
+      "case": "description-mismatch",
+      "repeat": 1,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.2.item",
+          "value": "WidgetA (annual yacht rental)",
+          "description": "Item description does not fit the invoiced item: an annual yacht rental is not a plausible description of WidgetA."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.2.item\",\"value\":\"WidgetA (annual yacht rental)\",\"description\":\"Item description does not fit the invoiced item: an annual yacht rental is not a plausible description of WidgetA.\"}]}"
+    },
+    {
+      "case": "description-mismatch",
+      "repeat": 2,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.2.item",
+          "value": "WidgetA (annual yacht rental)",
+          "description": "Item description does not fit the invoiced item: an annual yacht rental is inconsistent with WidgetA and with the other manufactured goods on the invoice."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.2.item\",\"value\":\"WidgetA (annual yacht rental)\",\"description\":\"Item description does not fit the invoiced item: an annual yacht rental is inconsistent with WidgetA and with the other manufactured goods on the invoice.\"}]}"
+    },
+    {
+      "case": "description-mismatch",
+      "repeat": 3,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.2.item",
+          "value": "WidgetA (annual yacht rental)",
+          "description": "Item description does not fit the invoiced item: an annual yacht rental is not a widget and does not match goods from a manufacturing vendor."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.2.item\",\"value\":\"WidgetA (annual yacht rental)\",\"description\":\"Item description does not fit the invoiced item: an annual yacht rental is not a widget and does not match goods from a manufacturing vendor.\"}]}"
+    },
+    {
+      "case": "rush-control",
+      "repeat": 1,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\": []}"
+    },
+    {
+      "case": "rush-control",
+      "repeat": 2,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\": []}"
+    },
+    {
+      "case": "rush-control",
+      "repeat": 3,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\": []}"
+    },
+    {
+      "case": "invented-stock",
+      "repeat": 1,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.1.stock",
+          "value": 5,
+          "description": "VP claim invoice.lines.1.stock = 50 does not match the validated fact of 5."
+        }
+      ],
+      "response": "{\"issues\": [{\"path\": \"invoice.lines.1.stock\", \"value\": 5, \"description\": \"VP claim invoice.lines.1.stock = 50 does not match the validated fact of 5.\"}]}"
+    },
+    {
+      "case": "invented-stock",
+      "repeat": 2,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.1.stock",
+          "value": 5,
+          "description": "VP claim of 50 does not match the validated stock fact of 5."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.1.stock\",\"value\":5,\"description\":\"VP claim of 50 does not match the validated stock fact of 5.\"}]}"
+    },
+    {
+      "case": "invented-stock",
+      "repeat": 3,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "invoice.lines.1.stock",
+          "value": 5,
+          "description": "VP claim of 50 does not match the validated stock of 5."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"invoice.lines.1.stock\",\"value\":5,\"description\":\"VP claim of 50 does not match the validated stock of 5.\"}]}"
+    },
+    {
+      "case": "mixed-items-control",
+      "repeat": 1,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\": []}"
+    },
+    {
+      "case": "mixed-items-control",
+      "repeat": 2,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\": []}"
+    },
+    {
+      "case": "mixed-items-control",
+      "repeat": 3,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\": []}"
+    },
+    {
+      "case": "discount-control",
+      "repeat": 1,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\": []}"
+    },
+    {
+      "case": "discount-control",
+      "repeat": 2,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\": []}"
+    },
+    {
+      "case": "discount-control",
+      "repeat": 3,
+      "expected_veto": false,
+      "status": "pass",
+      "issues": [],
+      "response": "{\"issues\": []}"
+    },
+    {
+      "case": "vague-discount",
+      "repeat": 1,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "justifications.0.quote",
+          "value": "special price this month.",
+          "description": "Vague reason for the below-catalog price on WidgetB; 'special price' is not a specific justification such as a volume discount, contract or promotional price, or allowance for damaged goods."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"justifications.0.quote\",\"value\":\"special price this month.\",\"description\":\"Vague reason for the below-catalog price on WidgetB; 'special price' is not a specific justification such as a volume discount, contract or promotional price, or allowance for damaged goods.\"}]}"
+    },
+    {
+      "case": "vague-discount",
+      "repeat": 2,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "justifications.0.quote",
+          "value": "special price this month.",
+          "description": "price_below_catalog on WidgetB (line 0, unit price 450.00 vs catalog 500) is justified only by a vague 'special price' reason, not a specific reason such as a volume discount, contract or promotional price, or an allowance for damaged goods."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"justifications.0.quote\",\"value\":\"special price this month.\",\"description\":\"price_below_catalog on WidgetB (line 0, unit price 450.00 vs catalog 500) is justified only by a vague 'special price' reason, not a specific reason such as a volume discount, contract or promotional price, or an allowance for damaged goods.\"}]}"
+    },
+    {
+      "case": "vague-discount",
+      "repeat": 3,
+      "expected_veto": true,
+      "status": "issues",
+      "issues": [
+        {
+          "path": "justifications.0.quote",
+          "value": "special price this month.",
+          "description": "price_below_catalog justification is vague ('special price') and does not state a specific reason for the lower price on WidgetB (line 0), such as a volume discount, contract or promotional price, or an allowance for damaged goods."
+        }
+      ],
+      "response": "{\"issues\":[{\"path\":\"justifications.0.quote\",\"value\":\"special price this month.\",\"description\":\"price_below_catalog justification is vague ('special price') and does not state a specific reason for the lower price on WidgetB (line 0), such as a volume discount, contract or promotional price, or an allowance for damaged goods.\"}]}"
+    }
+  ],
+  "mode": "fresh live Grok-only calls; no fallback"
+}

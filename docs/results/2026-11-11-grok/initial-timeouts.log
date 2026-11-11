@@ -1,0 +1,14 @@
+Running all four labeled sets with fresh Grok-only calls; no DeepSeek fallback.
+model_call_failed model=grok-4.7 latency_seconds=120.535
+model_call_failed model=grok-4.7 latency_seconds=120.496
+model_call_failed model=grok-4.7 latency_seconds=120.674
+model_call_failed model=grok-4.7 latency_seconds=120.490
+model_call_failed model=grok-4.7 latency_seconds=120.508
+model_call_failed model=grok-4.7 latency_seconds=120.656
+model_call_failed model=grok-4.7 latency_seconds=120.604
+model_call_failed model=grok-4.7 latency_seconds=120.567
+model_call_failed model=grok-4.7 latency_seconds=120.664
+model_call_failed model=grok-4.7 latency_seconds=120.521
+model_call_failed model=grok-4.7 latency_seconds=120.523
+model_call_failed model=grok-4.7 latency_seconds=120.440
+model_call_failed model=grok-4.7 latency_seconds=120.594

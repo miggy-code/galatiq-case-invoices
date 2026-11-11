@@ -1,0 +1,16 @@
+Cover memo: Our controller can supply the packing-list copy if your warehouse needs it.
+
+Invoice: CTL-04
+Vendor: Dune Assembly Supply
+Date: 2026-10-01
+Due Date: 2026-10-31
+Currency: USD
+
+Item | Quantity | Unit price | Amount
+WidgetA | 2 | $250.00 | $500.00
+WidgetB | 1 | $500.00 | $500.00
+
+Subtotal: $1000.00
+Tax: $0.00
+Shipping: $0.08
+Total: $1000.08

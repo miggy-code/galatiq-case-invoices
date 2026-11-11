@@ -1,0 +1,8 @@
+Invoice: INV-9007
+Vendor: Oak Supply
+Date: 2026-03-01
+Due Date: 2026-04-01
+
+GadgetX  qty: 6 @ $750.00
+Total: $4,500.00
+Notes: Standard terms

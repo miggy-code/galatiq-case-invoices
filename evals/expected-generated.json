@@ -1,0 +1,1273 @@
+{
+  "label_status": "working expectations authored before predictions; selected cases reviewed by Miguel on 2026-11-10, see label-review.json; remaining cases unreviewed",
+  "policy": "evals/POLICY.md; per-case policy_decisions cite the oracle",
+  "cases": [
+    {
+      "file": "01-above-299.99-reason.txt",
+      "sha256": "baa6872d1e025463174e751a7253f785160f23c4038494cdf2e34cbddde83985",
+      "decision": "approve",
+      "reasons": [
+        "price_above_catalog"
+      ],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        5,
+        6
+      ],
+      "pattern": "above-299.99-reason",
+      "vendor": "Boundary 01 TXT Supply",
+      "invoice_number": "INV-G011",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "599.98",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 2
+      },
+      "unit_prices": {
+        "WidgetA": "299.99"
+      },
+      "total": "599.98",
+      "route": "vp",
+      "batch_route": "vp"
+    },
+    {
+      "file": "01-above-299.99-reason.pdf",
+      "sha256": "6bffeb750a05a7e063305f8f04dfaf5bfa78e049182c59b2e821919e3eb334eb",
+      "decision": "approve",
+      "reasons": [
+        "price_above_catalog"
+      ],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        5,
+        6
+      ],
+      "pattern": "above-299.99-reason",
+      "vendor": "Boundary 01 PDF Supply",
+      "invoice_number": "INV-G012",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "899.97",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 3
+      },
+      "unit_prices": {
+        "WidgetA": "299.99"
+      },
+      "total": "899.97",
+      "route": "vp",
+      "batch_route": "vp"
+    },
+    {
+      "file": "02-above-299.99-no-reason.txt",
+      "sha256": "ad4e2a3e963628d00e32e7466745650bc0db02e7915f672caa688a8f12e800e1",
+      "decision": "hold",
+      "reasons": [
+        "price_above_catalog",
+        "vp_hold"
+      ],
+      "owner": "human_review",
+      "batch_decision": "hold",
+      "policy_decisions": [
+        5,
+        6
+      ],
+      "pattern": "above-299.99-no-reason",
+      "vendor": "Boundary 02 TXT Supply",
+      "invoice_number": "INV-G021",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "599.98",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 2
+      },
+      "unit_prices": {
+        "WidgetA": "299.99"
+      },
+      "total": "599.98"
+    },
+    {
+      "file": "02-above-299.99-no-reason.pdf",
+      "sha256": "32c4a4b946cea15fe07fd856c4ac6536506af714ffa8b489d1fd6326fa746984",
+      "decision": "hold",
+      "reasons": [
+        "price_above_catalog",
+        "vp_hold"
+      ],
+      "owner": "human_review",
+      "batch_decision": "hold",
+      "policy_decisions": [
+        5,
+        6
+      ],
+      "pattern": "above-299.99-no-reason",
+      "vendor": "Boundary 02 PDF Supply",
+      "invoice_number": "INV-G022",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "899.97",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 3
+      },
+      "unit_prices": {
+        "WidgetA": "299.99"
+      },
+      "total": "899.97"
+    },
+    {
+      "file": "03-above-300.00-reason.txt",
+      "sha256": "11f28061e92fd9ac116403f7aa7370f41f7bd5a788247333b1aa52cb1a787e85",
+      "decision": "approve",
+      "reasons": [
+        "price_above_catalog"
+      ],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        5,
+        6
+      ],
+      "pattern": "above-300.00-reason",
+      "vendor": "Boundary 03 TXT Supply",
+      "invoice_number": "INV-G031",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "1200.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 4
+      },
+      "unit_prices": {
+        "WidgetA": "300.00"
+      },
+      "total": "1200.00",
+      "route": "vp",
+      "batch_route": "vp"
+    },
+    {
+      "file": "03-above-300.00-reason.pdf",
+      "sha256": "746792503b13b6b19ac5480eeaefdcd08346f59e13fd061a137a4a0bda54b114",
+      "decision": "approve",
+      "reasons": [
+        "price_above_catalog"
+      ],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        5,
+        6
+      ],
+      "pattern": "above-300.00-reason",
+      "vendor": "Boundary 03 PDF Supply",
+      "invoice_number": "INV-G032",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "1500.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 5
+      },
+      "unit_prices": {
+        "WidgetA": "300.00"
+      },
+      "total": "1500.00",
+      "route": "vp",
+      "batch_route": "vp"
+    },
+    {
+      "file": "04-above-300.00-no-reason.txt",
+      "sha256": "f456432d3ee701dbcb1876a8920084b89773ba2758d4e9e9c20291633df1791f",
+      "decision": "hold",
+      "reasons": [
+        "price_above_catalog",
+        "vp_hold"
+      ],
+      "owner": "human_review",
+      "batch_decision": "hold",
+      "policy_decisions": [
+        5,
+        6
+      ],
+      "pattern": "above-300.00-no-reason",
+      "vendor": "Boundary 04 TXT Supply",
+      "invoice_number": "INV-G041",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "1200.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 4
+      },
+      "unit_prices": {
+        "WidgetA": "300.00"
+      },
+      "total": "1200.00"
+    },
+    {
+      "file": "04-above-300.00-no-reason.pdf",
+      "sha256": "7dff663b3246a016ee3a58d41dd6659e3ad186f62f93a79485631147b89231ef",
+      "decision": "hold",
+      "reasons": [
+        "price_above_catalog",
+        "vp_hold"
+      ],
+      "owner": "human_review",
+      "batch_decision": "hold",
+      "policy_decisions": [
+        5,
+        6
+      ],
+      "pattern": "above-300.00-no-reason",
+      "vendor": "Boundary 04 PDF Supply",
+      "invoice_number": "INV-G042",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "1500.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 5
+      },
+      "unit_prices": {
+        "WidgetA": "300.00"
+      },
+      "total": "1500.00"
+    },
+    {
+      "file": "05-above-300.01-reason.txt",
+      "sha256": "5bea9634d8f20b2d4d49e18262a731a472ad61816d0d18c05333313ede0e988b",
+      "decision": "hold",
+      "reasons": [
+        "price_above_catalog",
+        "vp_recommend"
+      ],
+      "owner": "human_review",
+      "batch_decision": "hold",
+      "policy_decisions": [
+        5,
+        6
+      ],
+      "pattern": "above-300.01-reason",
+      "vendor": "Boundary 05 TXT Supply",
+      "invoice_number": "INV-G051",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "1800.06",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 6
+      },
+      "unit_prices": {
+        "WidgetA": "300.01"
+      },
+      "total": "1800.06"
+    },
+    {
+      "file": "05-above-300.01-reason.pdf",
+      "sha256": "6a0d12dc0c8a370d8881813875b131cc76216888bea1fcc158efc43ba03f604d",
+      "decision": "hold",
+      "reasons": [
+        "price_above_catalog",
+        "vp_recommend"
+      ],
+      "owner": "human_review",
+      "batch_decision": "hold",
+      "policy_decisions": [
+        5,
+        6
+      ],
+      "pattern": "above-300.01-reason",
+      "vendor": "Boundary 05 PDF Supply",
+      "invoice_number": "INV-G052",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "2100.07",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 7
+      },
+      "unit_prices": {
+        "WidgetA": "300.01"
+      },
+      "total": "2100.07"
+    },
+    {
+      "file": "06-below-200.00.txt",
+      "sha256": "c5ff789a4072b48cab168ba034ed4f981d5138b1f1ec28e34c3b9aa6000e7bba",
+      "decision": "hold",
+      "reasons": [
+        "price_below_catalog",
+        "vp_hold"
+      ],
+      "owner": "human_review",
+      "batch_decision": "hold",
+      "policy_decisions": [
+        5,
+        6
+      ],
+      "pattern": "below-200.00",
+      "vendor": "Boundary 06 TXT Supply",
+      "invoice_number": "INV-G061",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "1400.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 7
+      },
+      "unit_prices": {
+        "WidgetA": "200.00"
+      },
+      "total": "1400.00",
+      "route": "vp"
+    },
+    {
+      "file": "06-below-200.00.pdf",
+      "sha256": "e4409112316b1ffce841d2248722def2f4db1801da3b23ded77b59c6647beff2",
+      "decision": "hold",
+      "reasons": [
+        "price_below_catalog",
+        "vp_hold"
+      ],
+      "owner": "human_review",
+      "batch_decision": "hold",
+      "policy_decisions": [
+        5,
+        6
+      ],
+      "pattern": "below-200.00",
+      "vendor": "Boundary 06 PDF Supply",
+      "invoice_number": "INV-G062",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "1600.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 8
+      },
+      "unit_prices": {
+        "WidgetA": "200.00"
+      },
+      "total": "1600.00",
+      "route": "vp"
+    },
+    {
+      "file": "07-below-199.99.txt",
+      "sha256": "697a39ca8bd07b7c65e0b6e77487811235102a4250abe6f9553c8a06cd363f22",
+      "decision": "hold",
+      "reasons": [
+        "price_below_catalog",
+        "vp_hold"
+      ],
+      "owner": "human_review",
+      "batch_decision": "hold",
+      "policy_decisions": [
+        5,
+        6
+      ],
+      "pattern": "below-199.99",
+      "vendor": "Boundary 07 TXT Supply",
+      "invoice_number": "INV-G071",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "1599.92",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 8
+      },
+      "unit_prices": {
+        "WidgetA": "199.99"
+      },
+      "total": "1599.92"
+    },
+    {
+      "file": "07-below-199.99.pdf",
+      "sha256": "6f0fac4b15f1ff731c48a56e274eb369e1e3468b44b2f9e7b4fdef0d9450d096",
+      "decision": "hold",
+      "reasons": [
+        "price_below_catalog",
+        "vp_hold"
+      ],
+      "owner": "human_review",
+      "batch_decision": "hold",
+      "policy_decisions": [
+        5,
+        6
+      ],
+      "pattern": "below-199.99",
+      "vendor": "Boundary 07 PDF Supply",
+      "invoice_number": "INV-G072",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "1799.91",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 9
+      },
+      "unit_prices": {
+        "WidgetA": "199.99"
+      },
+      "total": "1799.91"
+    },
+    {
+      "file": "08-vp-at-10000.txt",
+      "sha256": "61e01e57ac4969b5bc16ab6fcc5ed3d924926d0d619902788ec8334d74de0b2d",
+      "decision": "approve",
+      "reasons": [],
+      "batch_decision": "duplicate",
+      "policy_decisions": [
+        4,
+        6,
+        8
+      ],
+      "pattern": "vp-at-10000",
+      "vendor": "Boundary 08 Supply",
+      "invoice_number": "INV-G08",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "10000.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 10,
+        "WidgetB": 9,
+        "GadgetX": 4
+      },
+      "unit_prices": {
+        "WidgetA": "250.00",
+        "WidgetB": "500.00",
+        "GadgetX": "750.00"
+      },
+      "total": "10000.00"
+    },
+    {
+      "file": "08-vp-at-10000.pdf",
+      "sha256": "8015d9695f2c7a19a231323734bdb3c9eef7615fd1fc3f9c99c45994e750a5e4",
+      "decision": "approve",
+      "reasons": [],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        4,
+        6,
+        8
+      ],
+      "pattern": "vp-at-10000",
+      "vendor": "Boundary 08 Supply",
+      "invoice_number": "INV-G08",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "10000.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 10,
+        "WidgetB": 9,
+        "GadgetX": 4
+      },
+      "unit_prices": {
+        "WidgetA": "250.00",
+        "WidgetB": "500.00",
+        "GadgetX": "750.00"
+      },
+      "total": "10000.00"
+    },
+    {
+      "file": "09-vp-over-10000.txt",
+      "sha256": "5c471c78354c0ac4616b43fff4a2e1aa47fd4ff4f82d3017c832ff1a59442497",
+      "decision": "approve",
+      "reasons": [
+        "high_value"
+      ],
+      "batch_decision": "duplicate",
+      "policy_decisions": [
+        4,
+        6,
+        8
+      ],
+      "pattern": "vp-over-10000",
+      "vendor": "Boundary 09 Supply",
+      "invoice_number": "INV-G09",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "10000.00",
+      "tax": "0.01",
+      "quantities": {
+        "WidgetA": 10,
+        "WidgetB": 9,
+        "GadgetX": 4
+      },
+      "unit_prices": {
+        "WidgetA": "250.00",
+        "WidgetB": "500.00",
+        "GadgetX": "750.00"
+      },
+      "total": "10000.01",
+      "route": "vp"
+    },
+    {
+      "file": "09-vp-over-10000.pdf",
+      "sha256": "b5e73435ccf93b105ea8e1b9559203edd800d1490a3097b415953ead2304d556",
+      "decision": "approve",
+      "reasons": [
+        "high_value"
+      ],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        4,
+        6,
+        8
+      ],
+      "pattern": "vp-over-10000",
+      "vendor": "Boundary 09 Supply",
+      "invoice_number": "INV-G09",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "10000.00",
+      "tax": "0.01",
+      "quantities": {
+        "WidgetA": 10,
+        "WidgetB": 9,
+        "GadgetX": 4
+      },
+      "unit_prices": {
+        "WidgetA": "250.00",
+        "WidgetB": "500.00",
+        "GadgetX": "750.00"
+      },
+      "total": "10000.01",
+      "route": "vp",
+      "batch_route": "vp"
+    },
+    {
+      "file": "10-rounding-one-cent.txt",
+      "sha256": "7f5c05fd9539201f0838a9500773f14d2659c93e50fa58197de63aeb382639c0",
+      "decision": "approve",
+      "reasons": [],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        1,
+        2
+      ],
+      "pattern": "rounding-one-cent",
+      "vendor": "Boundary 10 TXT Supply",
+      "invoice_number": "INV-G101",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "2250.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 9
+      },
+      "unit_prices": {
+        "WidgetA": "250.00"
+      },
+      "total": "2250.01"
+    },
+    {
+      "file": "10-rounding-one-cent.pdf",
+      "sha256": "f3a926ddd0f0e3a8f5c0c9051013019170bb119e1009ff0897c01812ae026ab9",
+      "decision": "approve",
+      "reasons": [],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        1,
+        2
+      ],
+      "pattern": "rounding-one-cent",
+      "vendor": "Boundary 10 PDF Supply",
+      "invoice_number": "INV-G102",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "2500.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 10
+      },
+      "unit_prices": {
+        "WidgetA": "250.00"
+      },
+      "total": "2500.01"
+    },
+    {
+      "file": "11-rounding-two-cents.txt",
+      "sha256": "79313f30fc6ff51f35f98d3b00a373c2e78a70f6b146f196bcd56883ca91ebaf",
+      "decision": "reject",
+      "reasons": [
+        "total_mismatch"
+      ],
+      "owner": "vendor",
+      "batch_decision": "reject",
+      "policy_decisions": [
+        1,
+        2
+      ],
+      "pattern": "rounding-two-cents",
+      "vendor": "Boundary 11 TXT Supply",
+      "invoice_number": "INV-G111",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "2500.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 10
+      },
+      "unit_prices": {
+        "WidgetA": "250.00"
+      },
+      "total": "2500.02"
+    },
+    {
+      "file": "11-rounding-two-cents.pdf",
+      "sha256": "b50e11af844aa209a6e289fbc8fea07c5602f0b55add86104596c39086374a20",
+      "decision": "reject",
+      "reasons": [
+        "total_mismatch"
+      ],
+      "owner": "vendor",
+      "batch_decision": "reject",
+      "policy_decisions": [
+        1,
+        2
+      ],
+      "pattern": "rounding-two-cents",
+      "vendor": "Boundary 11 PDF Supply",
+      "invoice_number": "INV-G112",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "2750.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 11
+      },
+      "unit_prices": {
+        "WidgetA": "250.00"
+      },
+      "total": "2750.02"
+    },
+    {
+      "file": "12-tax-rate-correct.txt",
+      "sha256": "7d37613c75a2b19031378d6f969d984435b33954fa56c7b88337a344562bcaeb",
+      "decision": "approve",
+      "reasons": [],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        1
+      ],
+      "pattern": "tax-rate-correct",
+      "vendor": "Boundary 12 TXT Supply",
+      "invoice_number": "INV-G121",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "2750.00",
+      "tax": "199.38",
+      "quantities": {
+        "WidgetA": 11
+      },
+      "unit_prices": {
+        "WidgetA": "250.00"
+      },
+      "total": "2949.38"
+    },
+    {
+      "file": "12-tax-rate-correct.pdf",
+      "sha256": "70864a157dbfb91ac43a15a3cc00efb6a11bb72ca50bd7423c64d5d1520966e0",
+      "decision": "approve",
+      "reasons": [],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        1
+      ],
+      "pattern": "tax-rate-correct",
+      "vendor": "Boundary 12 PDF Supply",
+      "invoice_number": "INV-G122",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "3000.00",
+      "tax": "217.50",
+      "quantities": {
+        "WidgetA": 12
+      },
+      "unit_prices": {
+        "WidgetA": "250.00"
+      },
+      "total": "3217.50"
+    },
+    {
+      "file": "13-tax-rate-overcharge.txt",
+      "sha256": "4537fa8e1fa59e2da6367585d4fe5de3e7dd48863ab44deec833f3e9aa8f6173",
+      "decision": "reject",
+      "reasons": [
+        "tax_mismatch"
+      ],
+      "owner": "vendor",
+      "batch_decision": "reject",
+      "policy_decisions": [
+        1
+      ],
+      "pattern": "tax-rate-overcharge",
+      "vendor": "Boundary 13 TXT Supply",
+      "invoice_number": "INV-G131",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "3000.00",
+      "tax": "217.53",
+      "quantities": {
+        "WidgetA": 12
+      },
+      "unit_prices": {
+        "WidgetA": "250.00"
+      },
+      "total": "3217.53"
+    },
+    {
+      "file": "13-tax-rate-overcharge.pdf",
+      "sha256": "914fd90477c5a97f16001d62c67d114ca800c00b6ce0058ee924c6b30b2953f1",
+      "decision": "reject",
+      "reasons": [
+        "tax_mismatch"
+      ],
+      "owner": "vendor",
+      "batch_decision": "reject",
+      "policy_decisions": [
+        1
+      ],
+      "pattern": "tax-rate-overcharge",
+      "vendor": "Boundary 13 PDF Supply",
+      "invoice_number": "INV-G132",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "3250.00",
+      "tax": "235.66",
+      "quantities": {
+        "WidgetA": 13
+      },
+      "unit_prices": {
+        "WidgetA": "250.00"
+      },
+      "total": "3485.66"
+    },
+    {
+      "file": "14-conflicting-totals.txt",
+      "sha256": "1f4e5c166ad4a12ad1e3fe6924e054aedd845152690cac629c8775b26b48cfe3",
+      "decision": "hold",
+      "reasons": [
+        "extraction_uncertain"
+      ],
+      "owner": "ap_clerk",
+      "batch_decision": "hold",
+      "policy_decisions": [
+        2
+      ],
+      "pattern": "conflicting-totals",
+      "vendor": "Boundary 14 TXT Supply",
+      "invoice_number": "INV-G141",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "3250.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 13
+      },
+      "unit_prices": {
+        "WidgetA": "250.00"
+      }
+    },
+    {
+      "file": "14-conflicting-totals.pdf",
+      "sha256": "accebd3e5cbe515e959e76d1a37f847f4324b63cefb06b46bc499f048e0587c8",
+      "decision": "hold",
+      "reasons": [
+        "extraction_uncertain"
+      ],
+      "owner": "ap_clerk",
+      "batch_decision": "hold",
+      "policy_decisions": [
+        2
+      ],
+      "pattern": "conflicting-totals",
+      "vendor": "Boundary 14 PDF Supply",
+      "invoice_number": "INV-G142",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "3500.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 14
+      },
+      "unit_prices": {
+        "WidgetA": "250.00"
+      }
+    },
+    {
+      "file": "15-catalog-key-value.txt",
+      "sha256": "e2b3182d387a03a10da552dc59c48718d534a0fba4716eeb035605df9e9a498e",
+      "decision": "approve",
+      "reasons": [],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        1,
+        3
+      ],
+      "pattern": "catalog-key-value",
+      "vendor": "Boundary 15 TXT Supply",
+      "invoice_number": "INV-G151",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "750.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 3
+      },
+      "unit_prices": {
+        "WidgetA": "250.00"
+      },
+      "total": "750.00"
+    },
+    {
+      "file": "15-catalog-key-value.pdf",
+      "sha256": "c26a721bce8e8cb969a04b707e80f39502e4a46d600019395f5e72d760bb8900",
+      "decision": "approve",
+      "reasons": [],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        1,
+        3
+      ],
+      "pattern": "catalog-key-value",
+      "vendor": "Boundary 15 PDF Supply",
+      "invoice_number": "INV-G152",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "1000.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 4
+      },
+      "unit_prices": {
+        "WidgetA": "250.00"
+      },
+      "total": "1000.00"
+    },
+    {
+      "file": "16-catalog-table.txt",
+      "sha256": "61b93564703703c536df0edab1d5734952d83ff25117c75c4fe8028c806bf6ca",
+      "decision": "approve",
+      "reasons": [],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        1,
+        3
+      ],
+      "pattern": "catalog-table",
+      "vendor": "Boundary 16 TXT Supply",
+      "invoice_number": "INV-G161",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "2000.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetB": 4
+      },
+      "unit_prices": {
+        "WidgetB": "500.00"
+      },
+      "total": "2000.00"
+    },
+    {
+      "file": "16-catalog-table.pdf",
+      "sha256": "0e2abd8aab0c8ca98f65af687ea385db50322b394e903cb89a2509c424706e53",
+      "decision": "approve",
+      "reasons": [],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        1,
+        3
+      ],
+      "pattern": "catalog-table",
+      "vendor": "Boundary 16 PDF Supply",
+      "invoice_number": "INV-G162",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "2500.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetB": 5
+      },
+      "unit_prices": {
+        "WidgetB": "500.00"
+      },
+      "total": "2500.00"
+    },
+    {
+      "file": "17-catalog-balance.txt",
+      "sha256": "f6790fc66e5776f39b9ad5e4e7d629229d0dfa1e7c938f3fee23cb9ed209f9ab",
+      "decision": "approve",
+      "reasons": [],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        1,
+        3
+      ],
+      "pattern": "catalog-balance",
+      "vendor": "Boundary 17 TXT Supply",
+      "invoice_number": "INV-G171",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "1500.00",
+      "tax": "0.00",
+      "quantities": {
+        "GadgetX": 2
+      },
+      "unit_prices": {
+        "GadgetX": "750.00"
+      },
+      "total": "1500.00"
+    },
+    {
+      "file": "17-catalog-balance.pdf",
+      "sha256": "b74cc104d7500c1fc931f1554e9e95b2d1be36ec8a103c5039310496911d5b0e",
+      "decision": "approve",
+      "reasons": [],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        1,
+        3
+      ],
+      "pattern": "catalog-balance",
+      "vendor": "Boundary 17 PDF Supply",
+      "invoice_number": "INV-G172",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "2250.00",
+      "tax": "0.00",
+      "quantities": {
+        "GadgetX": 3
+      },
+      "unit_prices": {
+        "GadgetX": "750.00"
+      },
+      "total": "2250.00"
+    },
+    {
+      "file": "18-discount-200.01.txt",
+      "sha256": "d8ce86940f5d08c9cce6608ece21ab5d424343b262992ec43353624968bbddfd",
+      "decision": "hold",
+      "reasons": [
+        "price_below_catalog",
+        "vp_hold"
+      ],
+      "owner": "human_review",
+      "batch_decision": "hold",
+      "policy_decisions": [
+        5,
+        6
+      ],
+      "pattern": "discount-200.01",
+      "vendor": "Boundary 18 TXT Supply",
+      "invoice_number": "INV-G181",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "1000.05",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 5
+      },
+      "unit_prices": {
+        "WidgetA": "200.01"
+      },
+      "total": "1000.05",
+      "route": "vp"
+    },
+    {
+      "file": "18-discount-200.01.pdf",
+      "sha256": "87e351b9297974f69ccad4d26804cb8b5126a1a94437f290e56939ab1dac3e70",
+      "decision": "hold",
+      "reasons": [
+        "price_below_catalog",
+        "vp_hold"
+      ],
+      "owner": "human_review",
+      "batch_decision": "hold",
+      "policy_decisions": [
+        5,
+        6
+      ],
+      "pattern": "discount-200.01",
+      "vendor": "Boundary 18 PDF Supply",
+      "invoice_number": "INV-G182",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "1200.06",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 6
+      },
+      "unit_prices": {
+        "WidgetA": "200.01"
+      },
+      "total": "1200.06",
+      "route": "vp"
+    },
+    {
+      "file": "19-catalog-multi-line.txt",
+      "sha256": "441964906002920b33337bd94802415d208d080f417b7b06782fea23b22418e5",
+      "decision": "approve",
+      "reasons": [],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        1,
+        3
+      ],
+      "pattern": "catalog-multi-line",
+      "vendor": "Boundary 19 TXT Supply",
+      "invoice_number": "INV-G191",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "2000.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 2,
+        "WidgetB": 3
+      },
+      "unit_prices": {
+        "WidgetA": "250.00",
+        "WidgetB": "500.00"
+      },
+      "total": "2000.00"
+    },
+    {
+      "file": "19-catalog-multi-line.pdf",
+      "sha256": "4c482d53e06ec67ab3d0360b8345a2d9e13aaffe49038051f7a921268a4ed00f",
+      "decision": "approve",
+      "reasons": [],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        1,
+        3
+      ],
+      "pattern": "catalog-multi-line",
+      "vendor": "Boundary 19 PDF Supply",
+      "invoice_number": "INV-G192",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "2750.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 3,
+        "WidgetB": 4
+      },
+      "unit_prices": {
+        "WidgetA": "250.00",
+        "WidgetB": "500.00"
+      },
+      "total": "2750.00"
+    },
+    {
+      "file": "20-catalog-neutral-note.txt",
+      "sha256": "6e93fa73908416e0b5fc8cf3032d8c841eee081ad046ba245b3ae798b34ea916",
+      "decision": "approve",
+      "reasons": [],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        1,
+        3,
+        9
+      ],
+      "pattern": "catalog-neutral-note",
+      "vendor": "Boundary 20 TXT Supply",
+      "invoice_number": "INV-G201",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "1250.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 5
+      },
+      "unit_prices": {
+        "WidgetA": "250.00"
+      },
+      "total": "1250.00"
+    },
+    {
+      "file": "20-catalog-neutral-note.pdf",
+      "sha256": "eb192976d410e799924ed019a01f27fccbe0da319e1d5f9c4f4179809eef8b6d",
+      "decision": "approve",
+      "reasons": [],
+      "batch_decision": "approve",
+      "policy_decisions": [
+        1,
+        3,
+        9
+      ],
+      "pattern": "catalog-neutral-note",
+      "vendor": "Boundary 20 PDF Supply",
+      "invoice_number": "INV-G202",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "1500.00",
+      "tax": "0.00",
+      "quantities": {
+        "WidgetA": 6
+      },
+      "unit_prices": {
+        "WidgetA": "250.00"
+      },
+      "total": "1500.00"
+    },
+    {
+      "file": "21-image-only.pdf",
+      "sha256": "e2fdc84ea98c011b3b3353d99d4519027bf9806ab3eea26b22bd48e1faabb1ab",
+      "decision": "hold",
+      "reasons": [
+        "unreadable_document"
+      ],
+      "owner": "ap_clerk",
+      "batch_decision": "hold",
+      "policy_decisions": [
+        1,
+        2
+      ],
+      "pattern": "image-only-1"
+    },
+    {
+      "file": "22-image-only.pdf",
+      "sha256": "cf6fab69457053a4ab13c2d231af0da7ff7e44c1a68f9d1a2b7a137a0d09e88f",
+      "decision": "hold",
+      "reasons": [
+        "unreadable_document"
+      ],
+      "owner": "ap_clerk",
+      "batch_decision": "hold",
+      "policy_decisions": [
+        1,
+        2
+      ],
+      "pattern": "image-only-2"
+    },
+    {
+      "file": "23-image-only.pdf",
+      "sha256": "d7b0ba64c647b5b8273643b0e6e2971b29036d2d72204c3c33385c3b0df16aaa",
+      "decision": "hold",
+      "reasons": [
+        "unreadable_document"
+      ],
+      "owner": "ap_clerk",
+      "batch_decision": "hold",
+      "policy_decisions": [
+        1,
+        2
+      ],
+      "pattern": "image-only-3"
+    },
+    {
+      "file": "24-image-only.pdf",
+      "sha256": "650fc306bbed0737bfe2dbd122996f26c78391f88c11e7163229a5d8914d646b",
+      "decision": "hold",
+      "reasons": [
+        "unreadable_document"
+      ],
+      "owner": "ap_clerk",
+      "batch_decision": "hold",
+      "policy_decisions": [
+        1,
+        2
+      ],
+      "pattern": "image-only-4"
+    },
+    {
+      "file": "25-stacked-cents.txt",
+      "sha256": "94bc6828f483ac43ccc95efeaed5a789ced3f8d8fac6b31e4cd4ca280be3fe27",
+      "decision": "reject",
+      "reasons": [
+        "total_mismatch"
+      ],
+      "owner": "vendor",
+      "batch_decision": "reject",
+      "policy_decisions": [
+        1
+      ],
+      "pattern": "stacked-cents",
+      "vendor": "Boundary 25 TXT Supply",
+      "invoice_number": "INV-G251",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "1500.01",
+      "tax": "0.01",
+      "quantities": {
+        "WidgetB": 3
+      },
+      "unit_prices": {
+        "WidgetB": "500.00"
+      },
+      "total": "1500.02"
+    },
+    {
+      "file": "25-stacked-cents.pdf",
+      "sha256": "d5e7f921f2f47a391c61ed27f70d427d3a8dc226e5dfdfd76f770825350ee247",
+      "decision": "reject",
+      "reasons": [
+        "total_mismatch"
+      ],
+      "owner": "vendor",
+      "batch_decision": "reject",
+      "policy_decisions": [
+        1
+      ],
+      "pattern": "stacked-cents",
+      "vendor": "Boundary 25 PDF Supply",
+      "invoice_number": "INV-G252",
+      "date": "2026-05-01",
+      "due_date": "2026-05-31",
+      "currency": "USD",
+      "subtotal": "3500.01",
+      "tax": "0.01",
+      "quantities": {
+        "WidgetB": 7
+      },
+      "unit_prices": {
+        "WidgetB": "500.00"
+      },
+      "total": "3500.02"
+    }
+  ]
+}

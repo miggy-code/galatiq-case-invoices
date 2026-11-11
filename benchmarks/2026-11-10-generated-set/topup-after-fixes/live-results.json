@@ -1,0 +1,182 @@
+{
+  "standalone": {
+    "cases": 44,
+    "matched": 36,
+    "false_approvals": 0,
+    "mismatches": [
+      {
+        "file": "01-above-299.99-reason.txt",
+        "decision": {
+          "expected": "approve",
+          "actual": "hold"
+        }
+      },
+      {
+        "file": "01-above-299.99-reason.pdf",
+        "decision": {
+          "expected": "approve",
+          "actual": "hold"
+        }
+      },
+      {
+        "file": "03-above-300.00-reason.txt",
+        "decision": {
+          "expected": "approve",
+          "actual": "hold"
+        }
+      },
+      {
+        "file": "03-above-300.00-reason.pdf",
+        "decision": {
+          "expected": "approve",
+          "actual": "hold"
+        }
+      },
+      {
+        "file": "05-above-300.01-reason.txt",
+        "missing_reasons": [
+          "vp_recommend"
+        ]
+      },
+      {
+        "file": "05-above-300.01-reason.pdf",
+        "missing_reasons": [
+          "vp_recommend"
+        ]
+      },
+      {
+        "file": "11-rounding-two-cents.txt",
+        "decision": {
+          "expected": "hold",
+          "actual": "reject"
+        },
+        "missing_reasons": [
+          "extraction_uncertain"
+        ],
+        "owner": {
+          "expected": "ap_clerk",
+          "actual": "vendor"
+        }
+      },
+      {
+        "file": "11-rounding-two-cents.pdf",
+        "decision": {
+          "expected": "hold",
+          "actual": "reject"
+        },
+        "missing_reasons": [
+          "extraction_uncertain"
+        ],
+        "owner": {
+          "expected": "ap_clerk",
+          "actual": "vendor"
+        }
+      }
+    ],
+    "unexpected_results": []
+  },
+  "batch": {
+    "cases": 44,
+    "matched": 38,
+    "false_approvals": 0,
+    "mismatches": [
+      {
+        "file": "01-above-299.99-reason.txt",
+        "decision": {
+          "expected": "approve",
+          "actual": "hold"
+        }
+      },
+      {
+        "file": "01-above-299.99-reason.pdf",
+        "decision": {
+          "expected": "approve",
+          "actual": "hold"
+        }
+      },
+      {
+        "file": "03-above-300.00-reason.txt",
+        "decision": {
+          "expected": "approve",
+          "actual": "hold"
+        }
+      },
+      {
+        "file": "03-above-300.00-reason.pdf",
+        "decision": {
+          "expected": "approve",
+          "actual": "hold"
+        }
+      },
+      {
+        "file": "11-rounding-two-cents.txt",
+        "decision": {
+          "expected": "hold",
+          "actual": "reject"
+        }
+      },
+      {
+        "file": "11-rounding-two-cents.pdf",
+        "decision": {
+          "expected": "hold",
+          "actual": "reject"
+        }
+      }
+    ],
+    "unexpected_results": []
+  },
+  "extraction": {
+    "fields": {
+      "vendor": {
+        "correct": 40,
+        "total": 40
+      },
+      "invoice_number": {
+        "correct": 40,
+        "total": 40
+      },
+      "date": {
+        "correct": 40,
+        "total": 40
+      },
+      "due_date": {
+        "correct": 40,
+        "total": 40
+      },
+      "currency": {
+        "correct": 40,
+        "total": 40
+      },
+      "total": {
+        "correct": 38,
+        "total": 38
+      },
+      "quantities": {
+        "correct": 40,
+        "total": 40
+      },
+      "subtotal": {
+        "correct": 40,
+        "total": 40
+      },
+      "tax": {
+        "correct": 40,
+        "total": 40
+      },
+      "unit_prices": {
+        "correct": 40,
+        "total": 40
+      }
+    },
+    "mismatches": []
+  },
+  "evidence_spans": {
+    "checked": 200,
+    "issues": {}
+  },
+  "safety": {
+    "nonpayable": 18,
+    "approved": 0,
+    "upper_bound_95": 0.153
+  }
+}

@@ -1,0 +1,15 @@
+INVOICE
+Vendor: Boundary 03 TXT Supply
+Invoice Number: INV-G031
+Date: 2026-05-01
+Due Date: 2026-05-31
+Currency: USD
+
+WidgetA quantity 4, unit price $300.00, amount $1200.00
+
+Subtotal: $1200.00
+Tax (0%): $0.00
+Total: $1200.00
+
+Notes: WidgetA price includes insulated packaging for overnight delivery to the
+cold-storage site.

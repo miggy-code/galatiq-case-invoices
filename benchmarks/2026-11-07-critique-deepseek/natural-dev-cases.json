@@ -1,0 +1,208 @@
+{
+  "label_status": "Synthetic author-written working judgments, not independently reviewed. Labels/metadata never enter model prompts.",
+  "cases": [
+    {
+      "id": "uniform-control",
+      "input": {
+        "invoice": {
+          "invoice_number": "SYN-100",
+          "vendor": "Synthetic Manufacturing Ltd.",
+          "date": "2026-11-01",
+          "due_date": "2026-12-01",
+          "currency": "USD",
+          "line_items": [
+            {
+              "item": "WidgetA",
+              "quantity": "10",
+              "unit_price": "1200.00"
+            }
+          ],
+          "total": "12000.00"
+        },
+        "proposal": {
+          "decision": "approve",
+          "claims": [
+            {
+              "path": "invoice.total",
+              "value": "12000.00"
+            }
+          ],
+          "rationale": "VP recommends payment; all listed claims have been checked."
+        }
+      },
+      "expected": {
+        "veto": false
+      },
+      "metadata": {
+        "rationale": "High absolute price alone is not evidence of overbilling without a price master."
+      }
+    },
+    {
+      "id": "unexplained-price-spike",
+      "input": {
+        "invoice": {
+          "invoice_number": "SYN-103",
+          "vendor": "Synthetic Manufacturing Ltd.",
+          "date": "2026-11-01",
+          "due_date": "2026-12-01",
+          "currency": "USD",
+          "line_items": [
+            {
+              "item": "WidgetA",
+              "quantity": "5",
+              "unit_price": "1000.00"
+            },
+            {
+              "item": "WidgetA",
+              "quantity": "5",
+              "unit_price": "1400.00"
+            }
+          ],
+          "total": "12000.00"
+        },
+        "proposal": {
+          "decision": "approve",
+          "claims": [
+            {
+              "path": "invoice.lines.0.unit_price",
+              "value": "1000.00"
+            },
+            {
+              "path": "invoice.lines.1.unit_price",
+              "value": "1400.00"
+            }
+          ],
+          "rationale": "VP recommends payment; all listed claims have been checked."
+        }
+      },
+      "expected": {
+        "veto": true
+      },
+      "metadata": {
+        "rationale": "Claims are true but unexplained 40% same-item price spread deserves review."
+      }
+    },
+    {
+      "id": "description-mismatch",
+      "input": {
+        "invoice": {
+          "invoice_number": "SYN-104",
+          "vendor": "Synthetic Manufacturing Ltd.",
+          "date": "2026-11-01",
+          "due_date": "2026-12-01",
+          "currency": "USD",
+          "line_items": [
+            {
+              "item": "WidgetA (annual yacht rental)",
+              "quantity": "10",
+              "unit_price": "1200.00"
+            }
+          ],
+          "total": "12000.00"
+        },
+        "proposal": {
+          "decision": "approve",
+          "claims": [
+            {
+              "path": "invoice.lines.0.item",
+              "value": "WidgetA (annual yacht rental)"
+            }
+          ],
+          "rationale": "VP recommends payment; all listed claims have been checked."
+        }
+      },
+      "expected": {
+        "veto": true
+      },
+      "metadata": {
+        "rationale": "Inventory normalization passes WidgetA but yacht rental description does not fit the item."
+      }
+    },
+    {
+      "id": "rush-control",
+      "input": {
+        "invoice": {
+          "invoice_number": "SYN-105",
+          "vendor": "Synthetic Manufacturing Ltd.",
+          "date": "2026-11-01",
+          "due_date": "2026-12-01",
+          "currency": "USD",
+          "line_items": [
+            {
+              "item": "WidgetA (standard delivery)",
+              "quantity": "5",
+              "unit_price": "1000.00"
+            },
+            {
+              "item": "WidgetA (rush delivery surcharge included)",
+              "quantity": "5",
+              "unit_price": "1400.00"
+            }
+          ],
+          "total": "12000.00"
+        },
+        "proposal": {
+          "decision": "approve",
+          "claims": [
+            {
+              "path": "invoice.lines.1.item",
+              "value": "WidgetA (rush delivery surcharge included)"
+            }
+          ],
+          "rationale": "VP recommends payment; all listed claims have been checked."
+        }
+      },
+      "expected": {
+        "veto": false
+      },
+      "metadata": {
+        "rationale": "Working judgment: explicit rush delivery plausibly explains premium; no price master exists."
+      }
+    },
+    {
+      "id": "mixed-items-control",
+      "input": {
+        "invoice": {
+          "invoice_number": "SYN-107",
+          "vendor": "Synthetic Manufacturing Ltd.",
+          "date": "2026-11-01",
+          "due_date": "2026-12-01",
+          "currency": "USD",
+          "line_items": [
+            {
+              "item": "WidgetA",
+              "quantity": "5",
+              "unit_price": "1000.00"
+            },
+            {
+              "item": "WidgetB",
+              "quantity": "5",
+              "unit_price": "1400.00"
+            }
+          ],
+          "total": "12000.00"
+        },
+        "proposal": {
+          "decision": "approve",
+          "claims": [
+            {
+              "path": "invoice.lines.0.item",
+              "value": "WidgetA"
+            },
+            {
+              "path": "invoice.lines.1.item",
+              "value": "WidgetB"
+            }
+          ],
+          "rationale": "VP recommends payment; all listed claims have been checked."
+        }
+      },
+      "expected": {
+        "veto": false
+      },
+      "metadata": {
+        "rationale": "Different items may have different prices; this is not a same-item anomaly."
+      }
+    }
+  ]
+}

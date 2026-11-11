@@ -1,0 +1,102 @@
+{
+  "label_status": "working labels, not independently reviewed; results are against our labels",
+  "mode": "offline replay of recorded model responses",
+  "supplied": {
+    "standalone": {
+      "cases": 20,
+      "matched": 20,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "batch": {
+      "cases": 20,
+      "matched": 20,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "extraction": {
+      "fields": {
+        "vendor": {
+          "correct": 20,
+          "total": 20
+        },
+        "invoice_number": {
+          "correct": 20,
+          "total": 20
+        },
+        "date": {
+          "correct": 20,
+          "total": 20
+        },
+        "due_date": {
+          "correct": 20,
+          "total": 20
+        },
+        "currency": {
+          "correct": 20,
+          "total": 20
+        },
+        "total": {
+          "correct": 20,
+          "total": 20
+        },
+        "quantities": {
+          "correct": 20,
+          "total": 20
+        }
+      },
+      "mismatches": []
+    }
+  },
+  "text": {
+    "standalone": {
+      "cases": 19,
+      "matched": 19,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "batch": {
+      "cases": 19,
+      "matched": 19,
+      "false_approvals": 0,
+      "mismatches": [],
+      "unexpected_results": []
+    },
+    "extraction": {
+      "fields": {
+        "vendor": {
+          "correct": 19,
+          "total": 19
+        },
+        "invoice_number": {
+          "correct": 19,
+          "total": 19
+        },
+        "date": {
+          "correct": 19,
+          "total": 19
+        },
+        "due_date": {
+          "correct": 19,
+          "total": 19
+        },
+        "currency": {
+          "correct": 19,
+          "total": 19
+        },
+        "total": {
+          "correct": 18,
+          "total": 18
+        },
+        "quantities": {
+          "correct": 19,
+          "total": 19
+        }
+      },
+      "mismatches": []
+    }
+  }
+}

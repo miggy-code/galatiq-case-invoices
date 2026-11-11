@@ -1,0 +1,16 @@
+Invoice: CTL-05
+Vendor: Elm Assembly Supply
+Date: 2026-10-01
+Due Date: 2026-10-31
+Currency: USD
+
+Item | Quantity | Unit price | Amount
+WidgetA | 2 | $250.00 | $500.00
+WidgetB | 1 | $500.00 | $500.00
+
+Subtotal: $1000.00
+Tax: $0.00
+Shipping: $0.10
+Total: $1000.10
+
+Signature panel: Prepared by the billing team; accounts contact available during office hours.

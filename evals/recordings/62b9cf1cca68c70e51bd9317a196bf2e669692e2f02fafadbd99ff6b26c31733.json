@@ -1,0 +1,1 @@
+{"content": "{\"signals\":[{\"reason\":\"urgency_pressure\",\"quote\":\"URGENT - Pay immediately to avoid penalties!!!\"}]}", "model": "deepseek-flash", "latency_seconds": 4.416991999998572, "prompt_tokens": 254, "completion_tokens": 483, "provider_requests": 1}
