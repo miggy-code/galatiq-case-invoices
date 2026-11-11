@@ -23,12 +23,14 @@ The batch reports INV-1001 as already paid, because the first command paid it: n
 
 **No API key is needed.** Without a key, every model call is replayed from a recording in `evals/recordings/`. A document with no recording holds for AP operations.
 
-**To call Grok live,** set your xAI key. The model is Grok 4.7, at low reasoning effort with a 180-second deadline per request:
+**To call Grok live,** put your keys in a `.env` file (copy `.env.example`) or export them. The model is Grok 4.7, at low reasoning effort with a 180-second deadline per request:
 
 ```sh
-export XAI_API_KEY=...
-uv run python main.py --batch data/invoices
+cp .env.example .env           # then fill in XAI_API_KEY, and DEEPSEEK_API_KEY for the backup
+python main.py --invoice_path=data/invoices/invoice_1001.txt
 ```
+
+`main.py` reads `.env` from the repository root; a variable already set in your shell wins. `.env` is git-ignored.
 
 With `DEEPSEEK_API_KEY` also set, DeepSeek is the backup: a Grok timeout, connection failure, rate limit or server error retries that call on DeepSeek, and the switch is logged. An invalid answer, failed grounding or a hold never switches providers, and each provider receives only its own key.
 
